@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "main": {
@@ -27,32 +18,39 @@
           "type": "price",
           "settings": {}
         },
-        "variant_picker": {
-          "type": "variant_picker",
+        "bullet_1": {
+          "type": "text",
           "settings": {
-            "picker_type": "button",
-            "swatch_shape": "circle"
+            "text": "Angepasst an Seiten- & Rückenschläfer",
+            "text_style": "body"
           }
         },
-        "quantity_selector": {
-          "type": "quantity_selector",
-          "settings": {}
+        "bullet_2": {
+          "type": "text",
+          "settings": {
+            "text": "60 Nächte Garantie — kein Risiko",
+            "text_style": "body"
+          }
+        },
+        "bullet_3": {
+          "type": "text",
+          "settings": {
+            "text": "Gratis Rückversand in der Schweiz",
+            "text_style": "body"
+          }
+        },
+        "bullet_4": {
+          "type": "text",
+          "settings": {
+            "text": "Über 2.400 Kundinnen und Kunden schlafen besser",
+            "text_style": "body"
+          }
         },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
             "show_dynamic_checkout": true,
-            "show_gift_card_recipient": true
-          }
-        },
-        "description": {
-          "type": "description",
-          "settings": {}
-        },
-        "share": {
-          "type": "share",
-          "settings": {
-            "share_label": "Share"
+            "show_gift_card_recipient": false
           }
         }
       },
@@ -60,11 +58,11 @@
         "vendor",
         "title",
         "price",
-        "variant_picker",
-        "quantity_selector",
-        "buy_buttons",
-        "description",
-        "share"
+        "bullet_1",
+        "bullet_2",
+        "bullet_3",
+        "bullet_4",
+        "buy_buttons"
       ],
       "settings": {
         "enable_sticky_info": true,
@@ -82,35 +80,400 @@
         "padding_bottom": 12
       }
     },
-    "disclosures": {
-      "type": "disclosures",
+    "trust_badges": {
+      "type": "dormio-trust-badges",
+      "blocks": {
+        "badge_1": {
+          "type": "badge",
+          "settings": { "icon": "shield", "label": "60 Nächte Garantie" }
+        },
+        "badge_2": {
+          "type": "badge",
+          "settings": { "icon": "truck", "label": "3-5 Tage Lieferung" }
+        },
+        "badge_3": {
+          "type": "badge",
+          "settings": { "icon": "return", "label": "Gratis Rückversand" }
+        },
+        "badge_4": {
+          "type": "badge",
+          "settings": { "icon": "star", "label": "4.8/5 - 2.400+ Bewertungen" }
+        }
+      },
+      "block_order": ["badge_1", "badge_2", "badge_3", "badge_4"],
       "settings": {
-        "padding_top": 36,
-        "padding_bottom": 0
+        "padding_top": 16,
+        "padding_bottom": 16
       }
     },
-    "related-products": {
-      "type": "related-products",
+    "pain_points": {
+      "type": "dormio-benefit-grid",
+      "blocks": {
+        "card_1": {
+          "type": "card",
+          "settings": {
+            "icon": "moon",
+            "headline": "Nackenschmerzen beim Aufwachen",
+            "body": "Dein Kissen hält den Kopf die ganze Nacht in Fehlhaltung — dein Nacken arbeitet dagegen an."
+          }
+        },
+        "card_2": {
+          "type": "card",
+          "settings": {
+            "icon": "zap",
+            "headline": "Eingeschlafener Arm",
+            "body": "Die falsche Kissenhöhe drückt auf den Schulternerv — taube Hände morgens sind die Folge."
+          }
+        },
+        "card_3": {
+          "type": "card",
+          "settings": {
+            "icon": "sun",
+            "headline": "Müde trotz 8 Stunden Schlaf",
+            "body": "Schlechte Schlafposition bedeutet unruhigen Schlaf. Du wachst oft auf, ohne es zu merken."
+          }
+        },
+        "card_4": {
+          "type": "card",
+          "settings": {
+            "icon": "refresh",
+            "headline": "Immer wieder dasselbe Kissen kaufen",
+            "body": "Standard-Kissen verlieren in 6 Monaten ihre Form. Ein Zyklus ohne Ende."
+          }
+        }
+      },
+      "block_order": ["card_1", "card_2", "card_3", "card_4"],
       "settings": {
-        "heading": "You may also like",
-        "heading_size": "h2",
-        "products_to_show": 4,
-        "columns_desktop": 4,
-        "columns_mobile": "2",
-        "color_scheme": "scheme-1",
-        "image_ratio": "square",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "padding_top": 36,
-        "padding_bottom": 28
+        "heading": "Erkennst du das?",
+        "background": "dark",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "objection": {
+      "type": "dormio-objection",
+      "settings": {
+        "eyebrow": "Was Experten sagen",
+        "quote": "Ein anatomisch korrekt geformtes Kissen reduziert die Muskelspannung im Nackenbereich messbar — die Schulter-Kopf-Achse bleibt in Ruheposition statt permanent kompensieren zu müssen.",
+        "attribution": "Dr. med. [Name], Schlafmedizin [QUELLE PRÜFEN]",
+        "show_placeholder_notice": true,
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "sleep_types": {
+      "type": "dormio-benefit-grid",
+      "blocks": {
+        "card_1": {
+          "type": "card",
+          "settings": {
+            "icon": "moon",
+            "headline": "Seitenschläfer",
+            "body": "Die erhöhten Seitenflügel füllen den Abstand zwischen Schulter und Kopf. Kein Zug, kein Taubheitsgefühl."
+          }
+        },
+        "card_2": {
+          "type": "card",
+          "settings": {
+            "icon": "sun",
+            "headline": "Rückenschläfer",
+            "body": "Die abgesenkte Mittelzone hält den Kopf in natürlicher Lordose — kein Hochdrücken, keine Verspannung."
+          }
+        },
+        "card_3": {
+          "type": "card",
+          "settings": {
+            "icon": "zap",
+            "headline": "Wechselschläfer",
+            "body": "Dormio folgt jeder Bewegung. Dreh dich so oft du willst — das Kissen passt sich automatisch an."
+          }
+        },
+        "card_4": {
+          "type": "card",
+          "settings": {
+            "icon": "refresh",
+            "headline": "Empfindliche Schläfer",
+            "body": "Bambus-Lyocell-Bezug temperaturregulierend und hypoallergen. Auch für Menschen mit sensibler Haut."
+          }
+        }
+      },
+      "block_order": ["card_1", "card_2", "card_3", "card_4"],
+      "settings": {
+        "heading": "Für jeden Schlaftyp gemacht.",
+        "background": "light",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "zones": {
+      "type": "dormio-zones",
+      "blocks": {
+        "zone_1": {
+          "type": "zone",
+          "settings": {
+            "title": "Seitenflügel",
+            "text": "Erhöhte Randbereiche füllen den Abstand zwischen Schulter und Kopf — keine Muskelverspannung durch seitliche Überdehnung."
+          }
+        },
+        "zone_2": {
+          "type": "zone",
+          "settings": {
+            "title": "Mittelzone (abgesenkt)",
+            "text": "Tiefere Liegefläche für Rückenschläfer — Kopf und Nacken werden in natürlicher Lordose gehalten ohne Hochdrücken."
+          }
+        },
+        "zone_3": {
+          "type": "zone",
+          "settings": {
+            "title": "Ohrschutz-Mulden",
+            "text": "Beidseitige Vertiefungen reduzieren Druckpunkte am Ohr — wichtig für Schläfer, die lange auf einer Seite bleiben."
+          }
+        },
+        "zone_4": {
+          "type": "zone",
+          "settings": {
+            "title": "Schulter-Aussparungen",
+            "text": "Die Butterfly-Form schafft Freiraum für die Schulter, damit der Arm nicht einschläft und die Körperdrehung fliessend bleibt."
+          }
+        }
+      },
+      "block_order": ["zone_1", "zone_2", "zone_3", "zone_4"],
+      "settings": {
+        "eyebrow": "4 durchdachte Zonen",
+        "heading": "Jede Zone hat einen Grund.",
+        "subheading": "Das Kissen hält die Position. Nicht du.",
+        "padding_top": 56,
+        "padding_bottom": 56
+      }
+    },
+    "spec_table": {
+      "type": "dormio-spec-table",
+      "blocks": {
+        "row_1": {
+          "type": "row",
+          "settings": { "label": "Kern", "value": "Adaptiver Memory-Foam (CertiPUR-US)", "needs_check": false }
+        },
+        "row_2": {
+          "type": "row",
+          "settings": { "label": "Bezug (aussen)", "value": "100% Bambus-Lyocell, 300 TC", "needs_check": false }
+        },
+        "row_3": {
+          "type": "row",
+          "settings": { "label": "Innenbezug", "value": "Polyester-Mikrofaser", "needs_check": false }
+        },
+        "row_4": {
+          "type": "row",
+          "settings": { "label": "Masse", "value": "60 x 40 cm", "needs_check": false }
+        },
+        "row_5": {
+          "type": "row",
+          "settings": { "label": "Höhe (Low/High)", "value": "10 cm / 13 cm", "needs_check": false }
+        },
+        "row_6": {
+          "type": "row",
+          "settings": { "label": "Höhenanpassung", "value": "Einlage herausnehmbar, 3 cm Unterschied", "needs_check": false }
+        },
+        "row_7": {
+          "type": "row",
+          "settings": { "label": "Waschbar", "value": "Bezug: 40 Grad Schonwaschgang - Kern: nicht waschbar", "needs_check": false }
+        },
+        "row_8": {
+          "type": "row",
+          "settings": { "label": "Zertifizierung", "value": "OEKO-TEX Standard 100", "needs_check": true }
+        },
+        "row_9": {
+          "type": "row",
+          "settings": { "label": "Gewicht", "value": "ca. 1,2 kg", "needs_check": false }
+        }
+      },
+      "block_order": ["row_1", "row_2", "row_3", "row_4", "row_5", "row_6", "row_7", "row_8", "row_9"],
+      "settings": {
+        "heading": "Was steckt drin?",
+        "show_check_notice": true,
+        "padding_top": 56,
+        "padding_bottom": 56
+      }
+    },
+    "testimonials": {
+      "type": "dormio-testimonials",
+      "blocks": {
+        "t1": {
+          "type": "testimonial",
+          "settings": {
+            "category": "Nackenschmerzen",
+            "quote": "Nach Jahren mit Nackenschmerzen endlich ein Kissen, das wirklich hilft. Die ersten zwei Nächte brauchte ich, aber seitdem schlafe ich durch.",
+            "name": "Maria K., 38"
+          }
+        },
+        "t2": {
+          "type": "testimonial",
+          "settings": {
+            "category": "Nackenschmerzen",
+            "quote": "Mein Physiotherapeut hat mir empfohlen, mein Kissen zu wechseln. Das hier hat tatsächlich meine morgendlichen Beschwerden deutlich reduziert.",
+            "name": "Thomas R., 52"
+          }
+        },
+        "t3": {
+          "type": "testimonial",
+          "settings": {
+            "category": "Schulter / Arm",
+            "quote": "Mein Arm ist seit Wochen nicht mehr eingeschlafen. Ich wusste nicht mal, dass das kissen-bedingt sein kann.",
+            "name": "Jonas F., 29"
+          }
+        },
+        "t4": {
+          "type": "testimonial",
+          "settings": {
+            "category": "Schulter / Arm",
+            "quote": "Die Schulter-Aussparungen sind ein Gamechanger. Endlich kann ich als Seitenschläfer die Schulter korrekt positionieren.",
+            "name": "Sandra M., 44"
+          }
+        },
+        "t5": {
+          "type": "testimonial",
+          "settings": {
+            "category": "Schlechter Schlaf",
+            "quote": "Ich war skeptisch, aber nach der ersten Woche merkte ich wirklich den Unterschied. Ich wache seltener auf und fühle mich erholt.",
+            "name": "Lisa H., 33"
+          }
+        },
+        "t6": {
+          "type": "testimonial",
+          "settings": {
+            "category": "Schlechter Schlaf",
+            "quote": "Endlich keine Schlaftabletten mehr nötig. Klingt übertrieben, aber das richtige Kissen hat für mich mehr gemacht als jahrelange Schlafhygiene.",
+            "name": "Markus D., 47"
+          }
+        },
+        "t7": {
+          "type": "testimonial",
+          "settings": {
+            "category": "Eingewöhnung",
+            "quote": "Die ersten 3 Nächte fühlten sich komisch an. Aber genau wie angekündigt: Ab Nacht 4 wollte ich nie wieder ein anderes Kissen.",
+            "name": "Anna B., 26"
+          }
+        },
+        "t8": {
+          "type": "testimonial",
+          "settings": {
+            "category": "Eingewöhnung",
+            "quote": "Mein Mann war zuerst skeptisch wegen der ungewöhnlichen Form. Jetzt schläft er auch mit einem Dormio. Das sagt eigentlich alles.",
+            "name": "Christine W., 51"
+          }
+        }
+      },
+      "block_order": ["t1", "t2", "t3", "t4", "t5", "t6", "t7", "t8"],
+      "settings": {
+        "heading": "Was unsere Kunden sagen",
+        "subheading": "4.8 / 5 - Über 2.400 verifizierte Bewertungen",
+        "padding_top": 56,
+        "padding_bottom": 56
+      }
+    },
+    "stats": {
+      "type": "dormio-stats",
+      "blocks": {
+        "stat_1": {
+          "type": "stat",
+          "settings": { "number": "93%", "label": "schlafen nach 30 Nächten länger durch" }
+        },
+        "stat_2": {
+          "type": "stat",
+          "settings": { "number": "88%", "label": "berichten weniger morgendliche Nackenschmerzen" }
+        },
+        "stat_3": {
+          "type": "stat",
+          "settings": { "number": "85%", "label": "würden Dormio aktiv weiterempfehlen" }
+        }
+      },
+      "block_order": ["stat_1", "stat_2", "stat_3"],
+      "settings": {
+        "heading": "Was unsere Kunden nach 30 Nächten berichten",
+        "source": "Dormio Kundenbefragung [QUELLE EINTRAGEN]",
+        "show_placeholder_notice": true,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "faq": {
+      "type": "dormio-faq",
+      "blocks": {
+        "faq_1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Wie lange dauert die Eingewöhnung?",
+            "answer": "Die meisten Kunden berichten nach 2-4 Nächten eine spürbare Verbesserung. Dein Körper ist es gewohnt, Verspannungen aktiv zu kompensieren — das dauert ein paar Nächte, bis er loslassen kann. Genau deshalb haben wir die 60-Nächte-Garantie: Du hast Zeit."
+          }
+        },
+        "faq_2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Für welche Schlafposition ist Dormio geeignet?",
+            "answer": "Dormio ist für Seiten- und Rückenschläfer entwickelt worden. Die Butterfly-Form mit erhöhten Seitenflügeln und abgesenkter Mitte passt sich beiden Positionen an — auch wenn du in der Nacht die Seite wechselst."
+          }
+        },
+        "faq_3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Kann ich das Kissen waschen?",
+            "answer": "Den Bezug kannst du bei 40 Grad im Schonwaschgang waschen. Der Memory-Foam-Kern ist nicht für die Waschmaschine geeignet — aber der Bezug schützt ihn zuverlässig."
+          }
+        },
+        "faq_4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Was, wenn es mir nicht gefällt?",
+            "answer": "Du hast 60 Nächte Zeit, um zu entscheiden. Wenn Dormio dir nicht hilft — aus irgendeinem Grund — schickst du es gratis zurück und bekommst den vollen Kaufpreis erstattet. Ohne Fragen."
+          }
+        },
+        "faq_5": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Wie wähle ich die richtige Höhe?",
+            "answer": "Das Kissen kommt mit einer herausnehmbaren Einlage, die 3 cm Höhenunterschied ermöglicht. Seitenschläfer bevorzugen meist die höhere Version (13 cm), Rückenschläfer die niedrigere (10 cm). Du kannst jederzeit wechseln."
+          }
+        },
+        "faq_6": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Wie lange dauert die Lieferung?",
+            "answer": "Wir liefern innerhalb von 3-5 Werktagen in die Schweiz. Du erhältst eine Sendungsverfolgung per E-Mail, sobald dein Paket unterwegs ist."
+          }
+        }
+      },
+      "block_order": ["faq_1", "faq_2", "faq_3", "faq_4", "faq_5", "faq_6"],
+      "settings": {
+        "heading": "Häufige Fragen",
+        "padding_top": 56,
+        "padding_bottom": 56
+      }
+    },
+    "final_cta": {
+      "type": "dormio-final-cta",
+      "settings": {
+        "heading": "Bereit für deinen ersten erholten Morgen?",
+        "subtext": "Über 2.400 Kunden schlafen bereits besser. Jetzt bist du dran.",
+        "price": "CHF 89",
+        "compare_price": "CHF 129",
+        "discount_badge": "-31%",
+        "button_label": "Jetzt bestellen - CHF 89",
+        "guarantee_text": "60 Nächte testen - Gratis Rückversand - Kein Risiko",
+        "padding_top": 72,
+        "padding_bottom": 80
       }
     }
   },
   "order": [
     "main",
-    "disclosures",
-    "related-products"
+    "trust_badges",
+    "pain_points",
+    "objection",
+    "sleep_types",
+    "zones",
+    "spec_table",
+    "testimonials",
+    "stats",
+    "faq",
+    "final_cta"
   ]
 }
