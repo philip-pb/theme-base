@@ -1,0 +1,136 @@
+{%- style -%}
+  .dormio-mission--{{ section.id }} {
+    --d-dark: #0D1B2A;
+    --d-creme: #F5F2EC;
+    --d-green: #4A7C6F;
+    background: var(--d-creme);
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .dormio-mission--{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+  .dormio-mission--{{ section.id }} .dm__inner {
+    max-width: 680px;
+    margin-inline: auto;
+    padding: 0 24px;
+    text-align: center;
+  }
+  .dormio-mission--{{ section.id }} .dm__eyebrow {
+    font-family: Inter, sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--d-green);
+    margin: 0 0 16px;
+    display: block;
+  }
+  .dormio-mission--{{ section.id }} .dm__heading {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    line-height: 1.2;
+    color: var(--d-dark);
+    margin: 0 0 20px;
+    font-weight: 400;
+  }
+  .dormio-mission--{{ section.id }} .dm__text {
+    font-family: Inter, sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.75;
+    color: #3a4a54;
+    margin: 0 0 32px;
+  }
+  .dormio-mission--{{ section.id }} .dm__signature {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: 1.1rem;
+    color: var(--d-dark);
+    font-style: italic;
+  }
+{%- endstyle -%}
+
+<div class="dormio-mission--{{ section.id }}">
+  <div class="dm__inner">
+    {%- unless section.settings.eyebrow == blank -%}
+      <span class="dm__eyebrow">{{ section.settings.eyebrow | escape }}</span>
+    {%- endunless -%}
+    {%- unless section.settings.heading == blank -%}
+      <h2 class="dm__heading">{{ section.settings.heading }}</h2>
+    {%- endunless -%}
+    {%- unless section.settings.text == blank -%}
+      <div class="dm__text">{{ section.settings.text }}</div>
+    {%- endunless -%}
+    {%- unless section.settings.signature == blank -%}
+      <p class="dm__signature">{{ section.settings.signature | escape }}</p>
+    {%- endunless -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Dormio: Mission",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow-Text",
+      "default": "Unsere Mission"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Überschrift",
+      "default": "Schlafen ist keine Schwäche. Schlechter Schlaf ist ein lösbares Problem."
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Wir haben Dormio gebaut, weil wir selbst jahrelang mit Nackenschmerzen und schlechtem Schlaf gekämpft haben — und keine ehrliche Lösung gefunden haben. Kein Marketing-Versprechen, keine Zahlen erfunden.</p><p>Nur ein Kissen, das tut, was es soll: deinen Kopf in der richtigen Position halten, damit dein Körper sich erholen kann.</p>"
+    },
+    {
+      "type": "text",
+      "id": "signature",
+      "label": "Signatur / Abschluss",
+      "default": "— Das Dormio-Team"
+    },
+    {
+      "type": "header",
+      "content": "Abstände"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 40,
+      "max": 120,
+      "step": 8,
+      "unit": "px",
+      "label": "Abstand oben",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 40,
+      "max": 120,
+      "step": 8,
+      "unit": "px",
+      "label": "Abstand unten",
+      "default": 80
+    }
+  ],
+  "presets": [
+    {
+      "name": "Dormio: Mission"
+    }
+  ]
+}
+{% endschema %}

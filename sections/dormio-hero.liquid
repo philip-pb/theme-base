@@ -1,0 +1,302 @@
+{%- style -%}
+  .dormio-hero--{{ section.id }} {
+    --d-dark: #0D1B2A;
+    --d-mid: #162436;
+    --d-creme: #F5F2EC;
+    --d-green: #4A7C6F;
+    --d-green-dark: #3A6259;
+    background: var(--d-dark);
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    position: relative;
+    overflow: hidden;
+  }
+  @media screen and (min-width: 750px) {
+    .dormio-hero--{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+  .dormio-hero--{{ section.id }} .dh__inner {
+    max-width: 860px;
+    margin-inline: auto;
+    padding: 0 24px;
+    text-align: center;
+  }
+  .dormio-hero--{{ section.id }} .dh__eyebrow {
+    font-family: Inter, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--d-green);
+    margin: 0 0 20px;
+    display: block;
+  }
+  .dormio-hero--{{ section.id }} .dh__heading {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: clamp(2.2rem, 6vw, 3.8rem);
+    line-height: 1.1;
+    color: var(--d-creme);
+    margin: 0 0 24px;
+    font-weight: 400;
+  }
+  .dormio-hero--{{ section.id }} .dh__subtext {
+    font-family: Inter, sans-serif;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.65;
+    color: #8aaabb;
+    margin: 0 0 36px;
+    max-width: 620px;
+    margin-inline: auto;
+    margin-bottom: 36px;
+  }
+  .dormio-hero--{{ section.id }} .dh__cta-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+  @media screen and (min-width: 480px) {
+    .dormio-hero--{{ section.id }} .dh__cta-group {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+  .dormio-hero--{{ section.id }} .dh__btn-primary {
+    display: inline-block;
+    background: var(--d-green);
+    color: #fff;
+    font-family: Inter, sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    padding: 16px 36px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.2s ease;
+    white-space: nowrap;
+  }
+  .dormio-hero--{{ section.id }} .dh__btn-primary:hover {
+    background: var(--d-green-dark);
+  }
+  .dormio-hero--{{ section.id }} .dh__btn-secondary {
+    display: inline-block;
+    color: var(--d-creme);
+    font-family: Inter, sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 16px 24px;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    opacity: 0.75;
+    transition: opacity 0.2s ease;
+    white-space: nowrap;
+  }
+  .dormio-hero--{{ section.id }} .dh__btn-secondary:hover {
+    opacity: 1;
+  }
+  .dormio-hero--{{ section.id }} .dh__social-proof {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .dormio-hero--{{ section.id }} .dh__proof-item {
+    font-family: Inter, sans-serif;
+    font-size: 0.9rem;
+    color: #8aaabb;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .dormio-hero--{{ section.id }} .dh__proof-stars {
+    color: #f5b942;
+    letter-spacing: 1px;
+  }
+  .dormio-hero--{{ section.id }} .dh__proof-divider {
+    color: #2E4560;
+  }
+  .dormio-hero--{{ section.id }} .dh__image-wrap {
+    margin-top: 48px;
+    border-radius: 16px;
+    overflow: hidden;
+    max-width: 780px;
+    margin-inline: auto;
+  }
+  .dormio-hero--{{ section.id }} .dh__image-wrap img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+{%- endstyle -%}
+
+<div class="dormio-hero--{{ section.id }}">
+  <div class="dh__inner">
+    {%- unless section.settings.eyebrow == blank -%}
+      <span class="dh__eyebrow">{{ section.settings.eyebrow | escape }}</span>
+    {%- endunless -%}
+
+    {%- unless section.settings.heading == blank -%}
+      <h1 class="dh__heading">{{ section.settings.heading }}</h1>
+    {%- endunless -%}
+
+    {%- unless section.settings.subtext == blank -%}
+      <p class="dh__subtext">{{ section.settings.subtext | escape }}</p>
+    {%- endunless -%}
+
+    <div class="dh__cta-group">
+      {%- unless section.settings.button_label == blank -%}
+        <a href="{{ section.settings.button_url }}" class="dh__btn-primary">
+          {{ section.settings.button_label | escape }}
+        </a>
+      {%- endunless -%}
+      {%- unless section.settings.secondary_label == blank -%}
+        <a href="{{ section.settings.secondary_url }}" class="dh__btn-secondary">
+          {{ section.settings.secondary_label | escape }}
+        </a>
+      {%- endunless -%}
+    </div>
+
+    <div class="dh__social-proof">
+      <span class="dh__proof-item">
+        <span class="dh__proof-stars">★★★★★</span>
+        {{ section.settings.rating_text | escape }}
+      </span>
+      <span class="dh__proof-divider" aria-hidden="true">·</span>
+      <span class="dh__proof-item">{{ section.settings.customers_text | escape }}</span>
+      {%- unless section.settings.guarantee_text == blank -%}
+        <span class="dh__proof-divider" aria-hidden="true">·</span>
+        <span class="dh__proof-item">{{ section.settings.guarantee_text | escape }}</span>
+      {%- endunless -%}
+    </div>
+
+    {%- if section.settings.image != blank -%}
+      <div class="dh__image-wrap">
+        {{ section.settings.image | image_url: width: 1200 | image_tag: loading: 'eager', widths: '600, 900, 1200', alt: section.settings.image.alt }}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Dormio: Hero",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow-Text",
+      "default": "Das ergonomische Schlafkissen"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Headline",
+      "default": "Wach auf. Ohne Schmerzen."
+    },
+    {
+      "type": "text",
+      "id": "subtext",
+      "label": "Untertext",
+      "default": "Dormio passt sich deiner Schlafposition an — nicht du dem Kissen. Entwickelt für Menschen, die morgens erholt aufwachen wollen."
+    },
+    {
+      "type": "header",
+      "content": "Haupt-Button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button-Text",
+      "default": "Jetzt bestellen — CHF 89"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button-Link"
+    },
+    {
+      "type": "header",
+      "content": "Sekundär-Button"
+    },
+    {
+      "type": "text",
+      "id": "secondary_label",
+      "label": "Text (leer = ausblenden)",
+      "default": "Mehr erfahren"
+    },
+    {
+      "type": "url",
+      "id": "secondary_url",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Social Proof"
+    },
+    {
+      "type": "text",
+      "id": "rating_text",
+      "label": "Bewertungstext",
+      "default": "4.8 / 5"
+    },
+    {
+      "type": "text",
+      "id": "customers_text",
+      "label": "Kunden-Text",
+      "default": "2.400+ Kunden"
+    },
+    {
+      "type": "text",
+      "id": "guarantee_text",
+      "label": "Garantie-Text",
+      "default": "60 Nächte testen"
+    },
+    {
+      "type": "header",
+      "content": "Bild (optional)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Hero-Bild"
+    },
+    {
+      "type": "header",
+      "content": "Abstände"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 48,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "label": "Abstand oben",
+      "default": 96
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 48,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "label": "Abstand unten",
+      "default": 96
+    }
+  ],
+  "presets": [
+    {
+      "name": "Dormio: Hero"
+    }
+  ]
+}
+{% endschema %}

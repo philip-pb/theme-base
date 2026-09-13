@@ -1,75 +1,195 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "hero": {
+      "type": "dormio-hero",
+      "settings": {
+        "eyebrow": "Das ergonomische Schlafkissen",
+        "heading": "Wach auf. Ohne Schmerzen.",
+        "subtext": "Dormio passt sich deiner Schlafposition an — nicht du dem Kissen. Entwickelt für Menschen, die morgens erholt aufwachen wollen.",
+        "button_label": "Jetzt bestellen — CHF 89",
+        "button_url": "/products/dormio-schlafkissen",
+        "secondary_label": "Mehr erfahren",
+        "secondary_url": "/products/dormio-schlafkissen",
+        "rating_text": "4.8 / 5",
+        "customers_text": "2.400+ Kunden",
+        "guarantee_text": "60 Nächte testen",
+        "padding_top": 96,
+        "padding_bottom": 80
+      }
+    },
+    "trust_badges": {
+      "type": "dormio-trust-badges",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "badge_1": {
+          "type": "badge",
+          "settings": { "icon": "shield", "label": "60 Nächte Garantie" }
+        },
+        "badge_2": {
+          "type": "badge",
+          "settings": { "icon": "truck", "label": "3-5 Tage Lieferung" }
+        },
+        "badge_3": {
+          "type": "badge",
+          "settings": { "icon": "return", "label": "Gratis Rückversand" }
+        },
+        "badge_4": {
+          "type": "badge",
+          "settings": { "icon": "star", "label": "4.8/5 - 2.400+ Bewertungen" }
+        }
+      },
+      "block_order": ["badge_1", "badge_2", "badge_3", "badge_4"],
+      "settings": {
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "pain_points": {
+      "type": "dormio-benefit-grid",
+      "blocks": {
+        "item_1": {
+          "type": "item",
           "settings": {
-            "heading": "Browse our latest products",
-            "heading_size": "h0"
+            "emoji": "😴",
+            "title": "Müde trotz 8 Stunden Schlaf",
+            "text": "Schlechte Schlafposition bedeutet unruhigen Schlaf — du wachst oft auf, ohne es zu merken."
           }
         },
-        "button": {
-          "type": "buttons",
+        "item_2": {
+          "type": "item",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "emoji": "🦴",
+            "title": "Steifer Nacken morgens",
+            "text": "Dein Kissen hält den Kopf die ganze Nacht in Fehlhaltung — der Nacken arbeitet dagegen an."
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "emoji": "🖐",
+            "title": "Eingeschlafener Arm",
+            "text": "Die falsche Kissenhöhe drückt auf den Schulternerv — taube Hände morgens sind die Folge."
+          }
+        },
+        "item_4": {
+          "type": "item",
+          "settings": {
+            "emoji": "🔄",
+            "title": "Kein Kissen hält ewig",
+            "text": "Standard-Kissen verlieren in 6 Monaten ihre Form. Ein Zyklus ohne Ende."
           }
         }
       },
-      "block_order": [
-        "heading",
-        "button"
-      ],
+      "block_order": ["item_1", "item_2", "item_3", "item_4"],
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "image_behavior": "none",
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "heading": "Erkennst du das?",
+        "subheading": "Diese Probleme liegen am Kissen. Nicht an dir.",
+        "dark_background": true,
+        "padding_top": 64,
+        "padding_bottom": 64
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
+    "stats": {
+      "type": "dormio-stats",
+      "blocks": {
+        "stat_1": {
+          "type": "stat",
+          "settings": { "number": "93%", "label": "schlafen nach 30 Nächten länger durch" }
+        },
+        "stat_2": {
+          "type": "stat",
+          "settings": { "number": "88%", "label": "berichten weniger Nackenschmerzen" }
+        },
+        "stat_3": {
+          "type": "stat",
+          "settings": { "number": "85%", "label": "würden Dormio weiterempfehlen" }
+        }
+      },
+      "block_order": ["stat_1", "stat_2", "stat_3"],
       "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "padding_top": 44,
-        "padding_bottom": 36
+        "heading": "Was unsere Kunden nach 30 Nächten berichten",
+        "source": "Dormio Kundenbefragung [QUELLE EINTRAGEN]",
+        "show_placeholder_notice": true,
+        "padding_top": 56,
+        "padding_bottom": 56
+      }
+    },
+    "testimonials": {
+      "type": "dormio-testimonials",
+      "blocks": {
+        "t1": {
+          "type": "testimonial",
+          "settings": {
+            "category": "Nackenschmerzen",
+            "quote": "Nach Jahren mit Nackenschmerzen endlich ein Kissen, das wirklich hilft. Die ersten zwei Nächte brauchte ich, aber seitdem schlafe ich durch.",
+            "name": "Maria K., 38"
+          }
+        },
+        "t2": {
+          "type": "testimonial",
+          "settings": {
+            "category": "Schulter / Arm",
+            "quote": "Mein Arm ist seit Wochen nicht mehr eingeschlafen. Ich wusste nicht mal, dass das kissen-bedingt sein kann.",
+            "name": "Jonas F., 29"
+          }
+        },
+        "t3": {
+          "type": "testimonial",
+          "settings": {
+            "category": "Schlechter Schlaf",
+            "quote": "Ich war skeptisch, aber nach der ersten Woche merkte ich wirklich den Unterschied. Ich wache seltener auf und fühle mich erholt.",
+            "name": "Lisa H., 33"
+          }
+        },
+        "t4": {
+          "type": "testimonial",
+          "settings": {
+            "category": "Eingewöhnung",
+            "quote": "Die ersten 3 Nächte fühlten sich komisch an. Aber genau wie angekündigt: Ab Nacht 4 wollte ich nie wieder ein anderes Kissen.",
+            "name": "Anna B., 26"
+          }
+        }
+      },
+      "block_order": ["t1", "t2", "t3", "t4"],
+      "settings": {
+        "heading": "Was unsere Kunden sagen",
+        "subheading": "4.8 / 5 - Über 2.400 verifizierte Bewertungen",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "mission": {
+      "type": "dormio-mission",
+      "settings": {
+        "eyebrow": "Unsere Mission",
+        "heading": "Schlafen ist keine Schwäche. Schlechter Schlaf ist ein lösbares Problem.",
+        "text": "<p>Wir haben Dormio gebaut, weil wir selbst jahrelang mit Nackenschmerzen und schlechtem Schlaf gekämpft haben — und keine ehrliche Lösung gefunden haben. Kein Marketing-Versprechen, keine Zahlen erfunden.</p><p>Nur ein Kissen, das tut, was es soll: deinen Kopf in der richtigen Position halten, damit dein Körper sich erholen kann.</p>",
+        "signature": "— Das Dormio-Team",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "final_cta": {
+      "type": "dormio-final-cta",
+      "settings": {
+        "heading": "Bereit für deinen ersten erholten Morgen?",
+        "subtext": "Über 2.400 Kunden schlafen bereits besser. Jetzt bist du dran.",
+        "price": "CHF 89",
+        "compare_price": "CHF 129",
+        "discount_badge": "-31%",
+        "button_label": "Jetzt bestellen - CHF 89",
+        "guarantee_text": "60 Nächte testen - Gratis Rückversand - Kein Risiko",
+        "padding_top": 72,
+        "padding_bottom": 80
       }
     }
   },
   "order": [
-    "image_banner",
-    "featured_collection"
+    "hero",
+    "trust_badges",
+    "pain_points",
+    "stats",
+    "testimonials",
+    "mission",
+    "final_cta"
   ]
 }
