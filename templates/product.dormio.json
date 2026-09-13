@@ -127,7 +127,7 @@
       "type": "dormio-benefit-grid",
       "blocks": {
         "card_1": {
-          "type": "card",
+          "type": "item",
           "settings": {
             "icon": "moon",
             "headline": "Nackenschmerzen beim Aufwachen",
@@ -135,7 +135,7 @@
           }
         },
         "card_2": {
-          "type": "card",
+          "type": "item",
           "settings": {
             "icon": "zap",
             "headline": "Eingeschlafener Arm",
@@ -143,7 +143,7 @@
           }
         },
         "card_3": {
-          "type": "card",
+          "type": "item",
           "settings": {
             "icon": "sun",
             "headline": "Müde trotz 8 Stunden Schlaf",
@@ -151,7 +151,7 @@
           }
         },
         "card_4": {
-          "type": "card",
+          "type": "item",
           "settings": {
             "icon": "refresh",
             "headline": "Immer wieder dasselbe Kissen kaufen",
@@ -187,7 +187,7 @@
       "type": "dormio-benefit-grid",
       "blocks": {
         "card_1": {
-          "type": "card",
+          "type": "item",
           "settings": {
             "icon": "moon",
             "headline": "Seitenschläfer",
@@ -195,7 +195,7 @@
           }
         },
         "card_2": {
-          "type": "card",
+          "type": "item",
           "settings": {
             "icon": "sun",
             "headline": "Rückenschläfer",
@@ -203,7 +203,7 @@
           }
         },
         "card_3": {
-          "type": "card",
+          "type": "item",
           "settings": {
             "icon": "zap",
             "headline": "Wechselschläfer",
@@ -211,7 +211,7 @@
           }
         },
         "card_4": {
-          "type": "card",
+          "type": "item",
           "settings": {
             "icon": "refresh",
             "headline": "Empfindliche Schläfer",
