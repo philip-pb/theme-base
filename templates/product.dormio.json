@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -128,35 +137,19 @@
       "blocks": {
         "card_1": {
           "type": "item",
-          "settings": {
-            "icon": "moon",
-            "headline": "Nackenschmerzen beim Aufwachen",
-            "body": "Dein Kissen hält den Kopf die ganze Nacht in Fehlhaltung — dein Nacken arbeitet dagegen an."
-          }
+          "settings": {}
         },
         "card_2": {
           "type": "item",
-          "settings": {
-            "icon": "zap",
-            "headline": "Eingeschlafener Arm",
-            "body": "Die falsche Kissenhöhe drückt auf den Schulternerv — taube Hände morgens sind die Folge."
-          }
+          "settings": {}
         },
         "card_3": {
           "type": "item",
-          "settings": {
-            "icon": "sun",
-            "headline": "Müde trotz 8 Stunden Schlaf",
-            "body": "Schlechte Schlafposition bedeutet unruhigen Schlaf. Du wachst oft auf, ohne es zu merken."
-          }
+          "settings": {}
         },
         "card_4": {
           "type": "item",
-          "settings": {
-            "icon": "refresh",
-            "headline": "Immer wieder dasselbe Kissen kaufen",
-            "body": "Standard-Kissen verlieren in 6 Monaten ihre Form. Ein Zyklus ohne Ende."
-          }
+          "settings": {}
         }
       },
       "block_order": [
@@ -167,7 +160,6 @@
       ],
       "settings": {
         "heading": "Erkennst du das?",
-        "background": "dark",
         "padding_top": 64,
         "padding_bottom": 64
       }
@@ -176,8 +168,6 @@
       "type": "dormio-objection",
       "settings": {
         "eyebrow": "Was Experten sagen",
-        "quote": "Ein anatomisch korrekt geformtes Kissen reduziert die Muskelspannung im Nackenbereich messbar — die Schulter-Kopf-Achse bleibt in Ruheposition statt permanent kompensieren zu müssen.",
-        "attribution": "Dr. med. [Name], Schlafmedizin [QUELLE PRÜFEN]",
         "show_placeholder_notice": true,
         "padding_top": 64,
         "padding_bottom": 64
@@ -188,35 +178,19 @@
       "blocks": {
         "card_1": {
           "type": "item",
-          "settings": {
-            "icon": "moon",
-            "headline": "Seitenschläfer",
-            "body": "Die erhöhten Seitenflügel füllen den Abstand zwischen Schulter und Kopf. Kein Zug, kein Taubheitsgefühl."
-          }
+          "settings": {}
         },
         "card_2": {
           "type": "item",
-          "settings": {
-            "icon": "sun",
-            "headline": "Rückenschläfer",
-            "body": "Die abgesenkte Mittelzone hält den Kopf in natürlicher Lordose — kein Hochdrücken, keine Verspannung."
-          }
+          "settings": {}
         },
         "card_3": {
           "type": "item",
-          "settings": {
-            "icon": "zap",
-            "headline": "Wechselschläfer",
-            "body": "Dormio folgt jeder Bewegung. Dreh dich so oft du willst — das Kissen passt sich automatisch an."
-          }
+          "settings": {}
         },
         "card_4": {
           "type": "item",
-          "settings": {
-            "icon": "refresh",
-            "headline": "Empfindliche Schläfer",
-            "body": "Bambus-Lyocell-Bezug temperaturregulierend und hypoallergen. Auch für Menschen mit sensibler Haut."
-          }
+          "settings": {}
         }
       },
       "block_order": [
@@ -227,7 +201,6 @@
       ],
       "settings": {
         "heading": "Für jeden Schlaftyp gemacht.",
-        "background": "light",
         "padding_top": 64,
         "padding_bottom": 64
       }
