@@ -1,0 +1,199 @@
+{%- style -%}
+  .dormio-stats--{{ section.id }} {
+    --d-dark: #0D1B2A;
+    --d-creme: #F5F2EC;
+    --d-green: #4A7C6F;
+    --d-green-pale: #E8F0EE;
+    background: var(--d-green);
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .dormio-stats--{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+  .dormio-stats--{{ section.id }} .ds__inner {
+    max-width: 860px;
+    margin-inline: auto;
+    padding: 0 24px;
+    text-align: center;
+  }
+  .dormio-stats--{{ section.id }} .ds__heading {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: clamp(1.4rem, 3.5vw, 1.8rem);
+    color: #fff;
+    margin: 0 0 8px;
+  }
+  .dormio-stats--{{ section.id }} .ds__source {
+    font-family: Inter, sans-serif;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.65);
+    margin: 0 0 36px;
+  }
+  .dormio-stats--{{ section.id }} .ds__grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .dormio-stats--{{ section.id }} .ds__stat {
+    flex: 1 1 140px;
+    max-width: 200px;
+    background: rgba(255,255,255,0.12);
+    border-radius: 12px;
+    padding: 20px 16px;
+  }
+  .dormio-stats--{{ section.id }} .ds__number {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: 2.6rem;
+    color: #fff;
+    line-height: 1;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .dormio-stats--{{ section.id }} .ds__label {
+    font-family: Inter, sans-serif;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.4;
+    margin: 0;
+  }
+  .dormio-stats--{{ section.id }} .ds__disclaimer {
+    font-family: Inter, sans-serif;
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.5);
+    margin: 24px 0 0;
+  }
+{%- endstyle -%}
+
+<div class="dormio-stats--{{ section.id }}">
+  <div class="ds__inner">
+    {%- unless section.settings.heading == blank -%}
+      <h2 class="ds__heading">{{ section.settings.heading }}</h2>
+    {%- endunless -%}
+    {%- unless section.settings.source == blank -%}
+      <p class="ds__source">{{ section.settings.source | escape }}</p>
+    {%- endunless -%}
+    <ul class="ds__grid" role="list">
+      {%- for block in section.blocks -%}
+        <li class="ds__stat" {{ block.shopify_attributes }}>
+          <span class="ds__number">{{ block.settings.number | escape }}</span>
+          <p class="ds__label">{{ block.settings.label }}</p>
+        </li>
+      {%- endfor -%}
+    </ul>
+    {%- if section.settings.show_placeholder_notice -%}
+      <p class="ds__disclaimer">⚠ Beispieldaten — echte Umfragewerte vor Go-Live eintragen (Quelle + Zeitraum angeben)</p>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Dormio: Statistik-Block",
+  "tag": "section",
+  "class": "section",
+  "templates": ["product"],
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Überschrift",
+      "default": "Was unsere Kunden nach 30 Nächten berichten"
+    },
+    {
+      "type": "text",
+      "id": "source",
+      "label": "Quelle / Zeitraum (Pflicht!)",
+      "info": "z.B. 'Dormio Kundenbefragung, Aug. 2025, n=412'",
+      "default": "Dormio Kundenbefragung [QUELLE EINTRAGEN]"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_placeholder_notice",
+      "label": "Platzhalter-Hinweis anzeigen (vor Go-Live deaktivieren)",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Abstände"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 16,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Abstand oben",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 16,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Abstand unten",
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "type": "stat",
+      "name": "Statistik",
+      "settings": [
+        {
+          "type": "text",
+          "id": "number",
+          "label": "Zahl (mit Einheit)",
+          "default": "93%"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Beschreibung",
+          "default": "schlafen länger durch als vorher"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Dormio: Statistik-Block",
+      "blocks": [
+        {
+          "type": "stat",
+          "settings": {
+            "number": "93%",
+            "label": "schlafen nach 30 Nächten länger durch"
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "number": "88%",
+            "label": "berichten weniger morgendliche Nackenschmerzen"
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "number": "85%",
+            "label": "würden Dormio aktiv weiterempfehlen"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

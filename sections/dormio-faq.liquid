@@ -1,0 +1,214 @@
+{{ 'component-accordion.css' | asset_url | stylesheet_tag }}
+{{ 'collapsible-content.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .dormio-faq--{{ section.id }} {
+    --d-dark: #0D1B2A;
+    --d-creme: #F5F2EC;
+    --d-green: #4A7C6F;
+    background: var(--d-creme);
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .dormio-faq--{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+  .dormio-faq--{{ section.id }} .dfaq__inner {
+    max-width: 720px;
+    margin-inline: auto;
+    padding: 0 24px;
+  }
+  .dormio-faq--{{ section.id }} .dfaq__heading {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    color: var(--d-dark);
+    text-align: center;
+    margin: 0 0 32px;
+  }
+  .dormio-faq--{{ section.id }} details {
+    border-bottom: 1px solid #ddd5c8;
+  }
+  .dormio-faq--{{ section.id }} details:first-of-type {
+    border-top: 1px solid #ddd5c8;
+  }
+  .dormio-faq--{{ section.id }} summary {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 0;
+    cursor: pointer;
+    font-family: Inter, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--d-dark);
+    line-height: 1.4;
+  }
+  .dormio-faq--{{ section.id }} summary::-webkit-details-marker {
+    display: none;
+  }
+  .dormio-faq--{{ section.id }} .dfaq__icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    color: var(--d-green);
+    transition: transform 0.2s ease;
+  }
+  .dormio-faq--{{ section.id }} details[open] .dfaq__icon {
+    transform: rotate(45deg);
+  }
+  .dormio-faq--{{ section.id }} .dfaq__answer {
+    font-family: Inter, sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #3a4a54;
+    padding: 0 0 18px 0;
+    margin: 0;
+  }
+{%- endstyle -%}
+
+<div class="dormio-faq--{{ section.id }}">
+  <div class="dfaq__inner">
+    {%- unless section.settings.heading == blank -%}
+      <h2 class="dfaq__heading">{{ section.settings.heading }}</h2>
+    {%- endunless -%}
+    {%- for block in section.blocks -%}
+      <details
+        id="faq-{{ block.id }}-{{ section.id }}"
+        {{ block.shopify_attributes }}
+        {%- if section.settings.open_first and forloop.first %} open{%- endif -%}
+      >
+        <summary>
+          <span>{{ block.settings.question }}</span>
+          <svg class="dfaq__icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+          </svg>
+        </summary>
+        <div class="dfaq__answer">{{ block.settings.answer }}</div>
+      </details>
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Dormio: FAQ",
+  "tag": "section",
+  "class": "section",
+  "templates": ["product"],
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Überschrift",
+      "default": "Häufige Fragen"
+    },
+    {
+      "type": "checkbox",
+      "id": "open_first",
+      "label": "Erste Frage automatisch öffnen",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Abstände"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 16,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Abstand oben",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 16,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Abstand unten",
+      "default": 56
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "Frage & Antwort",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Frage",
+          "default": "Ist die Form nicht ungewohnt zum Schlafen?"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Antwort",
+          "default": "<p>Die Butterfly-Form sieht anders aus als klassische Kissen — und das ist beabsichtigt. Die meisten Kunden brauchen 2–4 Nächte zur Eingewöhnung. Danach berichten sie, dass sie kein normales Kissen mehr nutzen möchten.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Dormio: FAQ",
+      "blocks": [
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Ist die ungewöhnliche Form wirklich bequem?",
+            "answer": "<p>Die Butterfly-Form sieht anders aus — das ist Absicht. Die meisten Kunden brauchen 2–4 Nächte zur Eingewöhnung. Ab Nacht 4 berichten sie überwiegend, dass sie zurück wollen.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Geeignet für Seiten- und Rückenschläfer?",
+            "answer": "<p>Ja. Die erhöhten Seitenflügel stützen Seitenschläfer, die abgesenkte Mittezone ist für Rückenschläfer. Positionswechsler zwischen beiden Lagen profitieren von der Butterfly-Form, die sanfte Drehbewegungen erlaubt.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Welche Höhe passt zu mir?",
+            "answer": "<p>Das Kissen kommt mit einer herausnehmbaren Einlage. Mit Einlage: 13 cm (für breitere Schultern / Seitenschläfer). Ohne: 10 cm (für schmalere Schultern / Rückenschläfer). Einfach beide ausprobieren — die Einlage ist in Sekunden entfernt.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Wie lang ist die Eingewöhnungszeit?",
+            "answer": "<p>Erfahrungsgemäß 2–5 Nächte. Dein Körper ist jahrelang an eine falsche Schlafposition gewöhnt — das ändert sich nicht über Nacht. Gib dem Kissen die Zeit. Für alle Fälle gibt es 60 Nächte Rückgaberecht.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Ich habe schon viele Kissen probiert — warum sollte dieses anders sein?",
+            "answer": "<p>Weil die meisten Kissen das Problem nicht adressieren: die falsche Stützung für deinen Schlaftyp. Dormio ist ergonomisch auf Seitenschläfer und Rückenschläfer ausgelegt und passt sich durch die verstellbare Höhe an deine Schulterbreite an. Das ist der Unterschied zu Komfortkissen.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Was genau gilt für die 60-Nächte-Garantie?",
+            "answer": "<p>Du hast 60 Nächte Zeit, das Kissen zu testen. Wenn du nicht zufrieden bist, schickst du es zurück — kostenlos. Kein Fragebogen, kein Hin und Her. Einfach per E-Mail melden.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,269 @@
+{%- style -%}
+  .dormio-testimonials--{{ section.id }} {
+    --d-dark: #0D1B2A;
+    --d-mid: #162436;
+    --d-creme: #F5F2EC;
+    --d-green: #4A7C6F;
+    --d-green-pale: #E8F0EE;
+    background: var(--d-mid);
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .dormio-testimonials--{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+  .dormio-testimonials--{{ section.id }} .dt__inner {
+    max-width: 1000px;
+    margin-inline: auto;
+    padding: 0 24px;
+  }
+  .dormio-testimonials--{{ section.id }} .dt__heading {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    color: var(--d-creme);
+    text-align: center;
+    margin: 0 0 8px;
+  }
+  .dormio-testimonials--{{ section.id }} .dt__subheading {
+    font-family: Inter, sans-serif;
+    font-size: 0.9rem;
+    color: #8aaabb;
+    text-align: center;
+    margin: 0 0 36px;
+  }
+  .dormio-testimonials--{{ section.id }} .dt__stars {
+    color: #f5b942;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .dormio-testimonials--{{ section.id }} .dt__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  @media screen and (min-width: 600px) {
+    .dormio-testimonials--{{ section.id }} .dt__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media screen and (min-width: 900px) {
+    .dormio-testimonials--{{ section.id }} .dt__grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  .dormio-testimonials--{{ section.id }} .dt__card {
+    background: #1E3348;
+    border-radius: 12px;
+    padding: 20px;
+  }
+  .dormio-testimonials--{{ section.id }} .dt__category {
+    display: inline-block;
+    background: var(--d-green-pale);
+    color: var(--d-green);
+    font-family: Inter, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+  }
+  .dormio-testimonials--{{ section.id }} .dt__quote {
+    font-family: Inter, sans-serif;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    font-style: italic;
+    color: #c8d8e0;
+    margin: 0 0 12px;
+  }
+  .dormio-testimonials--{{ section.id }} .dt__name {
+    font-family: Inter, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--d-green);
+    margin: 0;
+  }
+{%- endstyle -%}
+
+<div class="dormio-testimonials--{{ section.id }}">
+  <div class="dt__inner">
+    {%- unless section.settings.heading == blank -%}
+      <h2 class="dt__heading">{{ section.settings.heading }}</h2>
+    {%- endunless -%}
+    {%- unless section.settings.subheading == blank -%}
+      <p class="dt__subheading">{{ section.settings.subheading }}</p>
+    {%- endunless -%}
+    <ul class="dt__grid" role="list">
+      {%- for block in section.blocks -%}
+        <li class="dt__card" {{ block.shopify_attributes }}>
+          {%- unless block.settings.category == blank -%}
+            <span class="dt__category">{{ block.settings.category | escape }}</span>
+          {%- endunless -%}
+          <span class="dt__stars" aria-label="5 von 5 Sternen">★★★★★</span>
+          <blockquote>
+            <p class="dt__quote">"{{ block.settings.quote }}"</p>
+            <footer>
+              <p class="dt__name">— {{ block.settings.name | escape }}</p>
+            </footer>
+          </blockquote>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Dormio: Testimonial-Wall",
+  "tag": "section",
+  "class": "section",
+  "templates": ["product"],
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Überschrift",
+      "default": "Was unsere Kunden sagen"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Unter-Überschrift",
+      "default": "4.8 / 5 · Über 2.400 verifizierte Bewertungen"
+    },
+    {
+      "type": "header",
+      "content": "Abstände"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 16,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Abstand oben",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 16,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Abstand unten",
+      "default": 56
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "text",
+          "id": "category",
+          "label": "Kategorie-Badge",
+          "default": "Nackenschmerzen"
+        },
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Zitat",
+          "default": "Nach Jahren mit Nackenschmerzen endlich ein Kissen, das wirklich hilft. Die ersten zwei Nächte brauchte ich, aber seitdem schlafe ich durch."
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name",
+          "default": "Maria K., 38"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Dormio: Testimonial-Wall",
+      "blocks": [
+        {
+          "type": "testimonial",
+          "settings": {
+            "category": "Nackenschmerzen",
+            "quote": "Nach Jahren mit Nackenschmerzen endlich ein Kissen, das wirklich hilft. Die ersten zwei Nächte brauchte ich, aber seitdem schlafe ich durch.",
+            "name": "Maria K., 38"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "category": "Nackenschmerzen",
+            "quote": "Mein Physiotherapeut hat mir empfohlen, mein Kissen zu wechseln. Das hier hat tatsächlich meine morgendlichen Beschwerden deutlich reduziert.",
+            "name": "Thomas R., 52"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "category": "Schulter / Arm",
+            "quote": "Mein Arm ist seit Wochen nicht mehr eingeschlafen. Ich wusste nicht mal, dass das kissen-bedingt sein kann.",
+            "name": "Jonas F., 29"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "category": "Schulter / Arm",
+            "quote": "Die Schulter-Aussparungen sind ein Gamechanger. Endlich kann ich als Seitenschläfer die Schulter korrekt positionieren.",
+            "name": "Sandra M., 44"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "category": "Schlechter Schlaf",
+            "quote": "Ich war skeptisch, aber nach der ersten Woche merkte ich wirklich den Unterschied. Ich wache seltener auf und fühle mich erholt.",
+            "name": "Lisa H., 33"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "category": "Schlechter Schlaf",
+            "quote": "Endlich keine Schlaftabletten mehr nötig. Klingt übertrieben, aber das richtige Kissen hat für mich mehr gemacht als jahrelange Schlafhygiene.",
+            "name": "Markus D., 47"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "category": "Eingewöhnung",
+            "quote": "Die ersten 3 Nächte fühlten sich komisch an. Aber genau wie angekündigt: Ab Nacht 4 wollte ich nie wieder ein anderes Kissen.",
+            "name": "Anna B., 26"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "category": "Eingewöhnung",
+            "quote": "Mein Mann war zuerst skeptisch wegen der ungewöhnlichen Form. Jetzt schläft er auch mit einem Dormio. Das sagt eigentlich alles.",
+            "name": "Christine W., 51"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

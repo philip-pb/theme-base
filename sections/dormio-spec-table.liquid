@@ -1,0 +1,248 @@
+{%- style -%}
+  .dormio-spec-table--{{ section.id }} {
+    --d-dark: #0D1B2A;
+    --d-creme: #F5F2EC;
+    --d-green: #4A7C6F;
+    --d-green-pale: #E8F0EE;
+    background: var(--d-creme);
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .dormio-spec-table--{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+  .dormio-spec-table--{{ section.id }} .dst__inner {
+    max-width: 720px;
+    margin-inline: auto;
+    padding: 0 24px;
+  }
+  .dormio-spec-table--{{ section.id }} .dst__heading {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: clamp(1.4rem, 3.5vw, 1.8rem);
+    color: var(--d-dark);
+    text-align: center;
+    margin: 0 0 32px;
+  }
+  .dormio-spec-table--{{ section.id }} .dst__table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Inter, sans-serif;
+    font-size: 0.9rem;
+  }
+  .dormio-spec-table--{{ section.id }} .dst__table tr {
+    border-bottom: 1px solid #ddd5c8;
+  }
+  .dormio-spec-table--{{ section.id }} .dst__table tr:last-child {
+    border-bottom: none;
+  }
+  .dormio-spec-table--{{ section.id }} .dst__table td {
+    padding: 14px 8px;
+    vertical-align: top;
+    line-height: 1.5;
+  }
+  .dormio-spec-table--{{ section.id }} .dst__table td:first-child {
+    font-weight: 600;
+    color: var(--d-dark);
+    width: 40%;
+    padding-right: 16px;
+  }
+  .dormio-spec-table--{{ section.id }} .dst__table td:last-child {
+    color: #3a4a54;
+  }
+  .dormio-spec-table--{{ section.id }} .dst__notice {
+    font-family: Inter, sans-serif;
+    font-size: 0.72rem;
+    color: #8a9aa4;
+    margin: 12px 0 0;
+    text-align: center;
+  }
+  @media screen and (min-width: 750px) {
+    .dormio-spec-table--{{ section.id }} .dst__table td:first-child {
+      width: 35%;
+    }
+  }
+{%- endstyle -%}
+
+<div class="dormio-spec-table--{{ section.id }}">
+  <div class="dst__inner">
+    {%- unless section.settings.heading == blank -%}
+      <h2 class="dst__heading">{{ section.settings.heading }}</h2>
+    {%- endunless -%}
+    <table class="dst__table">
+      <tbody>
+        {%- for block in section.blocks -%}
+          <tr {{ block.shopify_attributes }}>
+            <td>{{ block.settings.label }}</td>
+            <td>
+              {{ block.settings.value }}
+              {%- if block.settings.needs_check -%}
+                <span style="color:#c0824a; font-size:0.8em;"> [PRÜFEN]</span>
+              {%- endif -%}
+            </td>
+          </tr>
+        {%- endfor -%}
+      </tbody>
+    </table>
+    {%- if section.settings.show_check_notice -%}
+      <p class="dst__notice">⚠ Felder mit [PRÜFEN] vor Go-Live mit Supplier bestätigen</p>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Dormio: Spezifikations-Tabelle",
+  "tag": "section",
+  "class": "section",
+  "templates": ["product"],
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Überschrift",
+      "default": "Was steckt drin?"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_check_notice",
+      "label": "[PRÜFEN]-Hinweis anzeigen (vor Go-Live deaktivieren)",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Abstände"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 16,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Abstand oben",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 16,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Abstand unten",
+      "default": 56
+    }
+  ],
+  "blocks": [
+    {
+      "type": "row",
+      "name": "Spezifikation",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Bezeichnung",
+          "default": "Kern"
+        },
+        {
+          "type": "text",
+          "id": "value",
+          "label": "Wert",
+          "default": "Adaptiver Memory-Foam (CertiPUR-US)"
+        },
+        {
+          "type": "checkbox",
+          "id": "needs_check",
+          "label": "[PRÜFEN]-Markierung",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Dormio: Spezifikations-Tabelle",
+      "blocks": [
+        {
+          "type": "row",
+          "settings": {
+            "label": "Kern",
+            "value": "Adaptiver Memory-Foam (CertiPUR-US)",
+            "needs_check": false
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "label": "Bezug (aussen)",
+            "value": "100% Bambus-Lyocell, 300 TC",
+            "needs_check": false
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "label": "Innenbezug",
+            "value": "Polyester-Mikrofaser",
+            "needs_check": false
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "label": "Maße",
+            "value": "60 × 40 cm",
+            "needs_check": false
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "label": "Höhe (Low/High)",
+            "value": "10 cm / 13 cm",
+            "needs_check": false
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "label": "Höhenanpassung",
+            "value": "Einlage herausnehmbar, 3 cm Unterschied",
+            "needs_check": false
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "label": "Waschbar",
+            "value": "Bezug: 40°C Schonwaschgang · Kern: nicht waschbar",
+            "needs_check": false
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "label": "Zertifizierung",
+            "value": "OEKO-TEX Standard 100",
+            "needs_check": true
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "label": "Gewicht",
+            "value": "ca. 1,2 kg",
+            "needs_check": false
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

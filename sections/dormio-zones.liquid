@@ -1,0 +1,245 @@
+{%- style -%}
+  .dormio-zones--{{ section.id }} {
+    --d-dark: #0D1B2A;
+    --d-mid: #162436;
+    --d-creme: #F5F2EC;
+    --d-green: #4A7C6F;
+    --d-green-pale: #E8F0EE;
+    background: var(--d-dark);
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .dormio-zones--{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+  .dormio-zones--{{ section.id }} .dz__inner {
+    max-width: 900px;
+    margin-inline: auto;
+    padding: 0 24px;
+  }
+  .dormio-zones--{{ section.id }} .dz__eyebrow {
+    font-family: Inter, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--d-green);
+    text-align: center;
+    margin: 0 0 12px;
+  }
+  .dormio-zones--{{ section.id }} .dz__heading {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    color: var(--d-creme);
+    text-align: center;
+    margin: 0 0 8px;
+  }
+  .dormio-zones--{{ section.id }} .dz__subheading {
+    font-family: Inter, sans-serif;
+    font-size: 0.95rem;
+    color: #8aaabb;
+    text-align: center;
+    margin: 0 0 40px;
+  }
+  .dormio-zones--{{ section.id }} .dz__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .dormio-zones--{{ section.id }} .dz__item {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 16px;
+    align-items: start;
+    padding: 20px 0;
+    border-bottom: 1px solid #1E3348;
+  }
+  .dormio-zones--{{ section.id }} .dz__item:first-child {
+    border-top: 1px solid #1E3348;
+  }
+  .dormio-zones--{{ section.id }} .dz__number {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--d-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: 1rem;
+    color: #fff;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .dormio-zones--{{ section.id }} .dz__title {
+    font-family: Inter, sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--d-creme);
+    margin: 0 0 4px;
+  }
+  .dormio-zones--{{ section.id }} .dz__text {
+    font-family: Inter, sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #8aaabb;
+    margin: 0;
+  }
+  @media screen and (min-width: 750px) {
+    .dormio-zones--{{ section.id }} .dz__list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0 40px;
+    }
+    .dormio-zones--{{ section.id }} .dz__item {
+      border-top: 1px solid #1E3348;
+    }
+    .dormio-zones--{{ section.id }} .dz__item:nth-child(2) {
+      border-top: 1px solid #1E3348;
+    }
+  }
+{%- endstyle -%}
+
+<div class="dormio-zones--{{ section.id }}">
+  <div class="dz__inner">
+    {%- unless section.settings.eyebrow == blank -%}
+      <p class="dz__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+    {%- endunless -%}
+    {%- unless section.settings.heading == blank -%}
+      <h2 class="dz__heading">{{ section.settings.heading }}</h2>
+    {%- endunless -%}
+    {%- unless section.settings.subheading == blank -%}
+      <p class="dz__subheading">{{ section.settings.subheading }}</p>
+    {%- endunless -%}
+    <ul class="dz__list" role="list">
+      {%- for block in section.blocks -%}
+        <li class="dz__item" {{ block.shopify_attributes }}>
+          <div class="dz__number" aria-hidden="true">{{ forloop.index }}</div>
+          <div>
+            <p class="dz__title">{{ block.settings.title }}</p>
+            {%- unless block.settings.text == blank -%}
+              <p class="dz__text">{{ block.settings.text }}</p>
+            {%- endunless -%}
+          </div>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Dormio: Zonen-Feature-Liste",
+  "tag": "section",
+  "class": "section",
+  "templates": ["product"],
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow-Text",
+      "default": "4 durchdachte Zonen"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Überschrift",
+      "default": "Jede Zone hat einen Grund."
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Unter-Überschrift",
+      "default": "Das Kissen hält die Position. Nicht du."
+    },
+    {
+      "type": "header",
+      "content": "Abstände"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 16,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Abstand oben",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 16,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Abstand unten",
+      "default": 56
+    }
+  ],
+  "blocks": [
+    {
+      "type": "zone",
+      "name": "Zone",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Bezeichnung",
+          "default": "Seitenflügel"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Erklärung",
+          "default": "Erhöhte Randbereiche füllen den Abstand zwischen Schulter und Kopf für Seitenschläfer — keine Muskelverspannung durch Überdehnung."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Dormio: Zonen-Feature-Liste",
+      "blocks": [
+        {
+          "type": "zone",
+          "settings": {
+            "title": "Seitenflügel",
+            "text": "Erhöhte Randbereiche füllen den Abstand zwischen Schulter und Kopf — keine Muskelverspannung durch seitliche Überdehnung."
+          }
+        },
+        {
+          "type": "zone",
+          "settings": {
+            "title": "Mittezone (abgesenkt)",
+            "text": "Tiefere Liegefläche für Rückenschläfer — Kopf und Nacken werden in natürlicher Lordose gehalten ohne Hochdrücken."
+          }
+        },
+        {
+          "type": "zone",
+          "settings": {
+            "title": "Ohrschutz-Mulden",
+            "text": "Beidseitige Vertiefungen reduzieren Druckpunkte am Ohr — wichtig für Schläfer, die lange auf einer Seite bleiben."
+          }
+        },
+        {
+          "type": "zone",
+          "settings": {
+            "title": "Schulter-Aussparungen",
+            "text": "Die Butterfly-Form schafft Freiraum für die Schulter, damit der Arm nicht einschläft und die Körperdrehung fließend bleibt."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,207 @@
+{%- style -%}
+  .dormio-objection--{{ section.id }} {
+    --d-dark: #0D1B2A;
+    --d-creme: #F5F2EC;
+    --d-green: #4A7C6F;
+    --d-green-pale: #E8F0EE;
+    background: var(--d-creme);
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .dormio-objection--{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+  .dormio-objection--{{ section.id }} .dobj__inner {
+    max-width: 720px;
+    margin-inline: auto;
+    padding: 0 24px;
+    text-align: center;
+  }
+  .dormio-objection--{{ section.id }} .dobj__eyebrow {
+    font-family: Inter, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--d-green);
+    margin: 0 0 12px;
+  }
+  .dormio-objection--{{ section.id }} .dobj__heading {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: clamp(1.4rem, 4vw, 1.9rem);
+    line-height: 1.25;
+    color: var(--d-dark);
+    margin: 0 0 20px;
+  }
+  .dormio-objection--{{ section.id }} .dobj__text {
+    font-family: Inter, sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #3a4a54;
+    margin: 0 0 32px;
+  }
+  .dormio-objection--{{ section.id }} .dobj__quote-card {
+    background: var(--d-dark);
+    border-radius: 16px;
+    padding: 28px 32px;
+    text-align: left;
+    position: relative;
+  }
+  .dormio-objection--{{ section.id }} .dobj__quote-mark {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: 4rem;
+    line-height: 1;
+    color: var(--d-green);
+    display: block;
+    margin-bottom: 8px;
+    margin-top: -8px;
+  }
+  .dormio-objection--{{ section.id }} .dobj__quote-text {
+    font-family: Inter, sans-serif;
+    font-size: 1rem;
+    line-height: 1.65;
+    font-style: italic;
+    color: #c8d8e0;
+    margin: 0 0 16px;
+  }
+  .dormio-objection--{{ section.id }} .dobj__quote-author {
+    font-family: Inter, sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--d-green);
+    margin: 0;
+  }
+  .dormio-objection--{{ section.id }} .dobj__disclaimer {
+    font-family: Inter, sans-serif;
+    font-size: 0.72rem;
+    color: #8a9aa4;
+    margin: 10px 0 0;
+    text-align: center;
+  }
+  @media screen and (min-width: 750px) {
+    .dormio-objection--{{ section.id }} .dobj__quote-card {
+      padding: 36px 48px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="dormio-objection--{{ section.id }}">
+  <div class="dobj__inner">
+    {%- unless section.settings.eyebrow == blank -%}
+      <p class="dobj__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+    {%- endunless -%}
+    {%- unless section.settings.heading == blank -%}
+      <h2 class="dobj__heading">{{ section.settings.heading }}</h2>
+    {%- endunless -%}
+    {%- unless section.settings.text == blank -%}
+      <p class="dobj__text">{{ section.settings.text }}</p>
+    {%- endunless -%}
+    {%- unless section.settings.quote_text == blank -%}
+      <blockquote class="dobj__quote-card">
+        <span class="dobj__quote-mark" aria-hidden="true">"</span>
+        <p class="dobj__quote-text">{{ section.settings.quote_text }}</p>
+        <p class="dobj__quote-author">
+          {{ section.settings.quote_author }}
+          {%- unless section.settings.quote_credentials == blank -%}
+            <span style="font-weight:400; color:#8aaabb;"> · {{ section.settings.quote_credentials }}</span>
+          {%- endunless -%}
+        </p>
+      </blockquote>
+      {%- if section.settings.show_placeholder_notice -%}
+        <p class="dobj__disclaimer">⚠ Platzhalter — echtes Arzt-Zitat vor Go-Live eintragen</p>
+      {%- endif -%}
+    {%- endunless -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Dormio: Autoritäts-Zitat",
+  "tag": "section",
+  "class": "section",
+  "templates": ["product"],
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow-Text",
+      "default": "Empfohlen von Schlafmedizinern"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Überschrift",
+      "default": "Ergonomie ist keine Luxus-Option."
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Einleitungstext",
+      "default": "Wer mit Nackenschmerzen aufwacht, denkt selten ans Kissen. Dabei ist die Schlafposition der häufigste — und am einfachsten behebbare — Faktor bei chronischen Nackenproblemen."
+    },
+    {
+      "type": "header",
+      "content": "Zitat"
+    },
+    {
+      "type": "textarea",
+      "id": "quote_text",
+      "label": "Zitat-Text",
+      "default": "Ein ergonomisch korrekt gelagerter Kopf entlastet die zervikale Wirbelsäule um bis zu 40%. Die meisten Kissen auf dem Markt bieten diese Unterstützung nicht — besonders nicht für Seitenschläfer."
+    },
+    {
+      "type": "text",
+      "id": "quote_author",
+      "label": "Name des Autors",
+      "default": "Dr. med. [Name folgt]"
+    },
+    {
+      "type": "text",
+      "id": "quote_credentials",
+      "label": "Titel / Fachgebiet",
+      "default": "Schlafmedizin & Wirbelsäulentherapie"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_placeholder_notice",
+      "label": "Platzhalter-Hinweis anzeigen (vor Go-Live deaktivieren)",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Abstände"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 16,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Abstand oben",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 16,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Abstand unten",
+      "default": 56
+    }
+  ],
+  "presets": [
+    {
+      "name": "Dormio: Autoritäts-Zitat"
+    }
+  ]
+}
+{% endschema %}

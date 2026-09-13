@@ -1,0 +1,267 @@
+{%- style -%}
+  .dormio-benefit-grid--{{ section.id }} {
+    --d-dark: #0D1B2A;
+    --d-mid: #162436;
+    --d-creme: #F5F2EC;
+    --d-green: #4A7C6F;
+    --d-green-pale: #E8F0EE;
+    background: {% if section.settings.dark_background %}var(--d-mid){% else %}var(--d-creme){% endif %};
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .dormio-benefit-grid--{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+  .dormio-benefit-grid--{{ section.id }} .dbg__inner {
+    max-width: 900px;
+    margin-inline: auto;
+    padding: 0 24px;
+  }
+  .dormio-benefit-grid--{{ section.id }} .dbg__heading {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    text-align: center;
+    margin: 0 0 8px;
+    color: {% if section.settings.dark_background %}var(--d-creme){% else %}var(--d-dark){% endif %};
+  }
+  .dormio-benefit-grid--{{ section.id }} .dbg__subheading {
+    font-family: Inter, sans-serif;
+    font-size: 0.95rem;
+    text-align: center;
+    margin: 0 0 32px;
+    color: {% if section.settings.dark_background %}#8aaabb{% else %}#5a6a72{% endif %};
+  }
+  .dormio-benefit-grid--{{ section.id }} .dbg__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  @media screen and (min-width: 750px) {
+    .dormio-benefit-grid--{{ section.id }} .dbg__grid {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+  }
+  .dormio-benefit-grid--{{ section.id }} .dbg__card {
+    border-radius: 12px;
+    padding: 20px 16px;
+    text-align: center;
+    background: {% if section.settings.dark_background %}#1E3348{% else %}#fff{% endif %};
+  }
+  .dormio-benefit-grid--{{ section.id }} .dbg__emoji {
+    font-size: 2rem;
+    line-height: 1;
+    display: block;
+    margin-bottom: 12px;
+  }
+  .dormio-benefit-grid--{{ section.id }} .dbg__title {
+    font-family: Inter, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin: 0 0 6px;
+    color: {% if section.settings.dark_background %}var(--d-creme){% else %}var(--d-dark){% endif %};
+  }
+  .dormio-benefit-grid--{{ section.id }} .dbg__text {
+    font-family: Inter, sans-serif;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    margin: 0;
+    color: {% if section.settings.dark_background %}#8aaabb{% else %}#5a6a72{% endif %};
+  }
+{%- endstyle -%}
+
+<div class="dormio-benefit-grid--{{ section.id }}">
+  <div class="dbg__inner">
+    {%- unless section.settings.heading == blank -%}
+      <h2 class="dbg__heading">{{ section.settings.heading }}</h2>
+    {%- endunless -%}
+    {%- unless section.settings.subheading == blank -%}
+      <p class="dbg__subheading">{{ section.settings.subheading }}</p>
+    {%- endunless -%}
+    <ul class="dbg__grid" role="list">
+      {%- for block in section.blocks -%}
+        <li class="dbg__card" {{ block.shopify_attributes }}>
+          <span class="dbg__emoji" aria-hidden="true">{{ block.settings.emoji }}</span>
+          <p class="dbg__title">{{ block.settings.title }}</p>
+          {%- unless block.settings.text == blank -%}
+            <p class="dbg__text">{{ block.settings.text }}</p>
+          {%- endunless -%}
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Dormio: Benefit-Grid",
+  "tag": "section",
+  "class": "section",
+  "templates": ["product"],
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Überschrift",
+      "default": "Erkennst du dich wieder?"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Unter-Überschrift",
+      "default": "Diese Probleme kennen wir — und haben sie gelöst."
+    },
+    {
+      "type": "checkbox",
+      "id": "dark_background",
+      "label": "Dunkler Hintergrund",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Abstände"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 16,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Abstand oben",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 16,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Abstand unten",
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Benefit-Karte",
+      "settings": [
+        {
+          "type": "text",
+          "id": "emoji",
+          "label": "Emoji",
+          "default": "😴"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titel",
+          "default": "Müde trotz Schlaf"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Beschreibung (optional)",
+          "default": "Du schläfst 8 Stunden und wachst trotzdem erschöpft auf."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Dormio: Pain-Points",
+      "settings": {
+        "heading": "Schlechter Schlaf — obwohl du alles richtig machst?",
+        "subheading": "Diese Probleme liegen am Kissen. Nicht an dir.",
+        "dark_background": true
+      },
+      "blocks": [
+        {
+          "type": "item",
+          "settings": {
+            "emoji": "😴",
+            "title": "Müde trotz Schlaf",
+            "text": "Du schläfst 8 Stunden und wachst trotzdem erschöpft auf."
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "emoji": "🦴",
+            "title": "Steifer Nacken",
+            "text": "Morgens zieht es direkt — bevor der Tag überhaupt begonnen hat."
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "emoji": "🖐",
+            "title": "Taubes Gefühl",
+            "text": "Kribbeln in Armen oder Händen durch falschen Druck auf Nerven."
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "emoji": "🔄",
+            "title": "Ständiges Umherwälzen",
+            "text": "Keine Position fühlt sich richtig an — du wachst mehrfach auf."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Dormio: Schlaftypen",
+      "settings": {
+        "heading": "Entwickelt für deinen Schlafstil",
+        "subheading": "Egal wie du schläfst — Dormio passt sich an.",
+        "dark_background": false
+      },
+      "blocks": [
+        {
+          "type": "item",
+          "settings": {
+            "emoji": "🛌",
+            "title": "Seitenschläfer",
+            "text": "Seitenflügel füllen die Schulter-Lücke für neutrale Halswirbelsäule."
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "emoji": "🛏",
+            "title": "Rückenschläfer",
+            "text": "Mittelzone stützt den Nacken ohne den Kopf hochzudrücken."
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "emoji": "↔️",
+            "title": "Positionswechsler",
+            "text": "Butterfly-Form ermöglicht flüssige Drehbewegungen ohne Aufwachen."
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "emoji": "🌬",
+            "title": "Schnarcher",
+            "text": "Optimale Kopfposition öffnet die Atemwege für freies Durchatmen."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
