@@ -85,22 +85,39 @@
       "blocks": {
         "badge_1": {
           "type": "badge",
-          "settings": { "icon": "shield", "label": "60 Nächte Garantie" }
+          "settings": {
+            "icon": "shield",
+            "label": "60 Nächte Garantie"
+          }
         },
         "badge_2": {
           "type": "badge",
-          "settings": { "icon": "truck", "label": "3-5 Tage Lieferung" }
+          "settings": {
+            "icon": "truck",
+            "label": "3-5 Tage Lieferung"
+          }
         },
         "badge_3": {
           "type": "badge",
-          "settings": { "icon": "return", "label": "Gratis Rückversand" }
+          "settings": {
+            "icon": "return",
+            "label": "Gratis Rückversand"
+          }
         },
         "badge_4": {
           "type": "badge",
-          "settings": { "icon": "star", "label": "4.8/5 - 2.400+ Bewertungen" }
+          "settings": {
+            "icon": "star",
+            "label": "4.8/5 - 2.400+ Bewertungen"
+          }
         }
       },
-      "block_order": ["badge_1", "badge_2", "badge_3", "badge_4"],
+      "block_order": [
+        "badge_1",
+        "badge_2",
+        "badge_3",
+        "badge_4"
+      ],
       "settings": {
         "padding_top": 16,
         "padding_bottom": 16
@@ -142,7 +159,12 @@
           }
         }
       },
-      "block_order": ["card_1", "card_2", "card_3", "card_4"],
+      "block_order": [
+        "card_1",
+        "card_2",
+        "card_3",
+        "card_4"
+      ],
       "settings": {
         "heading": "Erkennst du das?",
         "background": "dark",
@@ -197,7 +219,12 @@
           }
         }
       },
-      "block_order": ["card_1", "card_2", "card_3", "card_4"],
+      "block_order": [
+        "card_1",
+        "card_2",
+        "card_3",
+        "card_4"
+      ],
       "settings": {
         "heading": "Für jeden Schlaftyp gemacht.",
         "background": "light",
@@ -237,7 +264,12 @@
           }
         }
       },
-      "block_order": ["zone_1", "zone_2", "zone_3", "zone_4"],
+      "block_order": [
+        "zone_1",
+        "zone_2",
+        "zone_3",
+        "zone_4"
+      ],
       "settings": {
         "eyebrow": "4 durchdachte Zonen",
         "heading": "Jede Zone hat einen Grund.",
@@ -251,42 +283,88 @@
       "blocks": {
         "row_1": {
           "type": "row",
-          "settings": { "label": "Kern", "value": "Adaptiver Memory-Foam (CertiPUR-US)", "needs_check": false }
+          "settings": {
+            "label": "Kern",
+            "value": "Adaptiver Memory-Foam (CertiPUR-US)",
+            "needs_check": false
+          }
         },
         "row_2": {
           "type": "row",
-          "settings": { "label": "Bezug (aussen)", "value": "100% Bambus-Lyocell, 300 TC", "needs_check": false }
+          "settings": {
+            "label": "Bezug (aussen)",
+            "value": "100% Bambus-Lyocell, 300 TC",
+            "needs_check": false
+          }
         },
         "row_3": {
           "type": "row",
-          "settings": { "label": "Innenbezug", "value": "Polyester-Mikrofaser", "needs_check": false }
+          "settings": {
+            "label": "Innenbezug",
+            "value": "Polyester-Mikrofaser",
+            "needs_check": false
+          }
         },
         "row_4": {
           "type": "row",
-          "settings": { "label": "Masse", "value": "60 x 40 cm", "needs_check": false }
+          "settings": {
+            "label": "Masse",
+            "value": "60 x 40 cm",
+            "needs_check": false
+          }
         },
         "row_5": {
           "type": "row",
-          "settings": { "label": "Höhe (Low/High)", "value": "10 cm / 13 cm", "needs_check": false }
+          "settings": {
+            "label": "Höhe (Low/High)",
+            "value": "10 cm / 13 cm",
+            "needs_check": false
+          }
         },
         "row_6": {
           "type": "row",
-          "settings": { "label": "Höhenanpassung", "value": "Einlage herausnehmbar, 3 cm Unterschied", "needs_check": false }
+          "settings": {
+            "label": "Höhenanpassung",
+            "value": "Einlage herausnehmbar, 3 cm Unterschied",
+            "needs_check": false
+          }
         },
         "row_7": {
           "type": "row",
-          "settings": { "label": "Waschbar", "value": "Bezug: 40 Grad Schonwaschgang - Kern: nicht waschbar", "needs_check": false }
+          "settings": {
+            "label": "Waschbar",
+            "value": "Bezug: 40 Grad Schonwaschgang - Kern: nicht waschbar",
+            "needs_check": false
+          }
         },
         "row_8": {
           "type": "row",
-          "settings": { "label": "Zertifizierung", "value": "OEKO-TEX Standard 100", "needs_check": true }
+          "settings": {
+            "label": "Zertifizierung",
+            "value": "OEKO-TEX Standard 100",
+            "needs_check": true
+          }
         },
         "row_9": {
           "type": "row",
-          "settings": { "label": "Gewicht", "value": "ca. 1,2 kg", "needs_check": false }
+          "settings": {
+            "label": "Gewicht",
+            "value": "ca. 1,2 kg",
+            "needs_check": false
+          }
         }
       },
-      "block_order": ["row_1", "row_2", "row_3", "row_4", "row_5", "row_6", "row_7", "row_8", "row_9"],
+      "block_order": [
+        "row_1",
+        "row_2",
+        "row_3",
+        "row_4",
+        "row_5",
+        "row_6",
+        "row_7",
+        "row_8",
+        "row_9"
+      ],
       "settings": {
         "heading": "Was steckt drin?",
         "show_check_notice": true,
@@ -362,7 +440,16 @@
           }
         }
       },
-      "block_order": ["t1", "t2", "t3", "t4", "t5", "t6", "t7", "t8"],
+      "block_order": [
+        "t1",
+        "t2",
+        "t3",
+        "t4",
+        "t5",
+        "t6",
+        "t7",
+        "t8"
+      ],
       "settings": {
         "heading": "Was unsere Kunden sagen",
         "subheading": "4.8 / 5 - Über 2.400 verifizierte Bewertungen",
@@ -375,18 +462,31 @@
       "blocks": {
         "stat_1": {
           "type": "stat",
-          "settings": { "number": "93%", "label": "schlafen nach 30 Nächten länger durch" }
+          "settings": {
+            "number": "93%",
+            "label": "schlafen nach 30 Nächten länger durch"
+          }
         },
         "stat_2": {
           "type": "stat",
-          "settings": { "number": "88%", "label": "berichten weniger morgendliche Nackenschmerzen" }
+          "settings": {
+            "number": "88%",
+            "label": "berichten weniger morgendliche Nackenschmerzen"
+          }
         },
         "stat_3": {
           "type": "stat",
-          "settings": { "number": "85%", "label": "würden Dormio aktiv weiterempfehlen" }
+          "settings": {
+            "number": "85%",
+            "label": "würden Dormio aktiv weiterempfehlen"
+          }
         }
       },
-      "block_order": ["stat_1", "stat_2", "stat_3"],
+      "block_order": [
+        "stat_1",
+        "stat_2",
+        "stat_3"
+      ],
       "settings": {
         "heading": "Was unsere Kunden nach 30 Nächten berichten",
         "source": "Dormio Kundenbefragung [QUELLE EINTRAGEN]",
@@ -402,46 +502,53 @@
           "type": "faq_item",
           "settings": {
             "question": "Wie lange dauert die Eingewöhnung?",
-            "answer": "Die meisten Kunden berichten nach 2-4 Nächten eine spürbare Verbesserung. Dein Körper ist es gewohnt, Verspannungen aktiv zu kompensieren — das dauert ein paar Nächte, bis er loslassen kann. Genau deshalb haben wir die 60-Nächte-Garantie: Du hast Zeit."
+            "answer": "<p>Die meisten Kunden berichten nach 2-4 Naechten eine spuerbare Verbesserung. Dein Koerper ist es gewohnt, Verspannungen aktiv zu kompensieren - das dauert ein paar Naechte, bis er loslassen kann. Genau deshalb haben wir die 60-Naechte-Garantie: Du hast Zeit.</p>"
           }
         },
         "faq_2": {
           "type": "faq_item",
           "settings": {
             "question": "Für welche Schlafposition ist Dormio geeignet?",
-            "answer": "Dormio ist für Seiten- und Rückenschläfer entwickelt worden. Die Butterfly-Form mit erhöhten Seitenflügeln und abgesenkter Mitte passt sich beiden Positionen an — auch wenn du in der Nacht die Seite wechselst."
+            "answer": "<p>Dormio ist fuer Seiten- und Rueckenschlaefer entwickelt worden. Die Butterfly-Form mit erhoehten Seitenfluegeln und abgesenkter Mitte passt sich beiden Positionen an - auch wenn du in der Nacht die Seite wechselst.</p>"
           }
         },
         "faq_3": {
           "type": "faq_item",
           "settings": {
             "question": "Kann ich das Kissen waschen?",
-            "answer": "Den Bezug kannst du bei 40 Grad im Schonwaschgang waschen. Der Memory-Foam-Kern ist nicht für die Waschmaschine geeignet — aber der Bezug schützt ihn zuverlässig."
+            "answer": "<p>Den Bezug kannst du bei 40 Grad im Schonwaschgang waschen. Der Memory-Foam-Kern ist nicht fuer die Waschmaschine geeignet - aber der Bezug schuetzt ihn zuverlaessig.</p>"
           }
         },
         "faq_4": {
           "type": "faq_item",
           "settings": {
             "question": "Was, wenn es mir nicht gefällt?",
-            "answer": "Du hast 60 Nächte Zeit, um zu entscheiden. Wenn Dormio dir nicht hilft — aus irgendeinem Grund — schickst du es gratis zurück und bekommst den vollen Kaufpreis erstattet. Ohne Fragen."
+            "answer": "<p>Du hast 60 Naechte Zeit, um zu entscheiden. Wenn Dormio dir nicht hilft - aus irgendeinem Grund - schickst du es gratis zurueck und bekommst den vollen Kaufpreis erstattet. Ohne Fragen.</p>"
           }
         },
         "faq_5": {
           "type": "faq_item",
           "settings": {
             "question": "Wie wähle ich die richtige Höhe?",
-            "answer": "Das Kissen kommt mit einer herausnehmbaren Einlage, die 3 cm Höhenunterschied ermöglicht. Seitenschläfer bevorzugen meist die höhere Version (13 cm), Rückenschläfer die niedrigere (10 cm). Du kannst jederzeit wechseln."
+            "answer": "<p>Das Kissen kommt mit einer herausnehmbaren Einlage, die 3 cm Hoehenunterschied ermoeglicht. Seitenschlaefer bevorzugen meist die hoehere Version (13 cm), Rueckenschlaefer die niedrigere (10 cm). Du kannst jederzeit wechseln.</p>"
           }
         },
         "faq_6": {
           "type": "faq_item",
           "settings": {
             "question": "Wie lange dauert die Lieferung?",
-            "answer": "Wir liefern innerhalb von 3-5 Werktagen in die Schweiz. Du erhältst eine Sendungsverfolgung per E-Mail, sobald dein Paket unterwegs ist."
+            "answer": "<p>Wir liefern innerhalb von 3-5 Werktagen in die Schweiz. Du erhaeltst eine Sendungsverfolgung per E-Mail, sobald dein Paket unterwegs ist.</p>"
           }
         }
       },
-      "block_order": ["faq_1", "faq_2", "faq_3", "faq_4", "faq_5", "faq_6"],
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5",
+        "faq_6"
+      ],
       "settings": {
         "heading": "Häufige Fragen",
         "padding_top": 56,
