@@ -1,0 +1,19 @@
+/* Dormio – Header & Footer: frosted glass / pastel effect */
+
+.shopify-section-group-header-group .header-wrapper,
+.shopify-section-group-header-group .announcement-bar {
+  background: rgba(13, 27, 42, 0.55) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Remove the solid border separator so it doesn't look clunky */
+.shopify-section-group-header-group .header-wrapper.header-wrapper--border-bottom {
+  border-bottom-color: rgba(245, 242, 236, 0.12) !important;
+}
+
+.shopify-section-group-footer-group .footer {
+  background: rgba(13, 27, 42, 0.55) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
