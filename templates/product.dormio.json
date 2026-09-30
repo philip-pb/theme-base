@@ -587,6 +587,7 @@
   },
   "order": [
     "main",
+    "bundle_picker",
     "trust_badges",
     "pain_points",
     "objection",
@@ -596,7 +597,6 @@
     "testimonials",
     "stats",
     "faq",
-    "bundle_picker",
     "final_cta"
   ]
 }
