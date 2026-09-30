@@ -25,7 +25,7 @@
   gap: 10px;
   margin: 0;
   padding: 5px 0;
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   line-height: 1.5;
   color: #1e2d3a;
 }
@@ -33,7 +33,23 @@
   content: '✓';
   color: #4A7C6F;
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 1.4rem;
   flex-shrink: 0;
   letter-spacing: 0;
+}
+
+/* ── Add to cart button ── */
+.product-form__submit {
+  background: #4A7C6F !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 8px !important;
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.02em !important;
+  padding: 18px 32px !important;
+  transition: background 0.2s ease !important;
+}
+.product-form__submit:hover {
+  background: #3A6259 !important;
 }
