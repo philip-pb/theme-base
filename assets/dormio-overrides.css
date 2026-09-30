@@ -25,7 +25,7 @@
   gap: 10px;
   margin: 0;
   padding: 5px 0;
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   line-height: 1.5;
   color: #1e2d3a;
 }
@@ -33,7 +33,7 @@
   content: '✓';
   color: #4A7C6F;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 1.15rem;
   flex-shrink: 0;
   letter-spacing: 0;
 }
