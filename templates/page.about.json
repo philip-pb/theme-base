@@ -1,0 +1,24 @@
+{
+  "sections": {
+    "about": {
+      "type": "dormio-about",
+      "settings": {
+        "eyebrow": "Unsere Geschichte",
+        "hero_heading": "Je älter wir wurden, desto schlechter wurde der Schlaf.",
+        "hero_lead": "Dormio entstand nicht im Labor — sondern aus echten schlaflosen Nächten.",
+        "ch1_heading": "Wir haben das Problem selbst erlebt.",
+        "ch1_text": "<p>Mit Anfang 30 bemerkten wir es zum ersten Mal: Die Nächte wurden unruhiger, die Morgen schwerer. Steifer Nacken, tauber Arm, dieses diffuse Gefühl, nie wirklich erholt zu sein — obwohl man acht Stunden geschlafen hatte.</p><p>Wir dachten, das gehört zum Älterwerden dazu. Das stimmt nicht.</p>",
+        "ch2_heading": "Wir haben gesucht — und wenig Ehrliches gefunden.",
+        "ch2_text": "<p>Was der Markt anbot, war enttäuschend: aufgeblasene Versprechen, teure Kissen ohne schlafmedizinische Grundlage, und unzählige Influencer-Empfehlungen ohne jede Substanz.</p><p>Also haben wir uns in die Wissenschaft eingelesen. Studien zu Schlafergonomie, Halswirbelsäulen-Biomechanik, Druckpunkten. Und dann haben wir ein Kissen gebaut, das wirklich tut, was es soll.</p>",
+        "ch3_heading": "Dem Körper verpflichtet — nicht dem Trend.",
+        "ch3_text": "<p>Dormio ist kein Lifestyle-Produkt. Es ist ein Werkzeug zur Erholung. Jede Entscheidung — Schaumhärte, Kissenform, Zonen-Aufteilung — basiert auf dem, was der Körper im Schlaf tatsächlich braucht.</p><p>Wir verkaufen keine Magie. Wir verkaufen Schlaf, der sich lohnt.</p>",
+        "values_heading": "Was uns antreibt",
+        "closing_quote": "Guter Schlaf ist kein Luxus. Er ist das Fundament, auf dem alles andere aufbaut.",
+        "closing_sig": "Das Dormio-Team",
+        "cta_label": "Dormio entdecken",
+        "cta_url": "/products/dormio-schlafkissen"
+      }
+    }
+  },
+  "order": ["about"]
+}
