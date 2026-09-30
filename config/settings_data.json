@@ -187,6 +187,19 @@
       "cart_drawer_collection": "",
       "cart_color_scheme": "scheme-1",
       "sections": {
+        "header": {
+          "type": "header",
+          "settings": {
+            "color_scheme": "scheme-3",
+            "menu_color_scheme": "scheme-3"
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "settings": {
+            "color_scheme": "scheme-3"
+          }
+        },
         "main-password-header": {
           "type": "main-password-header",
           "settings": {
