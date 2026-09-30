@@ -573,6 +573,16 @@
         "padding_top": 72,
         "padding_bottom": 80
       }
+    },
+    "bundle_picker": {
+      "type": "dormio-bundle-picker",
+      "settings": {
+        "heading": "Wähle dein Paket",
+        "button_label": "In den Warenkorb",
+        "guarantee_text": "60 Nächte testen · Gratis Rückversand · Kein Risiko",
+        "padding_top": 56,
+        "padding_bottom": 56
+      }
     }
   },
   "order": [
@@ -586,6 +596,7 @@
     "testimonials",
     "stats",
     "faq",
+    "bundle_picker",
     "final_cta"
   ]
 }

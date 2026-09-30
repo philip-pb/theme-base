@@ -1,0 +1,357 @@
+{%- style -%}
+  .dormio-bundle--{{ section.id }} {
+    --d-dark: #0D1B2A;
+    --d-mid: #162436;
+    --d-creme: #F5F2EC;
+    --d-green: #4A7C6F;
+    --d-green-dark: #3A6259;
+    background: var(--d-dark);
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .dormio-bundle--{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+  .dormio-bundle--{{ section.id }} .db__inner {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .dormio-bundle--{{ section.id }} .db__heading {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    color: var(--d-creme);
+    text-align: center;
+    margin: 0 0 32px;
+    font-weight: 400;
+  }
+  .dormio-bundle--{{ section.id }} .db__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  @media screen and (min-width: 600px) {
+    .dormio-bundle--{{ section.id }} .db__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  /* ── Card ── */
+  .dormio-bundle--{{ section.id }} .db__card {
+    position: relative;
+    border: 2px solid #2E4560;
+    border-radius: 12px;
+    padding: 20px 18px;
+    cursor: pointer;
+    transition: border-color 0.15s ease, background 0.15s ease;
+    background: #1E3348;
+  }
+  .dormio-bundle--{{ section.id }} .db__card:hover {
+    border-color: var(--d-green);
+  }
+  .dormio-bundle--{{ section.id }} .db__card.is-selected {
+    border-color: var(--d-green);
+    background: #1A3040;
+  }
+  .dormio-bundle--{{ section.id }} .db__card input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  /* Badge */
+  .dormio-bundle--{{ section.id }} .db__badge {
+    display: inline-block;
+    font-family: Inter, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+  }
+  .dormio-bundle--{{ section.id }} .db__badge--popular {
+    background: var(--d-green);
+    color: #fff;
+  }
+  .dormio-bundle--{{ section.id }} .db__badge--best {
+    background: #c0824a;
+    color: #fff;
+  }
+  .dormio-bundle--{{ section.id }} .db__badge--empty {
+    visibility: hidden;
+    background: transparent;
+  }
+
+  /* Menge */
+  .dormio-bundle--{{ section.id }} .db__qty {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: 1.4rem;
+    color: var(--d-creme);
+    font-weight: 400;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  /* Preis pro Stück */
+  .dormio-bundle--{{ section.id }} .db__per-unit {
+    font-family: Inter, sans-serif;
+    font-size: 0.9rem;
+    color: var(--d-green);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  /* Gesamtpreis */
+  .dormio-bundle--{{ section.id }} .db__price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .dormio-bundle--{{ section.id }} .db__total {
+    font-family: Inter, sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--d-creme);
+  }
+  .dormio-bundle--{{ section.id }} .db__compare {
+    font-family: Inter, sans-serif;
+    font-size: 1rem;
+    color: #5a7a8a;
+    text-decoration: line-through;
+  }
+  .dormio-bundle--{{ section.id }} .db__save {
+    font-family: Inter, sans-serif;
+    font-size: 0.85rem;
+    color: #f5b942;
+    font-weight: 600;
+  }
+
+  /* Radio indicator */
+  .dormio-bundle--{{ section.id }} .db__radio {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #2E4560;
+    background: transparent;
+    transition: all 0.15s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .dormio-bundle--{{ section.id }} .db__card.is-selected .db__radio {
+    border-color: var(--d-green);
+    background: var(--d-green);
+  }
+  .dormio-bundle--{{ section.id }} .db__card.is-selected .db__radio::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #fff;
+    display: block;
+  }
+
+  /* ATC */
+  .dormio-bundle--{{ section.id }} .db__atc-wrap {
+    margin-top: 20px;
+    text-align: center;
+  }
+  .dormio-bundle--{{ section.id }} .db__atc-btn {
+    display: inline-block;
+    width: 100%;
+    max-width: 480px;
+    background: var(--d-green);
+    color: #fff;
+    font-family: Inter, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 18px 40px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  .dormio-bundle--{{ section.id }} .db__atc-btn:hover {
+    background: var(--d-green-dark);
+  }
+  .dormio-bundle--{{ section.id }} .db__guarantee {
+    font-family: Inter, sans-serif;
+    font-size: 0.95rem;
+    color: #5a7a8a;
+    margin-top: 12px;
+    text-align: center;
+  }
+{%- endstyle -%}
+
+{%- assign product = product -%}
+{%- assign variants = product.variants -%}
+
+<div class="dormio-bundle--{{ section.id }}">
+  <div class="db__inner">
+
+    {%- unless section.settings.heading == blank -%}
+      <h2 class="db__heading">{{ section.settings.heading }}</h2>
+    {%- endunless -%}
+
+    <form action="/cart/add" method="post" id="dormio-bundle-form-{{ section.id }}">
+      <input type="hidden" name="id" id="dormio-bundle-variant-{{ section.id }}" value="{{ variants.first.id }}">
+      <input type="hidden" name="quantity" value="1">
+
+      <div class="db__grid">
+        {%- for variant in variants -%}
+          {%- assign is_first = forloop.first -%}
+
+          {%- case forloop.index -%}
+            {%- when 1 -%}
+              {%- assign badge_class = 'db__badge--empty' -%}
+              {%- assign badge_text = '–' -%}
+              {%- assign qty_label = '1 Kissen' -%}
+              {%- assign per_unit = variant.price | money_without_trailing_zeros -%}
+              {%- assign per_unit_label = per_unit | append: ' / Stück' -%}
+            {%- when 2 -%}
+              {%- assign badge_class = 'db__badge--popular' -%}
+              {%- assign badge_text = 'Am beliebtesten' -%}
+              {%- assign qty_label = '2 Kissen' -%}
+              {%- assign per_unit_num = variant.price | divided_by: 2.0 -%}
+              {%- assign per_unit = per_unit_num | money_without_trailing_zeros -%}
+              {%- assign per_unit_label = per_unit | append: ' / Stück' -%}
+            {%- when 3 -%}
+              {%- assign badge_class = 'db__badge--best' -%}
+              {%- assign badge_text = 'Bestes Angebot' -%}
+              {%- assign qty_label = '3 Kissen' -%}
+              {%- assign per_unit_num = variant.price | divided_by: 3.0 -%}
+              {%- assign per_unit = per_unit_num | money_without_trailing_zeros -%}
+              {%- assign per_unit_label = per_unit | append: ' / Stück' -%}
+          {%- endcase -%}
+
+          {%- assign savings = variant.compare_at_price | minus: variant.price -%}
+
+          <label class="db__card{% if is_first %} is-selected{% endif %}"
+                 for="bundle-variant-{{ variant.id }}-{{ section.id }}"
+                 data-variant-id="{{ variant.id }}">
+            <input type="radio"
+                   id="bundle-variant-{{ variant.id }}-{{ section.id }}"
+                   name="bundle_option"
+                   value="{{ variant.id }}"
+                   {% if is_first %}checked{% endif %}>
+            <span class="db__badge {{ badge_class }}">{{ badge_text }}</span>
+            <span class="db__qty">{{ qty_label }}</span>
+            <span class="db__per-unit">{{ per_unit_label }}</span>
+            <div class="db__price-row">
+              <span class="db__total">{{ variant.price | money_without_trailing_zeros }}</span>
+              {%- if variant.compare_at_price > variant.price -%}
+                <span class="db__compare">{{ variant.compare_at_price | money_without_trailing_zeros }}</span>
+                {%- if savings > 0 -%}
+                  <span class="db__save">–{{ savings | money_without_trailing_zeros }} sparen</span>
+                {%- endif -%}
+              {%- endif -%}
+            </div>
+            <div class="db__radio"></div>
+          </label>
+        {%- endfor -%}
+      </div>
+
+      <div class="db__atc-wrap">
+        <button type="submit" class="db__atc-btn">
+          {{ section.settings.button_label | escape }}
+        </button>
+        {%- unless section.settings.guarantee_text == blank -%}
+          <p class="db__guarantee">{{ section.settings.guarantee_text | escape }}</p>
+        {%- endunless -%}
+      </div>
+    </form>
+
+  </div>
+</div>
+
+<script>
+(function() {
+  var section = document.querySelector('.dormio-bundle--{{ section.id }}');
+  if (!section) return;
+
+  var cards = section.querySelectorAll('.db__card');
+  var hiddenInput = section.querySelector('#dormio-bundle-variant-{{ section.id }}');
+
+  cards.forEach(function(card) {
+    card.addEventListener('click', function() {
+      cards.forEach(function(c) { c.classList.remove('is-selected'); });
+      card.classList.add('is-selected');
+      var variantId = card.getAttribute('data-variant-id');
+      hiddenInput.value = variantId;
+      var radio = card.querySelector('input[type="radio"]');
+      if (radio) radio.checked = true;
+    });
+  });
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Dormio: Bundle-Picker",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Überschrift",
+      "default": "Wähle dein Paket"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button-Text",
+      "default": "In den Warenkorb"
+    },
+    {
+      "type": "text",
+      "id": "guarantee_text",
+      "label": "Garantie-Text",
+      "default": "60 Nächte testen · Gratis Rückversand · Kein Risiko"
+    },
+    {
+      "type": "header",
+      "content": "Abstände"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 24,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Abstand oben",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 24,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Abstand unten",
+      "default": 56
+    }
+  ],
+  "presets": [
+    {
+      "name": "Dormio: Bundle-Picker"
+    }
+  ]
+}
+{% endschema %}
