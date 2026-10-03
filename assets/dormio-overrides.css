@@ -71,14 +71,16 @@
 .dst__heading,
 .ds__heading,
 .pg__heading,
-.dobj__heading {
+.dobj__heading,
+.dfcta__heading {
   font-size: var(--d-font-h2) !important;
 }
 
 /* Section-Subheading */
 .dbg__subheading,
 .dt__subheading,
-.dz__subheading {
+.dz__subheading,
+.dfcta__subtext {
   font-size: var(--d-font-sub) !important;
 }
 
@@ -93,16 +95,29 @@
 .dz__text,
 .dt__quote,
 .ds__text,
-.dm__text {
+.dm__text,
+.ds__label {
   font-size: var(--d-font-body) !important;
   line-height: 1.6;
 }
 
-/* Eyebrow */
+/* Eyebrow — überall einheitlich */
 .dz__eyebrow,
 .ds__eyebrow,
+.dm__eyebrow,
+.dh__eyebrow,
+.dfcta__eyebrow,
 .dbp__eyebrow {
   font-size: var(--d-font-eyebrow) !important;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Kleine Texte: Quellen, Garantiezeilen, Captions */
+.ds__source,
+.dfcta__guarantee,
+.pg__caption-text {
+  font-size: var(--d-font-small) !important;
 }
 
 /* Trust-Badge Items */
