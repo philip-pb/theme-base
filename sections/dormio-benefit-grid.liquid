@@ -5,7 +5,7 @@
     --d-creme: #F5F2EC;
     --d-green: #4A7C6F;
     --d-green-pale: #E8F0EE;
-    background: {% if section.settings.dark_background %}var(--d-mid){% else %}var(--d-creme){% endif %};
+    background: {% if section.settings.dark_background %}var(--d-mid){% elsif section.settings.background_shade == 'medium' %}#EAE5DA{% else %}var(--d-creme){% endif %};
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
@@ -124,6 +124,16 @@
       "id": "dark_background",
       "label": "Dunkler Hintergrund",
       "default": true
+    },
+    {
+      "type": "select",
+      "id": "background_shade",
+      "label": "Hintergrundton (wenn hell)",
+      "default": "light",
+      "options": [
+        { "value": "light", "label": "Hell — #F5F2EC" },
+        { "value": "medium", "label": "Mittel — #EAE5DA" }
+      ]
     },
     {
       "type": "header",

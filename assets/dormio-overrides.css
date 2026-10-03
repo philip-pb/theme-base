@@ -4,16 +4,110 @@
    --d-navy   #0D1B2A  Haupthintergrund (dunkel)
    --d-card   #2A4A63  Karten & UI-Elemente
    --d-creme  #F5F2EC  Helle Flächen, Text auf Dunkel
+   --d-creme2 #EAE5DA  Alternating section background
    --d-green  #4A7C6F  Akzentfarbe, CTAs, Checks
    --d-muted  #8AAABB  Sekundärtext, Icons
    ═══════════════════════════════════════════════ */
 :root {
-  --d-navy:  #0D1B2A;
-  --d-card:  #2A4A63;
-  --d-creme: #F5F2EC;
-  --d-green: #4A7C6F;
+  /* Farben */
+  --d-navy:       #0D1B2A;
+  --d-card:       #2A4A63;
+  --d-creme:      #F5F2EC;
+  --d-creme2:     #EAE5DA;
+  --d-green:      #4A7C6F;
   --d-green-dark: #3A6259;
-  --d-muted: #8AAABB;
+  --d-muted:      #8AAABB;
+  --d-text:       #1e2d3a;
+  --d-text-sub:   #5a6a72;
+
+  /* ═══════════════════════════════════════════════
+     DORMIO TYPOGRAFIE — Schriftgrössenskala
+     Referenz: Benefit-Grid (Erkennst du das?)
+     ═══════════════════════════════════════════════ */
+
+  /* Eyebrow: Kleine Kapitälchen über Überschriften */
+  --d-font-eyebrow: 0.72rem;
+
+  /* Hero-Überschrift (nur dormio-hero) */
+  --d-font-hero: clamp(2.4rem, 7vw, 4rem);
+
+  /* Abschnitts-H2: alle Section-Headings */
+  --d-font-h2: clamp(1.5rem, 4vw, 2rem);
+
+  /* H3: Karten-Titel, Unterabschnitte */
+  --d-font-h3: 1.35rem;
+
+  /* Subheading: Muted-Zeile unter dem H2 */
+  --d-font-sub: 1.15rem;
+
+  /* Body: Standard-Fliesstext */
+  --d-font-body: 1.35rem;
+
+  /* Body klein: Captions, Meta, Badges */
+  --d-font-small: 0.85rem;
+
+  /* CTA-Button standard */
+  --d-font-cta: 1.1rem;
+
+  /* CTA-Button gross (Bundle Picker) */
+  --d-font-cta-lg: 1.4rem;
+
+  /* Preis-Anzeige */
+  --d-font-price: 1.9rem;
+}
+
+/* ═══════════════════════════════════════════════
+   DORMIO TYPOGRAFIE — Globale Normalisierung
+   Alle Section-Headings, Subheadings, Body-Texte
+   auf einheitliche Skala bringen.
+   ═══════════════════════════════════════════════ */
+
+/* Section-H2 */
+.dbg__heading,
+.dt__heading,
+.dz__heading,
+.dm__heading,
+.dfaq__heading,
+.dst__heading,
+.ds__heading,
+.pg__heading,
+.dobj__heading {
+  font-size: var(--d-font-h2) !important;
+}
+
+/* Section-Subheading */
+.dbg__subheading,
+.dt__subheading,
+.dz__subheading {
+  font-size: var(--d-font-sub) !important;
+}
+
+/* Karten-Titel (H3) */
+.dbg__title,
+.dz__title {
+  font-size: var(--d-font-h3) !important;
+}
+
+/* Body-Text in Sections */
+.dbg__text,
+.dz__text,
+.dt__quote,
+.ds__text,
+.dm__text {
+  font-size: var(--d-font-body) !important;
+  line-height: 1.6;
+}
+
+/* Eyebrow */
+.dz__eyebrow,
+.ds__eyebrow,
+.dbp__eyebrow {
+  font-size: var(--d-font-eyebrow) !important;
+}
+
+/* Trust-Badge Items */
+.dormio-trust-badges__item {
+  font-size: var(--d-font-h3) !important;
 }
 
 /* Dormio – Header & Footer: frosted glass / pastel effect */
