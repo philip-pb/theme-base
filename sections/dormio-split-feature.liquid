@@ -133,11 +133,8 @@
   <div class="ds__inner">
     <div class="ds__image-wrap">
       {%- if section.settings.image != blank -%}
-        {{ section.settings.image | image_url: width: 900 | image_tag:
-          loading: 'lazy',
-          alt: section.settings.image.alt | escape,
-          widths: '450, 700, 900'
-        }}
+        {%- assign _alt = section.settings.image.alt | escape -%}
+        {{ section.settings.image | image_url: width: 900 | image_tag: loading: 'lazy', alt: _alt, widths: '450, 700, 900' }}
       {%- else -%}
         <div class="ds__placeholder">
           <span class="ds__placeholder-icon">📷</span>

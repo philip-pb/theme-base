@@ -103,12 +103,8 @@
       {%- for block in section.blocks -%}
         <div class="pg__tile" {{ block.shopify_attributes }}>
           {%- if block.settings.image != blank -%}
-            {{ block.settings.image | image_url: width: 900 | image_tag:
-              loading: 'lazy',
-              alt: block.settings.image.alt | escape,
-              widths: '450, 700, 900',
-              style: 'position:absolute;inset:0;width:100%;height:100%;object-fit:cover'
-            }}
+            {%- assign _alt = block.settings.image.alt | escape -%}
+            {{ block.settings.image | image_url: width: 900 | image_tag: loading: 'lazy', alt: _alt, widths: '450, 700, 900' }}
           {%- else -%}
             <div class="pg__placeholder">
               <span class="pg__placeholder-icon">📷</span>
