@@ -92,7 +92,7 @@
       "settings": {
         "heading": "Erkennst du das?",
         "subheading": "Diese Probleme liegen am Kissen. Nicht an dir.",
-        "dark_background": true,
+        "dark_background": false,
         "padding_top": 64,
         "padding_bottom": 64
       }

@@ -5,7 +5,7 @@
     --d-creme: #F5F2EC;
     --d-green: #4A7C6F;
     --d-green-pale: #E8F0EE;
-    background: var(--d-dark);
+    background: var(--d-creme);
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
@@ -33,14 +33,14 @@
   .dormio-zones--{{ section.id }} .dz__heading {
     font-family: 'DM Serif Display', Georgia, serif;
     font-size: clamp(1.5rem, 4vw, 2rem);
-    color: var(--d-creme);
+    color: var(--d-dark);
     text-align: center;
     margin: 0 0 8px;
   }
   .dormio-zones--{{ section.id }} .dz__subheading {
     font-family: Inter, sans-serif;
     font-size: 1.4rem;
-    color: #8aaabb;
+    color: #5a6a72;
     text-align: center;
     margin: 0 0 40px;
   }
@@ -58,10 +58,10 @@
     gap: 16px;
     align-items: start;
     padding: 20px 0;
-    border-bottom: 1px solid #1E3348;
+    border-bottom: 1px solid rgba(13,27,42,0.12);
   }
   .dormio-zones--{{ section.id }} .dz__item:first-child {
-    border-top: 1px solid #1E3348;
+    border-top: 1px solid rgba(13,27,42,0.12);
   }
   .dormio-zones--{{ section.id }} .dz__number {
     width: 40px;
@@ -81,14 +81,14 @@
     font-family: Inter, sans-serif;
     font-size: 1.35rem;
     font-weight: 700;
-    color: var(--d-creme);
+    color: var(--d-dark);
     margin: 0 0 4px;
   }
   .dormio-zones--{{ section.id }} .dz__text {
     font-family: Inter, sans-serif;
     font-size: 1.35rem;
     line-height: 1.6;
-    color: #8aaabb;
+    color: #3a4a54;
     margin: 0;
   }
   @media screen and (min-width: 750px) {
@@ -98,10 +98,10 @@
       gap: 0 40px;
     }
     .dormio-zones--{{ section.id }} .dz__item {
-      border-top: 1px solid #1E3348;
+      border-top: 1px solid rgba(13,27,42,0.12);
     }
     .dormio-zones--{{ section.id }} .dz__item:nth-child(2) {
-      border-top: 1px solid #1E3348;
+      border-top: 1px solid rgba(13,27,42,0.12);
     }
   }
 {%- endstyle -%}

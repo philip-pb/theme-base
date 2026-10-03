@@ -4,7 +4,7 @@
     --d-creme: #F5F2EC;
     --d-green: #4A7C6F;
     --d-green-pale: #E8F0EE;
-    background: var(--d-dark);
+    background: var(--d-creme);
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
@@ -29,7 +29,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    color: var(--d-creme);
+    color: var(--d-dark);
     font-family: Inter, sans-serif;
     font-size: 1.4rem;
     font-weight: 500;
@@ -42,7 +42,7 @@
     flex-shrink: 0;
   }
   .dormio-trust-badges__divider {
-    color: #2E4560;
+    color: rgba(13,27,42,0.25);
   }
   @media screen and (max-width: 749px) {
     .dormio-trust-badges__list {

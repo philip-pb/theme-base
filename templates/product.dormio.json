@@ -176,6 +176,7 @@
       ],
       "settings": {
         "heading": "Erkennst du das?",
+        "dark_background": false,
         "padding_top": 64,
         "padding_bottom": 64
       }
@@ -233,6 +234,7 @@
       ],
       "settings": {
         "heading": "Für jeden Schlaftyp gemacht.",
+        "dark_background": false,
         "padding_top": 64,
         "padding_bottom": 64
       }
