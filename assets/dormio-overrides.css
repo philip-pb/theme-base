@@ -1,3 +1,21 @@
+/* ═══════════════════════════════════════════════
+   DORMIO BRAND PALETTE — Single source of truth
+   ═══════════════════════════════════════════════
+   --d-navy   #0D1B2A  Haupthintergrund (dunkel)
+   --d-card   #2A4A63  Karten & UI-Elemente
+   --d-creme  #F5F2EC  Helle Flächen, Text auf Dunkel
+   --d-green  #4A7C6F  Akzentfarbe, CTAs, Checks
+   --d-muted  #8AAABB  Sekundärtext, Icons
+   ═══════════════════════════════════════════════ */
+:root {
+  --d-navy:  #0D1B2A;
+  --d-card:  #2A4A63;
+  --d-creme: #F5F2EC;
+  --d-green: #4A7C6F;
+  --d-green-dark: #3A6259;
+  --d-muted: #8AAABB;
+}
+
 /* Dormio – Header & Footer: frosted glass / pastel effect */
 
 .shopify-section-group-header-group .header-wrapper,
