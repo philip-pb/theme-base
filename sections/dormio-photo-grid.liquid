@@ -1,0 +1,162 @@
+{%- style -%}
+  .dormio-pgrid--{{ section.id }} {
+    background: var(--d-creme, #F5F2EC);
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .dormio-pgrid--{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+  .dormio-pgrid--{{ section.id }} .pg__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .dormio-pgrid--{{ section.id }} .pg__heading {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    color: var(--d-navy, #0D1B2A);
+    text-align: center;
+    margin: 0 0 48px;
+    font-weight: 400;
+  }
+
+  /* Grid: 1 big left + 2 stacked right on desktop */
+  .dormio-pgrid--{{ section.id }} .pg__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 16px;
+  }
+  @media screen and (min-width: 750px) {
+    .dormio-pgrid--{{ section.id }} .pg__grid {
+      grid-template-columns: 1.3fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      height: 560px;
+    }
+    .dormio-pgrid--{{ section.id }} .pg__tile:first-child {
+      grid-row: 1 / 3;
+    }
+  }
+
+  .dormio-pgrid--{{ section.id }} .pg__tile {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #b8cdd5 0%, #8aaabb 100%);
+    min-height: 220px;
+  }
+  .dormio-pgrid--{{ section.id }} .pg__tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .dormio-pgrid--{{ section.id }} .pg__placeholder {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: rgba(255,255,255,0.75);
+  }
+  .dormio-pgrid--{{ section.id }} .pg__placeholder-icon {
+    font-size: 2.5rem;
+    opacity: 0.7;
+  }
+  .dormio-pgrid--{{ section.id }} .pg__placeholder-label {
+    font-family: Inter, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .dormio-pgrid--{{ section.id }} .pg__caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 20px 16px;
+    background: linear-gradient(to top, rgba(13,27,42,0.65) 0%, transparent 100%);
+    color: #fff;
+    font-family: Inter, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+{%- endstyle -%}
+
+<div class="dormio-pgrid--{{ section.id }}">
+  <div class="pg__inner">
+    {%- unless section.settings.heading == blank -%}
+      <h2 class="pg__heading">{{ section.settings.heading | escape }}</h2>
+    {%- endunless -%}
+
+    <div class="pg__grid">
+      {%- for block in section.blocks -%}
+        <div class="pg__tile" {{ block.shopify_attributes }}>
+          {%- if block.settings.image != blank -%}
+            {{ block.settings.image | image_url: width: 900 | image_tag:
+              loading: 'lazy',
+              alt: block.settings.image.alt | escape,
+              widths: '450, 700, 900',
+              style: 'position:absolute;inset:0;width:100%;height:100%;object-fit:cover'
+            }}
+          {%- else -%}
+            <div class="pg__placeholder">
+              <span class="pg__placeholder-icon">📷</span>
+              <span class="pg__placeholder-label">Foto hier</span>
+            </div>
+          {%- endif -%}
+          {%- unless block.settings.caption == blank -%}
+            <div class="pg__caption">{{ block.settings.caption | escape }}</div>
+          {%- endunless -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Dormio: Foto-Grid",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": { "groups": ["header", "footer"] },
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Überschrift", "default": "Dormio im Alltag" },
+    { "type": "header", "content": "Abstände" },
+    { "type": "range", "id": "padding_top", "min": 24, "max": 120, "step": 8, "unit": "px", "label": "Abstand oben", "default": 72 },
+    { "type": "range", "id": "padding_bottom", "min": 24, "max": 120, "step": 8, "unit": "px", "label": "Abstand unten", "default": 72 }
+  ],
+  "blocks": [
+    {
+      "type": "photo",
+      "name": "Foto",
+      "limit": 4,
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Foto" },
+        { "type": "text", "id": "caption", "label": "Bildunterschrift (optional)" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Dormio: Foto-Grid",
+      "blocks": [
+        { "type": "photo", "settings": { "caption": "Erholter Schlaf" } },
+        { "type": "photo", "settings": { "caption": "Für jeden Schlaftyp" } },
+        { "type": "photo", "settings": { "caption": "Das Kissen" } },
+        { "type": "photo", "settings": { "caption": "Dein Morgen" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

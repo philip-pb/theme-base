@@ -1,0 +1,219 @@
+{%- style -%}
+  .dormio-split--{{ section.id }} {
+    background: var(--d-creme, #F5F2EC);
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .dormio-split--{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+  .dormio-split--{{ section.id }} .ds__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+  @media screen and (min-width: 750px) {
+    .dormio-split--{{ section.id }} .ds__inner {
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+    }
+    .dormio-split--{{ section.id }}.ds--image-right .ds__image-wrap {
+      order: 2;
+    }
+    .dormio-split--{{ section.id }}.ds--image-right .ds__text-col {
+      order: 1;
+    }
+  }
+
+  .dormio-split--{{ section.id }} .ds__image-wrap {
+    border-radius: 20px;
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+    background: linear-gradient(135deg, #b8cdd5 0%, #8aaabb 100%);
+  }
+  .dormio-split--{{ section.id }} .ds__image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .dormio-split--{{ section.id }} .ds__placeholder {
+    width: 100%;
+    height: 100%;
+    min-height: 360px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: rgba(255,255,255,0.7);
+  }
+  .dormio-split--{{ section.id }} .ds__placeholder-icon {
+    font-size: 3rem;
+    opacity: 0.6;
+  }
+  .dormio-split--{{ section.id }} .ds__placeholder-text {
+    font-family: Inter, sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .dormio-split--{{ section.id }} .ds__eyebrow {
+    font-family: Inter, sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--d-green, #4A7C6F);
+    display: block;
+    margin-bottom: 16px;
+  }
+  .dormio-split--{{ section.id }} .ds__heading {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    line-height: 1.2;
+    color: var(--d-navy, #0D1B2A);
+    margin: 0 0 20px;
+    font-weight: 400;
+  }
+  .dormio-split--{{ section.id }} .ds__text {
+    font-family: Inter, sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #3a4a54;
+    margin: 0 0 28px;
+  }
+  .dormio-split--{{ section.id }} .ds__benefits {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 36px;
+  }
+  .dormio-split--{{ section.id }} .ds__benefit {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    font-family: Inter, sans-serif;
+    font-size: 1.05rem;
+    color: #1e2d3a;
+    padding: 5px 0;
+  }
+  .dormio-split--{{ section.id }} .ds__benefit::before {
+    content: '✓';
+    color: var(--d-green, #4A7C6F);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .dormio-split--{{ section.id }} .ds__btn {
+    display: inline-block;
+    background: var(--d-green, #4A7C6F);
+    color: #fff;
+    font-family: Inter, sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 16px 36px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.2s ease;
+  }
+  .dormio-split--{{ section.id }} .ds__btn:hover {
+    background: var(--d-green-dark, #3A6259);
+  }
+{%- endstyle -%}
+
+<div class="dormio-split--{{ section.id }}{% if section.settings.image_position == 'right' %} ds--image-right{% endif %}">
+  <div class="ds__inner">
+    <div class="ds__image-wrap">
+      {%- if section.settings.image != blank -%}
+        {{ section.settings.image | image_url: width: 900 | image_tag:
+          loading: 'lazy',
+          alt: section.settings.image.alt | escape,
+          widths: '450, 700, 900'
+        }}
+      {%- else -%}
+        <div class="ds__placeholder">
+          <span class="ds__placeholder-icon">📷</span>
+          <span class="ds__placeholder-text">Lifestyle-Foto hier</span>
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div class="ds__text-col">
+      {%- unless section.settings.eyebrow == blank -%}
+        <span class="ds__eyebrow">{{ section.settings.eyebrow | escape }}</span>
+      {%- endunless -%}
+      <h2 class="ds__heading">{{ section.settings.heading }}</h2>
+      {%- unless section.settings.text == blank -%}
+        <p class="ds__text">{{ section.settings.text | escape }}</p>
+      {%- endunless -%}
+      {%- if section.blocks.size > 0 -%}
+        <ul class="ds__benefits">
+          {%- for block in section.blocks -%}
+            <li class="ds__benefit" {{ block.shopify_attributes }}>{{ block.settings.benefit | escape }}</li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+      {%- unless section.settings.button_label == blank -%}
+        <a href="{{ section.settings.button_url }}" class="ds__btn">{{ section.settings.button_label | escape }}</a>
+      {%- endunless -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Dormio: Split Feature",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": { "groups": ["header", "footer"] },
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Foto" },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Foto-Position",
+      "options": [
+        { "value": "left", "label": "Links" },
+        { "value": "right", "label": "Rechts" }
+      ],
+      "default": "left"
+    },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Warum Dormio" },
+    { "type": "inline_richtext", "id": "heading", "label": "Überschrift", "default": "Entwickelt für Menschen, die wirklich schlafen wollen." },
+    { "type": "text", "id": "text", "label": "Text", "default": "Dormio folgt der Biomechanik deines Körpers — nicht dem Trend. Jede Zone hat einen Grund." },
+    { "type": "text", "id": "button_label", "label": "Button-Text", "default": "Jetzt entdecken" },
+    { "type": "url", "id": "button_url", "label": "Button-Link" },
+    { "type": "header", "content": "Abstände" },
+    { "type": "range", "id": "padding_top", "min": 24, "max": 120, "step": 8, "unit": "px", "label": "Abstand oben", "default": 80 },
+    { "type": "range", "id": "padding_bottom", "min": 24, "max": 120, "step": 8, "unit": "px", "label": "Abstand unten", "default": 80 }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit",
+      "limit": 5,
+      "settings": [
+        { "type": "text", "id": "benefit", "label": "Text", "default": "Benefit hier eintragen" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Dormio: Split Feature",
+      "blocks": [
+        { "type": "benefit", "settings": { "benefit": "Ergonomisch für Seiten- & Rückenschläfer" } },
+        { "type": "benefit", "settings": { "benefit": "Memory-Foam mit 4 durchdachten Zonen" } },
+        { "type": "benefit", "settings": { "benefit": "60 Nächte testen — ohne Risiko" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

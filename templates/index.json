@@ -97,6 +97,41 @@
         "padding_bottom": 64
       }
     },
+    "split_feature": {
+      "type": "dormio-split-feature",
+      "blocks": {
+        "b1": { "type": "benefit", "settings": { "benefit": "Ergonomisch für Seiten- & Rückenschläfer" } },
+        "b2": { "type": "benefit", "settings": { "benefit": "Memory-Foam mit 4 durchdachten Zonen" } },
+        "b3": { "type": "benefit", "settings": { "benefit": "Bambus-Lyocell-Bezug — kühl & hypoallergen" } },
+        "b4": { "type": "benefit", "settings": { "benefit": "60 Nächte testen — gratis Rückversand" } }
+      },
+      "block_order": ["b1", "b2", "b3", "b4"],
+      "settings": {
+        "eyebrow": "Das Dormio-Kissen",
+        "heading": "Schlafen, wie dein Körper es braucht.",
+        "text": "Entwickelt mit Schlafmedizinern. Gebaut für Menschen, die morgens erholt aufwachen wollen — nicht nur ausgeschlafen.",
+        "image_position": "left",
+        "button_label": "Jetzt entdecken — CHF 89",
+        "button_url": "/products/dormio-schlafkissen",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "photo_grid": {
+      "type": "dormio-photo-grid",
+      "blocks": {
+        "p1": { "type": "photo", "settings": { "caption": "Erholter Schlaf" } },
+        "p2": { "type": "photo", "settings": { "caption": "Für jeden Schlaftyp" } },
+        "p3": { "type": "photo", "settings": { "caption": "Das Kissen" } },
+        "p4": { "type": "photo", "settings": { "caption": "Dein Morgen" } }
+      },
+      "block_order": ["p1", "p2", "p3", "p4"],
+      "settings": {
+        "heading": "Dormio im Alltag",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
     "stats": {
       "type": "dormio-stats",
       "blocks": {
@@ -195,7 +230,9 @@
   "order": [
     "hero",
     "trust_badges",
+    "split_feature",
     "pain_points",
+    "photo_grid",
     "stats",
     "testimonials",
     "mission",
