@@ -22,6 +22,7 @@
         "rating_text": "4.8 / 5",
         "customers_text": "2.400+ Kunden",
         "guarantee_text": "60 Nächte testen",
+        "image": "shopify://shop_images/sleepy-mood.png",
         "padding_top": 96,
         "padding_bottom": 80
       }
@@ -110,6 +111,7 @@
         "eyebrow": "Das Dormio-Kissen",
         "heading": "Schlafen, wie dein Körper es braucht.",
         "text": "Entwickelt mit Schlafmedizinern. Gebaut für Menschen, die morgens erholt aufwachen wollen — nicht nur ausgeschlafen.",
+        "image": "shopify://shop_images/Mood.jpg",
         "image_position": "left",
         "button_label": "Jetzt entdecken — CHF 89",
         "button_url": "/products/dormio-schlafkissen",
@@ -120,10 +122,10 @@
     "photo_grid": {
       "type": "dormio-photo-grid",
       "blocks": {
-        "p1": { "type": "photo", "settings": { "caption": "Erholter Schlaf" } },
-        "p2": { "type": "photo", "settings": { "caption": "Für jeden Schlaftyp" } },
-        "p3": { "type": "photo", "settings": { "caption": "Das Kissen" } },
-        "p4": { "type": "photo", "settings": { "caption": "Dein Morgen" } }
+        "p1": { "type": "photo", "settings": { "image": "shopify://shop_images/sleepy-mood.png", "caption": "Erholter Schlaf" } },
+        "p2": { "type": "photo", "settings": { "image": "shopify://shop_images/Sleep.jpg", "caption": "Für jeden Schlaftyp" } },
+        "p3": { "type": "photo", "settings": { "image": "shopify://shop_images/Touch.jpg", "caption": "Memory-Foam" } },
+        "p4": { "type": "photo", "settings": { "image": "shopify://shop_images/Mood.jpg", "caption": "Dein Morgen" } }
       },
       "block_order": ["p1", "p2", "p3", "p4"],
       "settings": {
