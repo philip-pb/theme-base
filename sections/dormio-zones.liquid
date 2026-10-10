@@ -91,6 +91,16 @@
     color: #3a4a54;
     margin: 0;
   }
+  .dormio-zones--{{ section.id }} .dz__diagram {
+    margin: 0 auto 44px;
+    max-width: 580px;
+  }
+  .dormio-zones--{{ section.id }} .dz__svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: visible;
+  }
   @media screen and (min-width: 750px) {
     .dormio-zones--{{ section.id }} .dz__list {
       display: grid;
@@ -117,6 +127,67 @@
     {%- unless section.settings.subheading == blank -%}
       <p class="dz__subheading">{{ section.settings.subheading }}</p>
     {%- endunless -%}
+    <div class="dz__diagram" role="img" aria-label="Dormio Kissen — Draufsicht mit 4 Zonen">
+      <svg viewBox="0 0 640 280" xmlns="http://www.w3.org/2000/svg" class="dz__svg">
+        <defs>
+          <clipPath id="dz-clip-{{ section.id }}">
+            <path d="M160,70 L480,70 Q508,70 510,95 Q500,150 510,205 Q508,230 480,230 L160,230 Q132,230 130,205 Q140,150 130,95 Q132,70 160,70 Z"/>
+          </clipPath>
+        </defs>
+
+        <!-- Drop shadow -->
+        <path d="M160,70 L480,70 Q508,70 510,95 Q500,150 510,205 Q508,230 480,230 L160,230 Q132,230 130,205 Q140,150 130,95 Q132,70 160,70 Z" fill="rgba(0,0,0,0.07)" transform="translate(3,5)"/>
+
+        <!-- Pillow base -->
+        <path d="M160,70 L480,70 Q508,70 510,95 Q500,150 510,205 Q508,230 480,230 L160,230 Q132,230 130,205 Q140,150 130,95 Q132,70 160,70 Z" fill="#E8EDEB"/>
+
+        <!-- Zone 1 — left wing fill -->
+        <rect x="130" y="70" width="115" height="160" fill="#D0E0DC" clip-path="url(#dz-clip-{{ section.id }})"/>
+        <!-- Zone 1 — right wing fill -->
+        <rect x="395" y="70" width="115" height="160" fill="#D0E0DC" clip-path="url(#dz-clip-{{ section.id }})"/>
+        <!-- Zone 2 — center fill -->
+        <rect x="245" y="70" width="150" height="160" fill="#C2D0CD" clip-path="url(#dz-clip-{{ section.id }})"/>
+
+        <!-- Zone dividers -->
+        <line x1="245" y1="77" x2="245" y2="223" stroke="rgba(74,124,111,0.3)" stroke-width="1.5" stroke-dasharray="5,3"/>
+        <line x1="395" y1="77" x2="395" y2="223" stroke="rgba(74,124,111,0.3)" stroke-width="1.5" stroke-dasharray="5,3"/>
+
+        <!-- Zone 3 — ear holes (depressions in wing areas) -->
+        <ellipse cx="188" cy="148" rx="30" ry="22" fill="#9DBAB4"/>
+        <ellipse cx="188" cy="148" rx="20" ry="14" fill="#8CACA6"/>
+        <ellipse cx="452" cy="148" rx="30" ry="22" fill="#9DBAB4"/>
+        <ellipse cx="452" cy="148" rx="20" ry="14" fill="#8CACA6"/>
+
+        <!-- Pillow outline -->
+        <path d="M160,70 L480,70 Q508,70 510,95 Q500,150 510,205 Q508,230 480,230 L160,230 Q132,230 130,205 Q140,150 130,95 Q132,70 160,70 Z" fill="none" stroke="#4A7C6F" stroke-width="2"/>
+
+        <!-- Small zone text labels inside pillow -->
+        <text x="188" y="200" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="rgba(13,27,42,0.45)" letter-spacing="0.02em">Seitenflügel</text>
+        <text x="320" y="200" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="rgba(13,27,42,0.45)" letter-spacing="0.02em">Mittelzone</text>
+        <text x="452" y="200" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="rgba(13,27,42,0.45)" letter-spacing="0.02em">Seitenflügel</text>
+
+        <!-- Callout 1 — Seitenflügel (left) -->
+        <line x1="155" y1="175" x2="52" y2="212" stroke="#4A7C6F" stroke-width="1.5"/>
+        <circle cx="48" cy="214" r="13" fill="#4A7C6F"/>
+        <text x="48" y="219" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="white">1</text>
+
+        <!-- Callout 2 — Mittelzone -->
+        <line x1="320" y1="230" x2="320" y2="262" stroke="#4A7C6F" stroke-width="1.5"/>
+        <circle cx="320" cy="266" r="13" fill="#4A7C6F"/>
+        <text x="320" y="271" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="white">2</text>
+
+        <!-- Callout 3 — Ohrschutz-Mulden -->
+        <line x1="188" y1="127" x2="188" y2="34" stroke="#4A7C6F" stroke-width="1.5"/>
+        <circle cx="188" cy="30" r="13" fill="#4A7C6F"/>
+        <text x="188" y="35" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="white">3</text>
+
+        <!-- Callout 4 — Schulter-Aussparungen (right side concavity) -->
+        <line x1="506" y1="150" x2="590" y2="120" stroke="#4A7C6F" stroke-width="1.5"/>
+        <circle cx="594" cy="116" r="13" fill="#4A7C6F"/>
+        <text x="594" y="121" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="white">4</text>
+      </svg>
+    </div>
+
     <ul class="dz__list" role="list">
       {%- for block in section.blocks -%}
         <li class="dz__item" {{ block.shopify_attributes }}>
