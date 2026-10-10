@@ -159,18 +159,32 @@
       {%- endunless -%}
     </div>
 
+    {%- assign has_proof = false -%}
+    {%- unless section.settings.rating_text == blank and section.settings.customers_text == blank and section.settings.guarantee_text == blank -%}
+      {%- assign has_proof = true -%}
+    {%- endunless -%}
+    {%- if has_proof -%}
     <div class="dh__social-proof">
-      <span class="dh__proof-item">
-        <span class="dh__proof-stars">★★★★★</span>
-        {{ section.settings.rating_text | escape }}
-      </span>
-      <span class="dh__proof-divider" aria-hidden="true">·</span>
-      <span class="dh__proof-item">{{ section.settings.customers_text | escape }}</span>
+      {%- unless section.settings.rating_text == blank -%}
+        <span class="dh__proof-item">
+          <span class="dh__proof-stars">★★★★★</span>
+          {{ section.settings.rating_text | escape }}
+        </span>
+      {%- endunless -%}
+      {%- unless section.settings.customers_text == blank -%}
+        {%- unless section.settings.rating_text == blank -%}
+          <span class="dh__proof-divider" aria-hidden="true">·</span>
+        {%- endunless -%}
+        <span class="dh__proof-item">{{ section.settings.customers_text | escape }}</span>
+      {%- endunless -%}
       {%- unless section.settings.guarantee_text == blank -%}
-        <span class="dh__proof-divider" aria-hidden="true">·</span>
+        {%- unless section.settings.rating_text == blank and section.settings.customers_text == blank -%}
+          <span class="dh__proof-divider" aria-hidden="true">·</span>
+        {%- endunless -%}
         <span class="dh__proof-item">{{ section.settings.guarantee_text | escape }}</span>
       {%- endunless -%}
     </div>
+    {%- endif -%}
 
     {%- if section.settings.image != blank -%}
       <div class="dh__image-wrap">

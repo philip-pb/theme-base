@@ -19,9 +19,9 @@
         "button_url": "/products/dormio-schlafkissen",
         "secondary_label": "Mehr erfahren",
         "secondary_url": "/products/dormio-schlafkissen",
-        "rating_text": "4.8 / 5",
-        "customers_text": "2.400+ Kunden",
-        "guarantee_text": "60 Nächte testen",
+        "rating_text": "",
+        "customers_text": "",
+        "guarantee_text": "60 Nächte testen — ohne Risiko",
         "image": "shopify://shop_images/sleepy-mood.png",
         "padding_top": 96,
         "padding_bottom": 80
@@ -103,14 +103,14 @@
       "blocks": {
         "b1": { "type": "benefit", "settings": { "benefit": "Ergonomisch für Seiten- & Rückenschläfer" } },
         "b2": { "type": "benefit", "settings": { "benefit": "Memory-Foam mit 4 durchdachten Zonen" } },
-        "b3": { "type": "benefit", "settings": { "benefit": "Bambus-Lyocell-Bezug — kühl & hypoallergen" } },
+        "b3": { "type": "benefit", "settings": { "benefit": "Bambus-Viskose-Bezug — atmungsaktiv & weich" } },
         "b4": { "type": "benefit", "settings": { "benefit": "60 Nächte testen — gratis Rückversand" } }
       },
       "block_order": ["b1", "b2", "b3", "b4"],
       "settings": {
         "eyebrow": "Das Dormio-Kissen",
         "heading": "Schlafen, wie dein Körper es braucht.",
-        "text": "Entwickelt mit Schlafmedizinern. Gebaut für Menschen, die morgens erholt aufwachen wollen — nicht nur ausgeschlafen.",
+        "text": "Ergonomisch für Seiten- und Rückenschläfer entwickelt. Unterstützt eine natürliche Liegeposition — damit du morgens erholt aufwachst.",
         "image": "shopify://shop_images/Mood.jpg",
         "image_position": "left",
         "button_label": "Jetzt entdecken — CHF 89",
@@ -122,7 +122,7 @@
     "photo_grid": {
       "type": "dormio-photo-grid",
       "blocks": {
-        "p1": { "type": "photo", "settings": { "image": "shopify://shop_images/sleepy-mood.png", "caption": "Erholter Schlaf" } },
+        "p1": { "type": "photo", "settings": { "image": "shopify://shop_images/Hero1.jpg", "caption": "Das Kissen" } },
         "p2": { "type": "photo", "settings": { "image": "shopify://shop_images/Sleep.jpg", "caption": "Für jeden Schlaftyp" } },
         "p3": { "type": "photo", "settings": { "image": "shopify://shop_images/Touch.jpg", "caption": "Memory-Foam" } },
         "p4": { "type": "photo", "settings": { "image": "shopify://shop_images/Mood.jpg", "caption": "Dein Morgen" } }
@@ -198,7 +198,7 @@
       "block_order": ["t1", "t2", "t3", "t4"],
       "settings": {
         "heading": "Was unsere Kunden sagen",
-        "subheading": "4.8 / 5 - Über 2.400 verifizierte Bewertungen",
+        "subheading": "Was unsere Kunden berichten",
         "padding_top": 64,
         "padding_bottom": 64
       }
@@ -218,10 +218,10 @@
       "type": "dormio-final-cta",
       "settings": {
         "heading": "Bereit für deinen ersten erholten Morgen?",
-        "subtext": "Über 2.400 Kunden schlafen bereits besser. Jetzt bist du dran.",
+        "subtext": "Teste Dormio 60 Nächte — gratis Rückversand, kein Risiko.",
         "price": "CHF 89",
-        "compare_price": "CHF 129",
-        "discount_badge": "-31%",
+        "compare_price": "",
+        "discount_badge": "",
         "button_label": "Jetzt bestellen - CHF 89",
         "guarantee_text": "60 Nächte testen - Gratis Rückversand - Kein Risiko",
         "padding_top": 72,
