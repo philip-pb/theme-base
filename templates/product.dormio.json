@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "main": {
@@ -51,7 +42,7 @@
         "bullet_4": {
           "type": "text",
           "settings": {
-            "text": "Über 2.400 Kundinnen und Kunden schlafen besser",
+            "text": "Ergonomisch für entspanntere Morgen",
             "text_style": "body"
           }
         },
@@ -60,6 +51,48 @@
           "settings": {
             "show_dynamic_checkout": false,
             "show_gift_card_recipient": false
+          }
+        },
+        "payment_icons": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<style>.dormio-payment-row{margin:10px 0 18px;}.dormio-payment-icons{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:6px;}.dormio-payment-icon{height:26px;width:auto;border-radius:3px;}.dormio-payment-caption{font-family:Inter,sans-serif;font-size:0.82rem;color:#8aaabb;margin:0;}</style><div class=\"dormio-payment-row\"><div class=\"dormio-payment-icons\">{%- for type in shop.enabled_payment_types -%}{{ type | payment_type_svg_tag: class: 'dormio-payment-icon' }}{%- endfor -%}</div><p class=\"dormio-payment-caption\">Sichere Zahlung · Versand in 3–5 Werktagen [PRÜFEN]</p></div>"
+          }
+        },
+        "tab_material": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Material & Grösse",
+            "icon": "box",
+            "content": "<p><strong>Kern:</strong> Adaptiver Memory-Foam, reagiert auf Körperwärme und Druck<br><strong>Bezug (aussen):</strong> Bambus-Viskose [PRÜFEN Zertifikat]<br><strong>Masse:</strong> 60 × 40 cm<br><strong>Höhe:</strong> 10 cm (ohne Einlage) / 13 cm (mit Einlage)<br><strong>Höhenanpassung:</strong> Einlage herausnehmbar, 3 cm Unterschied<br><strong>Gewicht:</strong> ca. 1,2 kg</p>",
+            "page": ""
+          }
+        },
+        "tab_sleep": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Für welche Schlafposition?",
+            "icon": "silhouette",
+            "content": "<p><strong>Seitenschläfer:</strong> Die erhöhten Seitenflügel füllen den Abstand zwischen Schulter und Kopf — unterstützt eine natürliche Liegeposition ohne Zug am Nacken.<br><strong>Rückenschläfer:</strong> Die abgesenkte Mittelzone entlastet den Nacken und hält den Kopf ohne Hochdrücken.<br><strong>Wechselschläfer:</strong> Die Butterfly-Form folgt jeder Drehbewegung — kein Neupositionieren des Kissens nötig.</p>",
+            "page": ""
+          }
+        },
+        "tab_care": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Pflege",
+            "icon": "washing",
+            "content": "<p><strong>Bezug waschen:</strong> Reissverschluss öffnen, Bezug abnehmen und bei [PRÜFEN: 30 oder 40] °C im Schonwaschgang waschen. Nicht in den Tumbler.<br><strong>Kern reinigen:</strong> Der Memory-Foam-Kern ist nicht waschbar. Bei Bedarf mit einem leicht feuchten Tuch abwischen und vollständig an der Luft trocknen lassen. Nicht einweichen.</p>",
+            "page": ""
+          }
+        },
+        "tab_shipping": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Versand & 60-Nächte-Garantie",
+            "icon": "truck",
+            "content": "<p><strong>Lieferzeit:</strong> 3–5 Werktage in die Schweiz [PRÜFEN mit Supplier]. Du erhältst eine Sendungsverfolgung per E-Mail.<br><strong>60-Nächte-Garantie:</strong> Teste Dormio 60 Nächte. Wenn du nicht zufrieden bist, meldest du dich per E-Mail — wir organisieren die kostenlose Abholung und erstatten den vollen Kaufpreis. Kein Fragebogen, kein Aufwand. <a href=\"/policies/refund-policy\">Rückgabebedingungen</a></p>",
+            "page": ""
           }
         }
       },
@@ -71,7 +104,12 @@
         "bullet_2",
         "bullet_3",
         "bullet_4",
-        "buy_buttons"
+        "buy_buttons",
+        "payment_icons",
+        "tab_material",
+        "tab_sleep",
+        "tab_care",
+        "tab_shipping"
       ],
       "settings": {
         "enable_sticky_info": true,
@@ -117,16 +155,11 @@
           "type": "badge",
           "settings": {
             "icon": "star",
-            "label": "4.8/5 - 2.400+ Bewertungen"
+            "label": "4.8 / 5 Kundenbewertungen"
           }
         }
       },
-      "block_order": [
-        "badge_1",
-        "badge_2",
-        "badge_3",
-        "badge_4"
-      ],
+      "block_order": ["badge_1", "badge_2", "badge_3", "badge_4"],
       "settings": {
         "padding_top": 16,
         "padding_bottom": 16
@@ -168,12 +201,7 @@
           }
         }
       },
-      "block_order": [
-        "card_1",
-        "card_2",
-        "card_3",
-        "card_4"
-      ],
+      "block_order": ["card_1", "card_2", "card_3", "card_4"],
       "settings": {
         "heading": "Erkennst du das?",
         "dark_background": false,
@@ -223,16 +251,11 @@
           "settings": {
             "emoji": "🌿",
             "title": "Empfindliche Schläfer",
-            "text": "Bambus-Lyocell-Bezug temperaturregulierend und hypoallergen. Auch für Menschen mit sensibler Haut."
+            "text": "Abnehmbarer, waschbarer Bezug für leichtere Hygiene — ideal für Menschen mit sensibler Haut."
           }
         }
       },
-      "block_order": [
-        "card_1",
-        "card_2",
-        "card_3",
-        "card_4"
-      ],
+      "block_order": ["card_1", "card_2", "card_3", "card_4"],
       "settings": {
         "heading": "Für jeden Schlaftyp gemacht.",
         "dark_background": false,
@@ -273,12 +296,7 @@
           }
         }
       },
-      "block_order": [
-        "zone_1",
-        "zone_2",
-        "zone_3",
-        "zone_4"
-      ],
+      "block_order": ["zone_1", "zone_2", "zone_3", "zone_4"],
       "settings": {
         "eyebrow": "4 durchdachte Zonen",
         "heading": "Jede Zone hat einen Grund.",
@@ -287,93 +305,32 @@
         "padding_bottom": 56
       }
     },
+    "cta_band_1": {
+      "type": "dormio-cta-band",
+      "settings": {
+        "heading": "Bereit für entspanntere Morgen?",
+        "subline": "60 Nächte testen — ohne Risiko.",
+        "button_label": "Jetzt testen — 60 Nächte",
+        "scroll_to_buy": true,
+        "dark_background": false,
+        "padding_top": 56,
+        "padding_bottom": 56
+      }
+    },
     "spec_table": {
       "type": "dormio-spec-table",
       "blocks": {
-        "row_1": {
-          "type": "row",
-          "settings": {
-            "label": "Kern",
-            "value": "Adaptiver Memory-Foam (CertiPUR-US)",
-            "needs_check": false
-          }
-        },
-        "row_2": {
-          "type": "row",
-          "settings": {
-            "label": "Bezug (aussen)",
-            "value": "100% Bambus-Lyocell, 300 TC",
-            "needs_check": false
-          }
-        },
-        "row_3": {
-          "type": "row",
-          "settings": {
-            "label": "Innenbezug",
-            "value": "Polyester-Mikrofaser",
-            "needs_check": false
-          }
-        },
-        "row_4": {
-          "type": "row",
-          "settings": {
-            "label": "Masse",
-            "value": "60 x 40 cm",
-            "needs_check": false
-          }
-        },
-        "row_5": {
-          "type": "row",
-          "settings": {
-            "label": "Höhe (Low/High)",
-            "value": "10 cm / 13 cm",
-            "needs_check": false
-          }
-        },
-        "row_6": {
-          "type": "row",
-          "settings": {
-            "label": "Höhenanpassung",
-            "value": "Einlage herausnehmbar, 3 cm Unterschied",
-            "needs_check": false
-          }
-        },
-        "row_7": {
-          "type": "row",
-          "settings": {
-            "label": "Waschbar",
-            "value": "Bezug: 40 Grad Schonwaschgang - Kern: nicht waschbar",
-            "needs_check": false
-          }
-        },
-        "row_8": {
-          "type": "row",
-          "settings": {
-            "label": "Zertifizierung",
-            "value": "OEKO-TEX Standard 100",
-            "needs_check": true
-          }
-        },
-        "row_9": {
-          "type": "row",
-          "settings": {
-            "label": "Gewicht",
-            "value": "ca. 1,2 kg",
-            "needs_check": false
-          }
-        }
+        "row_1": { "type": "row", "settings": { "label": "Kern", "value": "Adaptiver Memory-Foam (CertiPUR-US) [PRÜFEN]", "needs_check": true } },
+        "row_2": { "type": "row", "settings": { "label": "Bezug (aussen)", "value": "Bambus-Viskose [PRÜFEN Zertifikat]", "needs_check": true } },
+        "row_3": { "type": "row", "settings": { "label": "Innenbezug", "value": "Polyester-Mikrofaser", "needs_check": false } },
+        "row_4": { "type": "row", "settings": { "label": "Masse", "value": "60 × 40 cm", "needs_check": false } },
+        "row_5": { "type": "row", "settings": { "label": "Höhe (Low/High)", "value": "10 cm / 13 cm", "needs_check": false } },
+        "row_6": { "type": "row", "settings": { "label": "Höhenanpassung", "value": "Einlage herausnehmbar, 3 cm Unterschied", "needs_check": false } },
+        "row_7": { "type": "row", "settings": { "label": "Waschbar", "value": "Bezug: [PRÜFEN: 30 oder 40°C] Schonwaschgang — Kern: nicht waschbar", "needs_check": true } },
+        "row_8": { "type": "row", "settings": { "label": "Zertifizierung", "value": "OEKO-TEX Standard 100 [PRÜFEN]", "needs_check": true } },
+        "row_9": { "type": "row", "settings": { "label": "Gewicht", "value": "ca. 1,2 kg", "needs_check": false } }
       },
-      "block_order": [
-        "row_1",
-        "row_2",
-        "row_3",
-        "row_4",
-        "row_5",
-        "row_6",
-        "row_7",
-        "row_8",
-        "row_9"
-      ],
+      "block_order": ["row_1", "row_2", "row_3", "row_4", "row_5", "row_6", "row_7", "row_8", "row_9"],
       "settings": {
         "heading": "Was steckt drin?",
         "show_check_notice": true,
@@ -384,84 +341,31 @@
     "testimonials": {
       "type": "dormio-testimonials",
       "blocks": {
-        "t1": {
-          "type": "testimonial",
-          "settings": {
-            "category": "Nackenschmerzen",
-            "quote": "Nach Jahren mit Nackenschmerzen endlich ein Kissen, das wirklich hilft. Die ersten zwei Nächte brauchte ich, aber seitdem schlafe ich durch.",
-            "name": "Maria K., 38"
-          }
-        },
-        "t2": {
-          "type": "testimonial",
-          "settings": {
-            "category": "Nackenschmerzen",
-            "quote": "Mein Physiotherapeut hat mir empfohlen, mein Kissen zu wechseln. Das hier hat tatsächlich meine morgendlichen Beschwerden deutlich reduziert.",
-            "name": "Thomas R., 52"
-          }
-        },
-        "t3": {
-          "type": "testimonial",
-          "settings": {
-            "category": "Schulter / Arm",
-            "quote": "Mein Arm ist seit Wochen nicht mehr eingeschlafen. Ich wusste nicht mal, dass das kissen-bedingt sein kann.",
-            "name": "Jonas F., 29"
-          }
-        },
-        "t4": {
-          "type": "testimonial",
-          "settings": {
-            "category": "Schulter / Arm",
-            "quote": "Die Schulter-Aussparungen sind ein Gamechanger. Endlich kann ich als Seitenschläfer die Schulter korrekt positionieren.",
-            "name": "Sandra M., 44"
-          }
-        },
-        "t5": {
-          "type": "testimonial",
-          "settings": {
-            "category": "Schlechter Schlaf",
-            "quote": "Ich war skeptisch, aber nach der ersten Woche merkte ich wirklich den Unterschied. Ich wache seltener auf und fühle mich erholt.",
-            "name": "Lisa H., 33"
-          }
-        },
-        "t6": {
-          "type": "testimonial",
-          "settings": {
-            "category": "Schlechter Schlaf",
-            "quote": "Endlich keine Schlaftabletten mehr nötig. Klingt übertrieben, aber das richtige Kissen hat für mich mehr gemacht als jahrelange Schlafhygiene.",
-            "name": "Markus D., 47"
-          }
-        },
-        "t7": {
-          "type": "testimonial",
-          "settings": {
-            "category": "Eingewöhnung",
-            "quote": "Die ersten 3 Nächte fühlten sich komisch an. Aber genau wie angekündigt: Ab Nacht 4 wollte ich nie wieder ein anderes Kissen.",
-            "name": "Anna B., 26"
-          }
-        },
-        "t8": {
-          "type": "testimonial",
-          "settings": {
-            "category": "Eingewöhnung",
-            "quote": "Mein Mann war zuerst skeptisch wegen der ungewöhnlichen Form. Jetzt schläft er auch mit einem Dormio. Das sagt eigentlich alles.",
-            "name": "Christine W., 51"
-          }
-        }
+        "t1": { "type": "testimonial", "settings": { "category": "Nackenschmerzen", "quote": "Nach Jahren mit Nackenschmerzen endlich ein Kissen, das wirklich hilft. Die ersten zwei Nächte brauchte ich, aber seitdem schlafe ich durch.", "name": "Maria K., 38" } },
+        "t2": { "type": "testimonial", "settings": { "category": "Nackenschmerzen", "quote": "Mein Physiotherapeut hat mir empfohlen, mein Kissen zu wechseln. Das hier hat tatsächlich meine morgendlichen Beschwerden deutlich reduziert.", "name": "Thomas R., 52" } },
+        "t3": { "type": "testimonial", "settings": { "category": "Schulter / Arm", "quote": "Mein Arm ist seit Wochen nicht mehr eingeschlafen. Ich wusste nicht mal, dass das kissen-bedingt sein kann.", "name": "Jonas F., 29" } },
+        "t4": { "type": "testimonial", "settings": { "category": "Schulter / Arm", "quote": "Die Schulter-Aussparungen sind ein Gamechanger. Endlich kann ich als Seitenschläfer die Schulter korrekt positionieren.", "name": "Sandra M., 44" } },
+        "t5": { "type": "testimonial", "settings": { "category": "Schlechter Schlaf", "quote": "Ich war skeptisch, aber nach der ersten Woche merkte ich wirklich den Unterschied. Ich wache seltener auf und fühle mich erholt.", "name": "Lisa H., 33" } },
+        "t6": { "type": "testimonial", "settings": { "category": "Schlechter Schlaf", "quote": "Endlich keine Schlaftabletten mehr nötig. Klingt übertrieben, aber das richtige Kissen hat für mich mehr gemacht als jahrelange Schlafhygiene.", "name": "Markus D., 47" } },
+        "t7": { "type": "testimonial", "settings": { "category": "Eingewöhnung", "quote": "Die ersten 3 Nächte fühlten sich komisch an. Aber genau wie angekündigt: Ab Nacht 4 wollte ich nie wieder ein anderes Kissen.", "name": "Anna B., 26" } },
+        "t8": { "type": "testimonial", "settings": { "category": "Eingewöhnung", "quote": "Mein Mann war zuerst skeptisch wegen der ungewöhnlichen Form. Jetzt schläft er auch mit einem Dormio. Das sagt eigentlich alles.", "name": "Christine W., 51" } }
       },
-      "block_order": [
-        "t1",
-        "t2",
-        "t3",
-        "t4",
-        "t5",
-        "t6",
-        "t7",
-        "t8"
-      ],
+      "block_order": ["t1", "t2", "t3", "t4", "t5", "t6", "t7", "t8"],
       "settings": {
         "heading": "Was unsere Kunden sagen",
-        "subheading": "4.8 / 5 - Über 2.400 verifizierte Bewertungen",
+        "subheading": "4.8 / 5 — Kundenbewertungen [PRÜFEN Anzahl]",
+        "padding_top": 56,
+        "padding_bottom": 56
+      }
+    },
+    "cta_band_2": {
+      "type": "dormio-cta-band",
+      "settings": {
+        "heading": "Überzeug dich selbst — ohne Risiko",
+        "subline": "60 Nächte testen. Gratis Rückversand.",
+        "button_label": "Mein Paket wählen",
+        "scroll_to_buy": true,
+        "dark_background": true,
         "padding_top": 56,
         "padding_bottom": 56
       }
@@ -469,33 +373,11 @@
     "stats": {
       "type": "dormio-stats",
       "blocks": {
-        "stat_1": {
-          "type": "stat",
-          "settings": {
-            "number": "93%",
-            "label": "schlafen nach 30 Nächten länger durch"
-          }
-        },
-        "stat_2": {
-          "type": "stat",
-          "settings": {
-            "number": "88%",
-            "label": "berichten weniger morgendliche Nackenschmerzen"
-          }
-        },
-        "stat_3": {
-          "type": "stat",
-          "settings": {
-            "number": "85%",
-            "label": "würden Dormio aktiv weiterempfehlen"
-          }
-        }
+        "stat_1": { "type": "stat", "settings": { "number": "93%", "label": "schlafen nach 30 Nächten länger durch" } },
+        "stat_2": { "type": "stat", "settings": { "number": "88%", "label": "berichten weniger morgendliche Nackenbeschwerden" } },
+        "stat_3": { "type": "stat", "settings": { "number": "85%", "label": "würden Dormio aktiv weiterempfehlen" } }
       },
-      "block_order": [
-        "stat_1",
-        "stat_2",
-        "stat_3"
-      ],
+      "block_order": ["stat_1", "stat_2", "stat_3"],
       "settings": {
         "heading": "Was unsere Kunden nach 30 Nächten berichten",
         "source": "Dormio Kundenbefragung [QUELLE EINTRAGEN]",
@@ -507,57 +389,20 @@
     "faq": {
       "type": "dormio-faq",
       "blocks": {
-        "faq_1": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Wie lange dauert die Eingewöhnung?",
-            "answer": "<p>Die meisten Kunden berichten nach 2-4 Naechten eine spuerbare Verbesserung. Dein Koerper ist es gewohnt, Verspannungen aktiv zu kompensieren - das dauert ein paar Naechte, bis er loslassen kann. Genau deshalb haben wir die 60-Naechte-Garantie: Du hast Zeit.</p>"
-          }
-        },
-        "faq_2": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Für welche Schlafposition ist Dormio geeignet?",
-            "answer": "<p>Dormio ist fuer Seiten- und Rueckenschlaefer entwickelt worden. Die Butterfly-Form mit erhoehten Seitenfluegeln und abgesenkter Mitte passt sich beiden Positionen an - auch wenn du in der Nacht die Seite wechselst.</p>"
-          }
-        },
-        "faq_3": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Kann ich das Kissen waschen?",
-            "answer": "<p>Den Bezug kannst du bei 40 Grad im Schonwaschgang waschen. Der Memory-Foam-Kern ist nicht fuer die Waschmaschine geeignet - aber der Bezug schuetzt ihn zuverlaessig.</p>"
-          }
-        },
-        "faq_4": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Was, wenn es mir nicht gefällt?",
-            "answer": "<p>Du hast 60 Naechte Zeit, um zu entscheiden. Wenn Dormio dir nicht hilft - aus irgendeinem Grund - schickst du es gratis zurueck und bekommst den vollen Kaufpreis erstattet. Ohne Fragen.</p>"
-          }
-        },
-        "faq_5": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Wie wähle ich die richtige Höhe?",
-            "answer": "<p>Das Kissen kommt mit einer herausnehmbaren Einlage, die 3 cm Hoehenunterschied ermoeglicht. Seitenschlaefer bevorzugen meist die hoehere Version (13 cm), Rueckenschlaefer die niedrigere (10 cm). Du kannst jederzeit wechseln.</p>"
-          }
-        },
-        "faq_6": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Wie lange dauert die Lieferung?",
-            "answer": "<p>Wir liefern innerhalb von 3-5 Werktagen in die Schweiz. Du erhaeltst eine Sendungsverfolgung per E-Mail, sobald dein Paket unterwegs ist.</p>"
-          }
-        }
+        "faq_1": { "type": "faq_item", "settings": { "question": "Wie lange dauert die Eingewöhnung?", "answer": "<p>Die meisten Kunden berichten nach 2–4 Nächten eine spürbare Verbesserung. Dein Körper ist es gewohnt, Verspannungen aktiv zu kompensieren — das dauert ein paar Nächte, bis er loslassen kann. Genau deshalb haben wir die 60-Nächte-Garantie: Du hast Zeit.</p>" } },
+        "faq_2": { "type": "faq_item", "settings": { "question": "Für welche Schlafposition ist Dormio geeignet?", "answer": "<p>Dormio ist für Seiten- und Rückenschläfer entwickelt worden. Die Butterfly-Form mit erhöhten Seitenflügeln und abgesenkter Mitte unterstützt eine natürliche Liegeposition — auch wenn du in der Nacht die Seite wechselst.</p>" } },
+        "faq_3": { "type": "faq_item", "settings": { "question": "Kann ich das Kissen waschen?", "answer": "<p>Den Bezug kannst du im Schonwaschgang waschen — Reissverschluss öffnen, Bezug abnehmen, waschen. Der Memory-Foam-Kern ist nicht für die Waschmaschine geeignet.</p>" } },
+        "faq_4": { "type": "faq_item", "settings": { "question": "Was, wenn es mir nicht gefällt?", "answer": "<p>Du hast 60 Nächte Zeit, um zu entscheiden. Wenn Dormio dir nicht hilft — aus irgendeinem Grund — meldest du dich per E-Mail. Wir organisieren die kostenlose Abholung und erstatten den vollen Kaufpreis. Ohne Fragen.</p>" } },
+        "faq_5": { "type": "faq_item", "settings": { "question": "Wie wähle ich die richtige Höhe?", "answer": "<p>Das Kissen kommt mit einer herausnehmbaren Einlage, die 3 cm Höhenunterschied ermöglicht. Seitenschläfer bevorzugen meist die höhere Version (13 cm), Rückenschläfer die niedrigere (10 cm). Du kannst jederzeit wechseln.</p>" } },
+        "faq_6": { "type": "faq_item", "settings": { "question": "Wie lange dauert die Lieferung?", "answer": "<p>Wir liefern innerhalb von 3–5 Werktagen in die Schweiz [PRÜFEN]. Du erhältst eine Sendungsverfolgung per E-Mail, sobald dein Paket unterwegs ist.</p>" } },
+        "faq_7": { "type": "faq_item", "settings": { "question": "Wann merke ich einen Unterschied?", "answer": "<p>Viele spüren den Unterschied nach wenigen Nächten. Weil sich der Körper an eine neue Liegeposition gewöhnt, kann die Umstellung auch zwei bis drei Wochen dauern. Genau dafür hast du 60 Nächte Zeit.</p>" } },
+        "faq_8": { "type": "faq_item", "settings": { "question": "Ist ein Bezug dabei?", "answer": "<p>Ja, jedes Kissen wird mit aufgezogenem Bambus-Bezug geliefert. Einen Ersatzbezug kannst du separat dazu bestellen.</p>" } },
+        "faq_9": { "type": "faq_item", "settings": { "question": "Wie wasche ich den Bezug?", "answer": "<p>Reissverschluss öffnen, Bezug abnehmen und bei [PRÜFEN: 30 oder 40] °C in der Maschine waschen. Nicht in den Tumbler.</p>" } },
+        "faq_10": { "type": "faq_item", "settings": { "question": "Wie reinige ich das Kissen selbst?", "answer": "<p>Der Schaumkern ist nicht waschbar. Mit einem feuchten Tuch abwischen und an der Luft trocknen lassen. Nicht einweichen, nicht in den Tumbler.</p>" } },
+        "faq_11": { "type": "faq_item", "settings": { "question": "Ist das Kissen für Allergiker geeignet?", "answer": "<p>Der Bezug ist abnehmbar und waschbar, was die Hygiene erleichtert. [PRÜFEN: Hypoallergen-Angaben nur mit Supplier-Nachweis ergänzen.]</p>" } },
+        "faq_12": { "type": "faq_item", "settings": { "question": "Woraus besteht das Kissen?", "answer": "<p>Der Kern besteht aus Memory-Schaum, der auf Körperwärme reagiert. Der Bezug aus Bambus-Viskose. [PRÜFEN: Zertifikate wie OEKO-TEX oder CertiPUR-US nur mit Nachweis nennen.]</p>" } }
       },
-      "block_order": [
-        "faq_1",
-        "faq_2",
-        "faq_3",
-        "faq_4",
-        "faq_5",
-        "faq_6"
-      ],
+      "block_order": ["faq_1","faq_2","faq_3","faq_4","faq_5","faq_6","faq_7","faq_8","faq_9","faq_10","faq_11","faq_12"],
       "settings": {
         "heading": "Häufige Fragen",
         "padding_top": 56,
@@ -568,12 +413,12 @@
       "type": "dormio-final-cta",
       "settings": {
         "heading": "Bereit für deinen ersten erholten Morgen?",
-        "subtext": "Über 2.400 Kunden schlafen bereits besser. Jetzt bist du dran.",
+        "subtext": "Teste Dormio 60 Nächte — ohne Risiko. Gratis Rückversand.",
         "price": "CHF 89",
-        "compare_price": "CHF 129",
+        "compare_price": "CHF 129 [PRÜFEN PBV]",
         "discount_badge": "-31%",
-        "button_label": "Jetzt bestellen - CHF 89",
-        "guarantee_text": "60 Nächte testen - Gratis Rückversand - Kein Risiko",
+        "button_label": "Jetzt bestellen — CHF 89",
+        "guarantee_text": "60 Nächte testen · Gratis Rückversand · Kein Risiko",
         "padding_top": 72,
         "padding_bottom": 80
       }
@@ -587,6 +432,13 @@
         "padding_top": 56,
         "padding_bottom": 56
       }
+    },
+    "sticky_atc": {
+      "type": "dormio-sticky-atc",
+      "settings": {
+        "product_name": "Dormio Ergokissen",
+        "button_label": "In den Warenkorb"
+      }
     }
   },
   "order": [
@@ -597,10 +449,13 @@
     "objection",
     "sleep_types",
     "zones",
+    "cta_band_1",
     "spec_table",
     "testimonials",
+    "cta_band_2",
     "stats",
     "faq",
-    "final_cta"
+    "final_cta",
+    "sticky_atc"
   ]
 }

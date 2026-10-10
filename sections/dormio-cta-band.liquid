@@ -1,0 +1,153 @@
+{%- style -%}
+  .dormio-cta-band--{{ section.id }} {
+    --d-dark: #0D1B2A;
+    --d-creme: #F5F2EC;
+    --d-green: #4A7C6F;
+    --d-green-dark: #3A6259;
+    background: {% if section.settings.dark_background %}var(--d-dark){% else %}var(--d-creme){% endif %};
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    text-align: center;
+  }
+  @media screen and (min-width: 750px) {
+    .dormio-cta-band--{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+  .dormio-cta-band--{{ section.id }} .dcb__inner {
+    max-width: 640px;
+    margin-inline: auto;
+    padding: 0 24px;
+  }
+  .dormio-cta-band--{{ section.id }} .dcb__heading {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    color: {% if section.settings.dark_background %}var(--d-creme){% else %}var(--d-dark){% endif %};
+    margin: 0 0 10px;
+    font-weight: 400;
+  }
+  .dormio-cta-band--{{ section.id }} .dcb__sub {
+    font-family: Inter, sans-serif;
+    font-size: 1.15rem;
+    color: {% if section.settings.dark_background %}#8aaabb{% else %}#5a6a72{% endif %};
+    margin: 0 0 28px;
+  }
+  .dormio-cta-band--{{ section.id }} .dcb__btn {
+    display: inline-block;
+    background: var(--d-green) !important;
+    color: #fff !important;
+    font-family: Inter, sans-serif;
+    font-size: 1.4rem !important;
+    font-weight: 700;
+    padding: 18px 44px;
+    border-radius: 8px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  .dormio-cta-band--{{ section.id }} .dcb__btn:hover {
+    background: var(--d-green-dark) !important;
+  }
+{%- endstyle -%}
+
+<div class="dormio-cta-band--{{ section.id }}">
+  <div class="dcb__inner">
+    {%- unless section.settings.heading == blank -%}
+      <h2 class="dcb__heading">{{ section.settings.heading }}</h2>
+    {%- endunless -%}
+    {%- unless section.settings.subline == blank -%}
+      <p class="dcb__sub">{{ section.settings.subline | escape }}</p>
+    {%- endunless -%}
+    {%- unless section.settings.button_label == blank -%}
+      {%- if section.settings.scroll_to_buy -%}
+        <button type="button" class="dcb__btn" onclick="document.querySelector('.product-form__submit, #dormio-bundle-form-{{ section.id }} button')?.scrollIntoView({behavior:'smooth',block:'center'})">
+          {{ section.settings.button_label | escape }}
+        </button>
+      {%- else -%}
+        <a href="{{ section.settings.button_url | default: '#' }}" class="dcb__btn">
+          {{ section.settings.button_label | escape }}
+        </a>
+      {%- endif -%}
+    {%- endunless -%}
+  </div>
+</div>
+
+<script>
+(function() {
+  var btn = document.querySelector('.dormio-cta-band--{{ section.id }} .dcb__btn[onclick]');
+  if (btn) {
+    btn.addEventListener('click', function() {
+      var target = document.querySelector('[id^="dormio-bundle-form-"] button[type="submit"]') ||
+                   document.querySelector('.product-form__submit');
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  }
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Dormio: CTA-Band",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": { "groups": ["header", "footer"] },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Überschrift",
+      "default": "Bereit für entspanntere Morgen?"
+    },
+    {
+      "type": "text",
+      "id": "subline",
+      "label": "Unterzeile",
+      "default": "60 Nächte testen — ohne Risiko."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button-Text",
+      "default": "Jetzt testen — 60 Nächte"
+    },
+    {
+      "type": "checkbox",
+      "id": "scroll_to_buy",
+      "label": "Scrollt zur Kaufbox (statt Link)",
+      "default": true
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button-Link (wenn kein Scroll)"
+    },
+    {
+      "type": "checkbox",
+      "id": "dark_background",
+      "label": "Dunkler Hintergrund",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Abstände"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 24, "max": 100, "step": 4, "unit": "px",
+      "label": "Abstand oben",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 24, "max": 100, "step": 4, "unit": "px",
+      "label": "Abstand unten",
+      "default": 56
+    }
+  ],
+  "presets": [{ "name": "Dormio: CTA-Band" }]
+}
+{% endschema %}
