@@ -91,7 +91,7 @@
           "settings": {
             "heading": "Versand & 60-Nächte-Garantie",
             "icon": "truck",
-            "content": "<p><strong>Lieferzeit:</strong> 3–5 Werktage in die Schweiz [PRÜFEN mit Supplier]. Du erhältst eine Sendungsverfolgung per E-Mail.<br><strong>60-Nächte-Garantie:</strong> Teste Dormio 60 Nächte. Wenn du nicht zufrieden bist, meldest du dich per E-Mail — wir organisieren die kostenlose Abholung und erstatten den vollen Kaufpreis. Kein Fragebogen, kein Aufwand. <a href=\"/policies/refund-policy\">Rückgabebedingungen</a></p>",
+            "content": "<p><strong>Lieferzeit:</strong> 3–5 Werktage in die Schweiz [PRÜFEN mit Supplier]. Du erhältst eine Sendungsverfolgung per E-Mail.<br><strong>60-Nächte-Garantie:</strong> Teste Mavuna 60 Nächte. Wenn du nicht zufrieden bist, meldest du dich per E-Mail — wir organisieren die kostenlose Abholung und erstatten den vollen Kaufpreis. Kein Fragebogen, kein Aufwand. <a href=\"/policies/refund-policy\">Rückgabebedingungen</a></p>",
             "page": ""
           }
         }
@@ -243,7 +243,7 @@
           "settings": {
             "emoji": "🔀",
             "title": "Wechselschläfer",
-            "text": "Dormio folgt jeder Bewegung. Dreh dich so oft du willst — das Kissen passt sich automatisch an."
+            "text": "Mavuna folgt jeder Bewegung. Dreh dich so oft du willst — das Kissen passt sich automatisch an."
           }
         },
         "card_4": {
@@ -348,7 +348,7 @@
         "t5": { "type": "testimonial", "settings": { "category": "Schlechter Schlaf", "quote": "Ich war skeptisch, aber nach der ersten Woche merkte ich wirklich den Unterschied. Ich wache seltener auf und fühle mich erholt.", "name": "Lisa H., 33" } },
         "t6": { "type": "testimonial", "settings": { "category": "Schlechter Schlaf", "quote": "Endlich keine Schlaftabletten mehr nötig. Klingt übertrieben, aber das richtige Kissen hat für mich mehr gemacht als jahrelange Schlafhygiene.", "name": "Markus D., 47" } },
         "t7": { "type": "testimonial", "settings": { "category": "Eingewöhnung", "quote": "Die ersten 3 Nächte fühlten sich komisch an. Aber genau wie angekündigt: Ab Nacht 4 wollte ich nie wieder ein anderes Kissen.", "name": "Anna B., 26" } },
-        "t8": { "type": "testimonial", "settings": { "category": "Eingewöhnung", "quote": "Mein Mann war zuerst skeptisch wegen der ungewöhnlichen Form. Jetzt schläft er auch mit einem Dormio. Das sagt eigentlich alles.", "name": "Christine W., 51" } }
+        "t8": { "type": "testimonial", "settings": { "category": "Eingewöhnung", "quote": "Mein Mann war zuerst skeptisch wegen der ungewöhnlichen Form. Jetzt schläft er auch mit einem Mavuna. Das sagt eigentlich alles.", "name": "Christine W., 51" } }
       },
       "block_order": ["t1", "t2", "t3", "t4", "t5", "t6", "t7", "t8"],
       "settings": {
@@ -375,12 +375,12 @@
       "blocks": {
         "stat_1": { "type": "stat", "settings": { "number": "93%", "label": "schlafen nach 30 Nächten länger durch" } },
         "stat_2": { "type": "stat", "settings": { "number": "88%", "label": "berichten weniger morgendliche Nackenbeschwerden" } },
-        "stat_3": { "type": "stat", "settings": { "number": "85%", "label": "würden Dormio aktiv weiterempfehlen" } }
+        "stat_3": { "type": "stat", "settings": { "number": "85%", "label": "würden Mavuna aktiv weiterempfehlen" } }
       },
       "block_order": ["stat_1", "stat_2", "stat_3"],
       "settings": {
         "heading": "Was unsere Kunden nach 30 Nächten berichten",
-        "source": "Dormio Kundenbefragung [QUELLE EINTRAGEN]",
+        "source": "Mavuna Kundenbefragung [QUELLE EINTRAGEN]",
         "show_placeholder_notice": true,
         "padding_top": 48,
         "padding_bottom": 48
@@ -390,9 +390,9 @@
       "type": "dormio-faq",
       "blocks": {
         "faq_1": { "type": "faq_item", "settings": { "question": "Wie lange dauert die Eingewöhnung?", "answer": "<p>Die meisten Kunden berichten nach 2–4 Nächten eine spürbare Verbesserung. Dein Körper ist es gewohnt, Verspannungen aktiv zu kompensieren — das dauert ein paar Nächte, bis er loslassen kann. Genau deshalb haben wir die 60-Nächte-Garantie: Du hast Zeit.</p>" } },
-        "faq_2": { "type": "faq_item", "settings": { "question": "Für welche Schlafposition ist Dormio geeignet?", "answer": "<p>Dormio ist für Seiten- und Rückenschläfer entwickelt worden. Die Butterfly-Form mit erhöhten Seitenflügeln und abgesenkter Mitte unterstützt eine natürliche Liegeposition — auch wenn du in der Nacht die Seite wechselst.</p>" } },
+        "faq_2": { "type": "faq_item", "settings": { "question": "Für welche Schlafposition ist Mavuna geeignet?", "answer": "<p>Mavuna ist für Seiten- und Rückenschläfer entwickelt worden. Die Butterfly-Form mit erhöhten Seitenflügeln und abgesenkter Mitte unterstützt eine natürliche Liegeposition — auch wenn du in der Nacht die Seite wechselst.</p>" } },
         "faq_3": { "type": "faq_item", "settings": { "question": "Kann ich das Kissen waschen?", "answer": "<p>Den Bezug kannst du im Schonwaschgang waschen — Reissverschluss öffnen, Bezug abnehmen, waschen. Der Memory-Foam-Kern ist nicht für die Waschmaschine geeignet.</p>" } },
-        "faq_4": { "type": "faq_item", "settings": { "question": "Was, wenn es mir nicht gefällt?", "answer": "<p>Du hast 60 Nächte Zeit, um zu entscheiden. Wenn Dormio dir nicht hilft — aus irgendeinem Grund — meldest du dich per E-Mail. Wir organisieren die kostenlose Abholung und erstatten den vollen Kaufpreis. Ohne Fragen.</p>" } },
+        "faq_4": { "type": "faq_item", "settings": { "question": "Was, wenn es mir nicht gefällt?", "answer": "<p>Du hast 60 Nächte Zeit, um zu entscheiden. Wenn Mavuna dir nicht hilft — aus irgendeinem Grund — meldest du dich per E-Mail. Wir organisieren die kostenlose Abholung und erstatten den vollen Kaufpreis. Ohne Fragen.</p>" } },
         "faq_5": { "type": "faq_item", "settings": { "question": "Wie wähle ich die richtige Höhe?", "answer": "<p>Das Kissen kommt mit einer herausnehmbaren Einlage, die 3 cm Höhenunterschied ermöglicht. Seitenschläfer bevorzugen meist die höhere Version (13 cm), Rückenschläfer die niedrigere (10 cm). Du kannst jederzeit wechseln.</p>" } },
         "faq_6": { "type": "faq_item", "settings": { "question": "Wie lange dauert die Lieferung?", "answer": "<p>Wir liefern innerhalb von 3–5 Werktagen in die Schweiz [PRÜFEN]. Du erhältst eine Sendungsverfolgung per E-Mail, sobald dein Paket unterwegs ist.</p>" } },
         "faq_7": { "type": "faq_item", "settings": { "question": "Wann merke ich einen Unterschied?", "answer": "<p>Viele spüren den Unterschied nach wenigen Nächten. Weil sich der Körper an eine neue Liegeposition gewöhnt, kann die Umstellung auch zwei bis drei Wochen dauern. Genau dafür hast du 60 Nächte Zeit.</p>" } },
@@ -413,7 +413,7 @@
       "type": "dormio-final-cta",
       "settings": {
         "heading": "Bereit für deinen ersten erholten Morgen?",
-        "subtext": "Teste Dormio 60 Nächte — ohne Risiko. Gratis Rückversand.",
+        "subtext": "Teste Mavuna 60 Nächte — ohne Risiko. Gratis Rückversand.",
         "price": "CHF 89",
         "compare_price": "CHF 129 [PRÜFEN PBV]",
         "discount_badge": "-31%",
@@ -436,7 +436,7 @@
     "sticky_atc": {
       "type": "dormio-sticky-atc",
       "settings": {
-        "product_name": "Dormio Ergokissen",
+        "product_name": "Mavuna Ergokissen",
         "button_label": "In den Warenkorb"
       }
     }
