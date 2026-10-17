@@ -38,7 +38,7 @@
   }
   #dormio-sticky-atc-{{ section.id }} .dsa__product {
     font-family: Inter, sans-serif;
-    font-size: 0.85rem;
+    font-size: var(--d-font-small);
     font-weight: 600;
     color: var(--d-creme);
     white-space: nowrap;
@@ -47,7 +47,7 @@
   }
   #dormio-sticky-atc-{{ section.id }} .dsa__price {
     font-family: Inter, sans-serif;
-    font-size: 1.05rem;
+    font-size: var(--d-font-sub);
     font-weight: 700;
     color: #8aaabb;
     margin-top: 2px;
@@ -57,7 +57,7 @@
     background: var(--d-green) !important;
     color: #fff !important;
     font-family: Inter, sans-serif;
-    font-size: 1rem !important;
+    font-size: var(--d-font-cta) !important;
     font-weight: 700;
     padding: 14px 24px;
     border-radius: 8px;
@@ -185,7 +185,7 @@
 
 {% schema %}
 {
-  "name": "Dormio: Sticky ATC",
+  "name": "Mavuna: Sticky ATC",
   "tag": "section",
   "class": "section",
   "limit": 1,
@@ -195,7 +195,7 @@
       "type": "text",
       "id": "product_name",
       "label": "Produktname (leer = Produkttitel)",
-      "info": "Kurz halten — z.B. \"Dormio Ergokissen\""
+      "info": "Kurz halten — z.B. \"Mavuna Ergokissen\""
     },
     {
       "type": "text",
@@ -204,6 +204,6 @@
       "default": "In den Warenkorb"
     }
   ],
-  "presets": [{ "name": "Dormio: Sticky ATC" }]
+  "presets": [{ "name": "Mavuna: Sticky ATC" }]
 }
 {% endschema %}

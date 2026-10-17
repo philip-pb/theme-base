@@ -14,11 +14,11 @@
       "settings": {
         "eyebrow": "Das ergonomische Schlafkissen",
         "heading": "Wach auf. Ohne Schmerzen.",
-        "subtext": "Dormio passt sich deiner Schlafposition an — nicht du dem Kissen. Entwickelt für Menschen, die morgens erholt aufwachen wollen.",
+        "subtext": "Mavuna passt sich deiner Schlafposition an — nicht du dem Kissen. Entwickelt für Menschen, die morgens erholt aufwachen wollen.",
         "button_label": "Jetzt bestellen — CHF 89",
-        "button_url": "/products/dormio-schlafkissen",
+        "button_url": "/products/mavuna-schlafkissen",
         "secondary_label": "Mehr erfahren",
-        "secondary_url": "/products/dormio-schlafkissen",
+        "secondary_url": "/products/mavuna-schlafkissen",
         "rating_text": "",
         "customers_text": "",
         "guarantee_text": "60 Nächte testen — ohne Risiko",
@@ -108,13 +108,13 @@
       },
       "block_order": ["b1", "b2", "b3", "b4"],
       "settings": {
-        "eyebrow": "Das Dormio-Kissen",
+        "eyebrow": "Das Mavuna-Kissen",
         "heading": "Schlafen, wie dein Körper es braucht.",
         "text": "Ergonomisch für Seiten- und Rückenschläfer entwickelt. Unterstützt eine natürliche Liegeposition — damit du morgens erholt aufwachst.",
         "image": "shopify://shop_images/Mood.jpg",
         "image_position": "left",
         "button_label": "Jetzt entdecken — CHF 89",
-        "button_url": "/products/dormio-schlafkissen",
+        "button_url": "/products/mavuna-schlafkissen",
         "padding_top": 80,
         "padding_bottom": 80
       }
@@ -129,7 +129,7 @@
       },
       "block_order": ["p1", "p2", "p3", "p4"],
       "settings": {
-        "heading": "Dormio im Alltag",
+        "heading": "Mavuna im Alltag",
         "padding_top": 72,
         "padding_bottom": 72
       }
@@ -147,13 +147,13 @@
         },
         "stat_3": {
           "type": "stat",
-          "settings": { "number": "85%", "label": "würden Dormio weiterempfehlen" }
+          "settings": { "number": "85%", "label": "würden Mavuna weiterempfehlen" }
         }
       },
       "block_order": ["stat_1", "stat_2", "stat_3"],
       "settings": {
         "heading": "Was unsere Kunden nach 30 Nächten berichten",
-        "source": "Dormio Kundenbefragung [QUELLE EINTRAGEN]",
+        "source": "Mavuna Kundenbefragung [QUELLE EINTRAGEN]",
         "show_placeholder_notice": true,
         "padding_top": 56,
         "padding_bottom": 56
@@ -208,8 +208,8 @@
       "settings": {
         "eyebrow": "Unsere Mission",
         "heading": "Schlafen ist keine Schwäche. Schlechter Schlaf ist ein lösbares Problem.",
-        "text": "<p>Wir haben Dormio gebaut, weil wir selbst jahrelang mit Nackenschmerzen und schlechtem Schlaf gekämpft haben — und keine ehrliche Lösung gefunden haben. Kein Marketing-Versprechen, keine Zahlen erfunden.</p><p>Nur ein Kissen, das tut, was es soll: deinen Kopf in der richtigen Position halten, damit dein Körper sich erholen kann.</p>",
-        "signature": "— Das Dormio-Team",
+        "text": "<p>Wir haben Mavuna gebaut, weil wir selbst jahrelang mit Nackenschmerzen und schlechtem Schlaf gekämpft haben — und keine ehrliche Lösung gefunden haben. Kein Marketing-Versprechen, keine Zahlen erfunden.</p><p>Nur ein Kissen, das tut, was es soll: deinen Kopf in der richtigen Position halten, damit dein Körper sich erholen kann.</p>",
+        "signature": "— Das Mavuna-Team",
         "padding_top": 80,
         "padding_bottom": 80
       }
@@ -218,7 +218,7 @@
       "type": "dormio-final-cta",
       "settings": {
         "heading": "Bereit für deinen ersten erholten Morgen?",
-        "subtext": "Teste Dormio 60 Nächte — gratis Rückversand, kein Risiko.",
+        "subtext": "Teste Mavuna 60 Nächte — gratis Rückversand, kein Risiko.",
         "price": "CHF 89",
         "compare_price": "",
         "discount_badge": "",

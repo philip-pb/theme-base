@@ -21,7 +21,7 @@
   }
   .dormio-bundle--{{ section.id }} .db__heading {
     font-family: 'DM Serif Display', Georgia, serif;
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: var(--d-font-h2);
     color: var(--d-dark);
     text-align: center;
     margin: 0 0 32px;
@@ -66,7 +66,7 @@
   .dormio-bundle--{{ section.id }} .db__badge {
     display: inline-block;
     font-family: Inter, sans-serif;
-    font-size: 0.72rem;
+    font-size: var(--d-font-badge);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -90,7 +90,7 @@
   /* Menge */
   .dormio-bundle--{{ section.id }} .db__qty {
     font-family: 'DM Serif Display', Georgia, serif;
-    font-size: 2rem;
+    font-size: var(--d-font-h3);
     color: var(--d-dark);
     font-weight: 400;
     display: block;
@@ -100,7 +100,7 @@
   /* Preis pro Stück */
   .dormio-bundle--{{ section.id }} .db__per-unit {
     font-family: Inter, sans-serif;
-    font-size: 1.2rem;
+    font-size: var(--d-font-small);
     color: var(--d-green);
     font-weight: 600;
     display: block;
@@ -116,19 +116,19 @@
   }
   .dormio-bundle--{{ section.id }} .db__total {
     font-family: Inter, sans-serif;
-    font-size: 1.9rem;
+    font-size: var(--d-font-price);
     font-weight: 700;
     color: var(--d-dark);
   }
   .dormio-bundle--{{ section.id }} .db__compare {
     font-family: Inter, sans-serif;
-    font-size: 1.3rem;
+    font-size: var(--d-font-small);
     color: #9aacb4;
     text-decoration: line-through;
   }
   .dormio-bundle--{{ section.id }} .db__save {
     font-family: Inter, sans-serif;
-    font-size: 1.15rem;
+    font-size: var(--d-font-small);
     color: var(--d-green);
     font-weight: 600;
   }
@@ -173,7 +173,7 @@
     background: #4A7C6F !important;
     color: #fff !important;
     font-family: Inter, sans-serif !important;
-    font-size: 1.4rem !important;
+    font-size: var(--d-font-cta) !important;
     font-weight: 700 !important;
     padding: 20px 40px !important;
     border-radius: 8px !important;
@@ -187,7 +187,7 @@
   }
   .dormio-bundle--{{ section.id }} .db__guarantee {
     font-family: Inter, sans-serif;
-    font-size: 1.15rem;
+    font-size: var(--d-font-small);
     color: #5a6a72;
     margin-top: 12px;
     text-align: center;
@@ -298,7 +298,7 @@
 
 {% schema %}
 {
-  "name": "Dormio: Bundle-Picker",
+  "name": "Mavuna: Bundle-Picker",
   "tag": "section",
   "class": "section",
   "disabled_on": {
@@ -350,7 +350,7 @@
   ],
   "presets": [
     {
-      "name": "Dormio: Bundle-Picker"
+      "name": "Mavuna: Bundle-Picker"
     }
   ]
 }

@@ -21,7 +21,7 @@
   }
   .dormio-mission--{{ section.id }} .dm__eyebrow {
     font-family: Inter, sans-serif;
-    font-size: 0.72rem;
+    font-size: var(--d-font-eyebrow);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.14em;
@@ -31,7 +31,7 @@
   }
   .dormio-mission--{{ section.id }} .dm__heading {
     font-family: 'DM Serif Display', Georgia, serif;
-    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-size: var(--d-font-h2);
     line-height: 1.2;
     color: var(--d-dark);
     margin: 0 0 20px;
@@ -39,14 +39,14 @@
   }
   .dormio-mission--{{ section.id }} .dm__text {
     font-family: Inter, sans-serif;
-    font-size: 1.2rem;
+    font-size: var(--d-font-body);
     line-height: 1.75;
     color: #3a4a54;
     margin: 0 0 32px;
   }
   .dormio-mission--{{ section.id }} .dm__signature {
     font-family: 'DM Serif Display', Georgia, serif;
-    font-size: 1.2rem;
+    font-size: var(--d-font-small);
     color: var(--d-dark);
     font-style: italic;
   }
@@ -71,7 +71,7 @@
 
 {% schema %}
 {
-  "name": "Dormio: Mission",
+  "name": "Mavuna: Mission",
   "tag": "section",
   "class": "section",
   "disabled_on": {
@@ -94,13 +94,13 @@
       "type": "richtext",
       "id": "text",
       "label": "Text",
-      "default": "<p>Wir haben Dormio gebaut, weil wir selbst jahrelang mit Nackenschmerzen und schlechtem Schlaf gekämpft haben — und keine ehrliche Lösung gefunden haben. Kein Marketing-Versprechen, keine Zahlen erfunden.</p><p>Nur ein Kissen, das tut, was es soll: deinen Kopf in der richtigen Position halten, damit dein Körper sich erholen kann.</p>"
+      "default": "<p>Wir haben Mavuna gebaut, weil wir selbst jahrelang mit Nackenschmerzen und schlechtem Schlaf gekämpft haben — und keine ehrliche Lösung gefunden haben. Kein Marketing-Versprechen, keine Zahlen erfunden.</p><p>Nur ein Kissen, das tut, was es soll: deinen Kopf in der richtigen Position halten, damit dein Körper sich erholen kann.</p>"
     },
     {
       "type": "text",
       "id": "signature",
       "label": "Signatur / Abschluss",
-      "default": "— Das Dormio-Team"
+      "default": "— Das Mavuna-Team"
     },
     {
       "type": "header",
@@ -129,7 +129,7 @@
   ],
   "presets": [
     {
-      "name": "Dormio: Mission"
+      "name": "Mavuna: Mission"
     }
   ]
 }

@@ -22,7 +22,7 @@
   }
   .dormio-zones--{{ section.id }} .dz__eyebrow {
     font-family: Inter, sans-serif;
-    font-size: 0.75rem;
+    font-size: var(--d-font-eyebrow);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.12em;
@@ -32,14 +32,14 @@
   }
   .dormio-zones--{{ section.id }} .dz__heading {
     font-family: 'DM Serif Display', Georgia, serif;
-    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-size: var(--d-font-h2);
     color: var(--d-dark);
     text-align: center;
     margin: 0 0 8px;
   }
   .dormio-zones--{{ section.id }} .dz__subheading {
     font-family: Inter, sans-serif;
-    font-size: 1.4rem;
+    font-size: var(--d-font-sub);
     color: #5a6a72;
     text-align: center;
     margin: 0 0 40px;
@@ -72,21 +72,21 @@
     align-items: center;
     justify-content: center;
     font-family: 'DM Serif Display', Georgia, serif;
-    font-size: 1.35rem;
+    font-size: 1.6rem;
     color: #fff;
     flex-shrink: 0;
     margin-top: 2px;
   }
   .dormio-zones--{{ section.id }} .dz__title {
     font-family: Inter, sans-serif;
-    font-size: 1.35rem;
+    font-size: var(--d-font-h3);
     font-weight: 700;
     color: var(--d-dark);
     margin: 0 0 4px;
   }
   .dormio-zones--{{ section.id }} .dz__text {
     font-family: Inter, sans-serif;
-    font-size: 1.35rem;
+    font-size: var(--d-font-body);
     line-height: 1.6;
     color: #3a4a54;
     margin: 0;
@@ -127,7 +127,7 @@
     {%- unless section.settings.subheading == blank -%}
       <p class="dz__subheading">{{ section.settings.subheading }}</p>
     {%- endunless -%}
-    <div class="dz__diagram" role="img" aria-label="Dormio Kissen — Draufsicht mit 4 Zonen">
+    <div class="dz__diagram" role="img" aria-label="Mavuna Kissen — Draufsicht mit 4 Zonen">
       <svg viewBox="0 0 640 280" xmlns="http://www.w3.org/2000/svg" class="dz__svg">
         <defs>
           <clipPath id="dz-clip-{{ section.id }}">
@@ -206,7 +206,7 @@
 
 {% schema %}
 {
-  "name": "Dormio: Zonen-Liste",
+  "name": "Mavuna: Zonen-Liste",
   "tag": "section",
   "class": "section",
   "disabled_on": {
@@ -278,7 +278,7 @@
   ],
   "presets": [
     {
-      "name": "Dormio: Zonen-Liste",
+      "name": "Mavuna: Zonen-Liste",
       "blocks": [
         {
           "type": "zone",

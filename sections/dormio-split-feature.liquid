@@ -61,7 +61,7 @@
   }
   .dormio-split--{{ section.id }} .ds__placeholder-text {
     font-family: Inter, sans-serif;
-    font-size: 0.85rem;
+    font-size: var(--d-font-fine);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -69,7 +69,7 @@
 
   .dormio-split--{{ section.id }} .ds__eyebrow {
     font-family: Inter, sans-serif;
-    font-size: 0.78rem;
+    font-size: var(--d-font-eyebrow);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.14em;
@@ -79,7 +79,7 @@
   }
   .dormio-split--{{ section.id }} .ds__heading {
     font-family: 'DM Serif Display', Georgia, serif;
-    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    font-size: var(--d-font-h2);
     line-height: 1.2;
     color: var(--d-navy, #0D1B2A);
     margin: 0 0 20px;
@@ -87,7 +87,7 @@
   }
   .dormio-split--{{ section.id }} .ds__text {
     font-family: Inter, sans-serif;
-    font-size: 1.1rem;
+    font-size: var(--d-font-body);
     line-height: 1.7;
     color: #3a4a54;
     margin: 0 0 28px;
@@ -102,7 +102,7 @@
     align-items: baseline;
     gap: 10px;
     font-family: Inter, sans-serif;
-    font-size: 1.05rem;
+    font-size: var(--d-font-body);
     color: #1e2d3a;
     padding: 5px 0;
   }
@@ -117,7 +117,7 @@
     background: var(--d-green, #4A7C6F);
     color: #fff;
     font-family: Inter, sans-serif;
-    font-size: 1.4rem;
+    font-size: var(--d-font-cta);
     font-weight: 700;
     padding: 18px 40px;
     border-radius: 8px;
@@ -167,7 +167,7 @@
 
 {% schema %}
 {
-  "name": "Dormio: Split Feature",
+  "name": "Mavuna: Split Feature",
   "tag": "section",
   "class": "section",
   "disabled_on": { "groups": ["header", "footer"] },
@@ -183,9 +183,9 @@
       ],
       "default": "left"
     },
-    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Warum Dormio" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Warum Mavuna" },
     { "type": "inline_richtext", "id": "heading", "label": "Überschrift", "default": "Entwickelt für Menschen, die wirklich schlafen wollen." },
-    { "type": "text", "id": "text", "label": "Text", "default": "Dormio folgt der Biomechanik deines Körpers — nicht dem Trend. Jede Zone hat einen Grund." },
+    { "type": "text", "id": "text", "label": "Text", "default": "Mavuna folgt der Biomechanik deines Körpers — nicht dem Trend. Jede Zone hat einen Grund." },
     { "type": "text", "id": "button_label", "label": "Button-Text", "default": "Jetzt entdecken" },
     { "type": "url", "id": "button_url", "label": "Button-Link" },
     { "type": "header", "content": "Abstände" },
@@ -204,7 +204,7 @@
   ],
   "presets": [
     {
-      "name": "Dormio: Split Feature",
+      "name": "Mavuna: Split Feature",
       "blocks": [
         { "type": "benefit", "settings": { "benefit": "Ergonomisch für Seiten- & Rückenschläfer" } },
         { "type": "benefit", "settings": { "benefit": "Memory-Foam mit 4 durchdachten Zonen" } },

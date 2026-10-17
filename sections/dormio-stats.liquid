@@ -22,13 +22,13 @@
   }
   .dormio-stats--{{ section.id }} .ds__heading {
     font-family: 'DM Serif Display', Georgia, serif;
-    font-size: clamp(1.4rem, 3.5vw, 1.8rem);
+    font-size: var(--d-font-h2);
     color: #fff;
     margin: 0 0 8px;
   }
   .dormio-stats--{{ section.id }} .ds__source {
     font-family: Inter, sans-serif;
-    font-size: 0.8rem;
+    font-size: var(--d-font-small);
     color: rgba(255,255,255,0.65);
     margin: 0 0 36px;
   }
@@ -50,7 +50,7 @@
   }
   .dormio-stats--{{ section.id }} .ds__number {
     font-family: 'DM Serif Display', Georgia, serif;
-    font-size: 2.6rem;
+    font-size: var(--d-font-stat);
     color: #fff;
     line-height: 1;
     display: block;
@@ -58,14 +58,14 @@
   }
   .dormio-stats--{{ section.id }} .ds__label {
     font-family: Inter, sans-serif;
-    font-size: 1.4rem;
+    font-size: var(--d-font-body);
     color: rgba(255,255,255,0.85);
     line-height: 1.4;
     margin: 0;
   }
   .dormio-stats--{{ section.id }} .ds__disclaimer {
     font-family: Inter, sans-serif;
-    font-size: 0.72rem;
+    font-size: var(--d-font-fine);
     color: rgba(255,255,255,0.5);
     margin: 24px 0 0;
   }
@@ -95,7 +95,7 @@
 
 {% schema %}
 {
-  "name": "Dormio: Statistik-Block",
+  "name": "Mavuna: Statistik-Block",
   "tag": "section",
   "class": "section",
   "disabled_on": {
@@ -112,8 +112,8 @@
       "type": "text",
       "id": "source",
       "label": "Quelle / Zeitraum (Pflicht!)",
-      "info": "z.B. 'Dormio Kundenbefragung, Aug. 2025, n=412'",
-      "default": "Dormio Kundenbefragung [QUELLE EINTRAGEN]"
+      "info": "z.B. 'Mavuna Kundenbefragung, Aug. 2025, n=412'",
+      "default": "Mavuna Kundenbefragung [QUELLE EINTRAGEN]"
     },
     {
       "type": "checkbox",
@@ -168,7 +168,7 @@
   ],
   "presets": [
     {
-      "name": "Dormio: Statistik-Block",
+      "name": "Mavuna: Statistik-Block",
       "blocks": [
         {
           "type": "stat",
@@ -188,7 +188,7 @@
           "type": "stat",
           "settings": {
             "number": "85%",
-            "label": "würden Dormio aktiv weiterempfehlen"
+            "label": "würden Mavuna aktiv weiterempfehlen"
           }
         }
       ]

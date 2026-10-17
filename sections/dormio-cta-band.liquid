@@ -22,14 +22,14 @@
   }
   .dormio-cta-band--{{ section.id }} .dcb__heading {
     font-family: 'DM Serif Display', Georgia, serif;
-    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-size: var(--d-font-h2);
     color: {% if section.settings.dark_background %}var(--d-creme){% else %}var(--d-dark){% endif %};
     margin: 0 0 10px;
     font-weight: 400;
   }
   .dormio-cta-band--{{ section.id }} .dcb__sub {
     font-family: Inter, sans-serif;
-    font-size: 1.15rem;
+    font-size: var(--d-font-sub);
     color: {% if section.settings.dark_background %}#8aaabb{% else %}#5a6a72{% endif %};
     margin: 0 0 28px;
   }
@@ -38,7 +38,7 @@
     background: var(--d-green) !important;
     color: #fff !important;
     font-family: Inter, sans-serif;
-    font-size: 1.4rem !important;
+    font-size: var(--d-font-cta) !important;
     font-weight: 700;
     padding: 18px 44px;
     border-radius: 8px;
@@ -89,7 +89,7 @@
 
 {% schema %}
 {
-  "name": "Dormio: CTA-Band",
+  "name": "Mavuna: CTA-Band",
   "tag": "section",
   "class": "section",
   "disabled_on": { "groups": ["header", "footer"] },
@@ -148,6 +148,6 @@
       "default": 56
     }
   ],
-  "presets": [{ "name": "Dormio: CTA-Band" }]
+  "presets": [{ "name": "Mavuna: CTA-Band" }]
 }
 {% endschema %}

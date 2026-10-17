@@ -17,7 +17,7 @@
   }
   .dormio-pgrid--{{ section.id }} .pg__heading {
     font-family: 'DM Serif Display', Georgia, serif;
-    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    font-size: var(--d-font-h2);
     color: var(--d-navy, #0D1B2A);
     text-align: center;
     margin: 0 0 48px;
@@ -73,7 +73,7 @@
   }
   .dormio-pgrid--{{ section.id }} .pg__placeholder-label {
     font-family: Inter, sans-serif;
-    font-size: 0.8rem;
+    font-size: var(--d-font-fine);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -87,7 +87,7 @@
     background: linear-gradient(to top, rgba(13,27,42,0.65) 0%, transparent 100%);
     color: #fff;
     font-family: Inter, sans-serif;
-    font-size: 0.9rem;
+    font-size: var(--d-font-small);
     font-weight: 600;
     letter-spacing: 0.04em;
   }
@@ -122,12 +122,12 @@
 
 {% schema %}
 {
-  "name": "Dormio: Foto-Grid",
+  "name": "Mavuna: Foto-Grid",
   "tag": "section",
   "class": "section",
   "disabled_on": { "groups": ["header", "footer"] },
   "settings": [
-    { "type": "text", "id": "heading", "label": "Überschrift", "default": "Dormio im Alltag" },
+    { "type": "text", "id": "heading", "label": "Überschrift", "default": "Mavuna im Alltag" },
     { "type": "header", "content": "Abstände" },
     { "type": "range", "id": "padding_top", "min": 24, "max": 120, "step": 8, "unit": "px", "label": "Abstand oben", "default": 72 },
     { "type": "range", "id": "padding_bottom", "min": 24, "max": 120, "step": 8, "unit": "px", "label": "Abstand unten", "default": 72 }
@@ -145,7 +145,7 @@
   ],
   "presets": [
     {
-      "name": "Dormio: Foto-Grid",
+      "name": "Mavuna: Foto-Grid",
       "blocks": [
         { "type": "photo", "settings": { "caption": "Erholter Schlaf" } },
         { "type": "photo", "settings": { "caption": "Für jeden Schlaftyp" } },
