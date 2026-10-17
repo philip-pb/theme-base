@@ -21,7 +21,7 @@
   }
   .dormio-mission--{{ section.id }} .dm__eyebrow {
     font-family: Inter, sans-serif;
-    font-size: 0.72rem;
+    font-size: var(--d-font-eyebrow);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.14em;
@@ -31,7 +31,7 @@
   }
   .dormio-mission--{{ section.id }} .dm__heading {
     font-family: 'DM Serif Display', Georgia, serif;
-    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-size: var(--d-font-h2);
     line-height: 1.2;
     color: var(--d-dark);
     margin: 0 0 20px;
@@ -39,14 +39,14 @@
   }
   .dormio-mission--{{ section.id }} .dm__text {
     font-family: Inter, sans-serif;
-    font-size: 1.2rem;
+    font-size: var(--d-font-body);
     line-height: 1.75;
     color: #3a4a54;
     margin: 0 0 32px;
   }
   .dormio-mission--{{ section.id }} .dm__signature {
     font-family: 'DM Serif Display', Georgia, serif;
-    font-size: 1.2rem;
+    font-size: var(--d-font-small);
     color: var(--d-dark);
     font-style: italic;
   }

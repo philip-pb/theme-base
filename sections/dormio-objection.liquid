@@ -22,7 +22,7 @@
   }
   .dormio-objection--{{ section.id }} .dobj__eyebrow {
     font-family: Inter, sans-serif;
-    font-size: 0.75rem;
+    font-size: var(--d-font-eyebrow);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.12em;
@@ -31,14 +31,14 @@
   }
   .dormio-objection--{{ section.id }} .dobj__heading {
     font-family: 'DM Serif Display', Georgia, serif;
-    font-size: clamp(1.4rem, 4vw, 1.9rem);
+    font-size: var(--d-font-h2);
     line-height: 1.25;
     color: var(--d-dark);
     margin: 0 0 20px;
   }
   .dormio-objection--{{ section.id }} .dobj__text {
     font-family: Inter, sans-serif;
-    font-size: 1.35rem;
+    font-size: var(--d-font-body);
     line-height: 1.7;
     color: #3a4a54;
     margin: 0 0 32px;
@@ -61,7 +61,7 @@
   }
   .dormio-objection--{{ section.id }} .dobj__quote-text {
     font-family: Inter, sans-serif;
-    font-size: 1.35rem;
+    font-size: var(--d-font-quote);
     line-height: 1.65;
     font-style: italic;
     color: #c8d8e0;
@@ -69,14 +69,14 @@
   }
   .dormio-objection--{{ section.id }} .dobj__quote-author {
     font-family: Inter, sans-serif;
-    font-size: 1.4rem;
+    font-size: var(--d-font-small);
     font-weight: 600;
     color: var(--d-green);
     margin: 0;
   }
   .dormio-objection--{{ section.id }} .dobj__disclaimer {
     font-family: Inter, sans-serif;
-    font-size: 0.72rem;
+    font-size: var(--d-font-fine);
     color: #8a9aa4;
     margin: 10px 0 0;
     text-align: center;

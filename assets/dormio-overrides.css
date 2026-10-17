@@ -21,39 +21,26 @@
   --d-text-sub:   #5a6a72;
 
   /* ═══════════════════════════════════════════════
-     DORMIO TYPOGRAFIE — Schriftgrössenskala
-     Referenz: Benefit-Grid (Erkennst du das?)
+     TYPOGRAFIE — Schriftgrössenskala (Dawn: 1rem = 10px)
+     Eine Stelle für alle Sections; Mobile-Werte als Untergrenze.
      ═══════════════════════════════════════════════ */
-
-  /* Eyebrow: Kleine Kapitälchen über Überschriften */
-  --d-font-eyebrow: 0.72rem;
-
-  /* Hero-Überschrift (nur dormio-hero) */
-  --d-font-hero: clamp(2.4rem, 7vw, 4rem);
-
-  /* Abschnitts-H2: alle Section-Headings */
-  --d-font-h2: clamp(1.5rem, 4vw, 2rem);
-
-  /* H3: Karten-Titel, Unterabschnitte */
-  --d-font-h3: 1.35rem;
-
-  /* Subheading: Muted-Zeile unter dem H2 */
-  --d-font-sub: 1.15rem;
-
-  /* Body: Standard-Fliesstext */
-  --d-font-body: 1.35rem;
-
-  /* Body klein: Captions, Meta, Badges */
-  --d-font-small: 0.85rem;
-
-  /* CTA-Button standard */
-  --d-font-cta: 1.1rem;
-
-  /* CTA-Button gross (Bundle Picker) */
-  --d-font-cta-lg: 1.4rem;
-
-  /* Preis-Anzeige */
-  --d-font-price: 1.9rem;
+  --d-font-eyebrow: 1.2rem;                        /* 12px, Kapitälchen über Überschriften */
+  --d-font-badge:   1.2rem;                        /* 12px, Badges */
+  --d-font-fine:    1.3rem;                        /* 13px, Hinweise, Platzhalter-Texte */
+  --d-font-small:   1.4rem;                        /* 14px, Captions, Garantiezeilen, Namen */
+  --d-font-body:    1.6rem;                        /* 16px, Fliesstext */
+  --d-font-sub:     1.7rem;                        /* 17px, Einleitungen unter H2, FAQ-Fragen */
+  --d-font-quote:   1.7rem;                        /* 17px, Zitate */
+  --d-font-h3:      1.8rem;                        /* 18px, Karten-Titel */
+  --d-font-h2s:     clamp(2.2rem, 4vw, 2.8rem);    /* 22–28px, Unterkapitel */
+  --d-font-h2:      clamp(2.6rem, 5vw, 3.8rem);    /* 26–38px, Section-Überschriften */
+  --d-font-h1:      clamp(3.2rem, 6vw, 4.8rem);    /* 32–48px, Seitentitel */
+  --d-font-hero:    clamp(3.4rem, 8vw, 5.6rem);    /* 34–56px, Hero */
+  --d-font-display: clamp(2.2rem, 4vw, 3rem);      /* Abschluss-Zitat */
+  --d-font-cta:     1.6rem;                        /* 16px, Buttons */
+  --d-font-cta-lg:  1.8rem;                        /* 18px, grosse Buttons */
+  --d-font-price:   2.8rem;                        /* 28px, Preis */
+  --d-font-stat:    clamp(3.6rem, 8vw, 4.8rem);    /* Statistik-Zahlen */
 }
 
 /* ═══════════════════════════════════════════════
@@ -122,7 +109,7 @@
 
 /* Trust-Badge Items */
 .dormio-trust-badges__item {
-  font-size: var(--d-font-h3) !important;
+  font-size: var(--d-font-small) !important;
 }
 
 /* Dormio – Header & Footer: frosted glass / pastel effect */
@@ -152,7 +139,7 @@
   gap: 10px;
   margin: 0;
   padding: 5px 0;
-  font-size: 1.5rem;
+  font-size: var(--d-font-body);
   line-height: 1.5;
   color: #1e2d3a;
 }
@@ -171,7 +158,7 @@
   color: #fff !important;
   border: none !important;
   border-radius: 8px !important;
-  font-size: 1.4rem !important;
+  font-size: var(--d-font-cta) !important;
   font-weight: 700 !important;
   letter-spacing: 0.02em !important;
   padding: 18px 32px !important;
