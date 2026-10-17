@@ -11,7 +11,7 @@
   "current": "Dawn",
   "presets": {
     "Dawn": {
-      "logo_width": 90,
+      "logo_width": 120,
       "customer_account_menu": "customer-account-main-menu",
       "color_schemes": {
         "scheme-1": {
@@ -203,7 +203,7 @@
         "main-password-header": {
           "type": "main-password-header",
           "settings": {
-            "color_scheme": "scheme-1"
+            "color_scheme": "scheme-3"
           }
         },
         "main-password-footer": {
@@ -212,7 +212,9 @@
             "color_scheme": "scheme-1"
           }
         }
-      }
+      },
+      "logo": "shopify://shop_images/mavuna-logo-hell.png",
+      "favicon": "shopify://shop_images/mavuna-favicon.png"
     }
   }
 }
